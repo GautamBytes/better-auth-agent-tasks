@@ -1,0 +1,58 @@
+[
+  {
+    "reverted_file": "packages/better-auth/src/cookies/cache.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 8,
+    "errors": 0
+  },
+  {
+    "reverted_file": "packages/better-auth/src/cookies/index.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 4,
+    "errors": 0
+  },
+  {
+    "reverted_file": "packages/better-auth/src/cookies/jwt.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 2,
+    "errors": 0
+  },
+  {
+    "reverted_file": "packages/better-auth/src/db/internal-adapter.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 4,
+    "errors": 0
+  },
+  {
+    "reverted_file": "packages/better-auth/src/db/schema.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 10,
+    "errors": 0
+  },
+  {
+    "reverted_file": "packages/better-auth/src/plugins/jwt/cookie-cache.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 2,
+    "errors": 0
+  },
+  {
+    "reverted_file": "packages/core/src/db/adapter/factory.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0
+  },
+  {
+    "reverted_file": "packages/core/src/utils/json.ts",
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0
+  }
+]

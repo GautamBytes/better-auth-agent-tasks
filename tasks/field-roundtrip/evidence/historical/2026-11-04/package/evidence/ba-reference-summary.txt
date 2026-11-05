@@ -1,0 +1,32 @@
+Local reference solution completed at base e7200d132f5946490c19a389b5a89b31aeead4e7.
+
+Production files changed, eight total:
+- packages/core/src/utils/json.ts adds optional nonreviving parsing while retaining legacy default behavior.
+- packages/core/src/db/adapter/factory.ts decodes serialized JSON and arrays without interpreting their strings as dates.
+- packages/better-auth/src/db/schema.ts restores only schema-declared top-level dates. A cached transport schema includes session core fields even when secondaryStorage makes the physical session table unnecessary.
+- packages/better-auth/src/cookies/cache.ts hydrates typed server payloads before existing structural validation. Calls without auth options retain their legacy behavior.
+- packages/better-auth/src/cookies/index.ts passes runtime schema options and prevents lexical changes before compact-cookie HMAC verification.
+- packages/better-auth/src/cookies/jwt.ts accepts optional schema options for the existing JWT payload parser.
+- packages/better-auth/src/plugins/jwt/cookie-cache.ts supplies runtime options to the locally managed JWT-plugin signer path.
+- packages/better-auth/src/db/internal-adapter.ts uses the same nonreviving model hydration for secondary session lookup, session update and user-session refresh.
+
+No test files were edited by this worker. No dependency or lockfile changes. No commits or external writes.
+
+Verification:
+1. Built workspace dependencies with Node24.19.0, pnpm11.1.1:
+   pnpm --filter 'better-auth^...' build
+   Exit0. Log /private/tmp/ba-reference-build.log.
+2. First broad run exposed two existing update-user regressions because output schemas omit core session fields when secondary storage is the sole store. This was corrected by adding the internal cached transport mode rather than hardcoding date names.
+3. Fresh final run:
+   pnpm exec vitest run --project better-auth --project @better-auth/core packages/better-auth/src/api/routes/session-field-roundtrip.test.ts packages/better-auth/src/api/routes/session-api.test.ts packages/better-auth/src/api/routes/update-user.test.ts packages/better-auth/src/cookies/cookies.test.ts packages/better-auth/src/plugins/jwt/jwt.test.ts packages/core/src/db/adapter/factory.test.ts --reporter=default --reporter=junit --outputFile.junit=/private/tmp/ba-reference-full-tests.xml
+   Exit0. Six files, 391 passed. Includes14 new cases and377 existing cases. No skips or failures.
+   Log /private/tmp/ba-reference-full-tests.log and XML /private/tmp/ba-reference-full-tests.xml.
+4. pnpm exec biome check on all eight changed production files.
+   Exit0, no fixes needed. Log /private/tmp/ba-reference-biome-final.log.
+5. git diff --check exited0.
+
+Rationale:
+The Fix Root Causes principle rules out converting Date objects back into strings after decoding, because exact timestamp spelling and fractional precision have already been lost. The Type System Discipline principle keeps runtime schema fields authoritative for date restoration. Generic JSON consumers, standalone getCookieCache callers without runtime auth schema, expiry checks and existing signature verification retain their existing contract.
+
+Remaining limits owned by root:
+Full repository typecheck, Docker/no-cache/offline/nonroot verification, partial and alternative solution controls, runner validation and final task package review. No measured agent difficulty or platform acceptance is claimed.

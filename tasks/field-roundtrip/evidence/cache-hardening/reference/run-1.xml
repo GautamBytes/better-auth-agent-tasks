@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="14" failures="0" errors="0" time="0.170924541">
+    <testsuite name="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" timestamp="2026-11-05T14:19:24.655Z" hostname="5d7959aaab5a" tests="14" failures="0" errors="0" skipped="0" time="0.170924541">
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the compact cookie cache" time="0.059437791">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the jwt cookie cache" time="0.009134417">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the jwe cookie cache" time="0.011429334">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through JWT-plugin cookie signing" time="0.012463084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through JSON-string secondary storage" time="0.009333208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through pre-parsed secondary storage" time="0.007602084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through SQLite array and JSON serialization" time="0.008807834">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the compact cookie cache" time="0.009379125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the jwt cookie cache" time="0.009340625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the jwe cookie cache" time="0.007239959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through JWT-plugin cookie signing" time="0.009216083">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through JSON-string secondary storage" time="0.006485">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through pre-parsed secondary storage" time="0.005891583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through SQLite array and JSON serialization" time="0.003386333">
+        </testcase>
+    </testsuite>
+</testsuites>

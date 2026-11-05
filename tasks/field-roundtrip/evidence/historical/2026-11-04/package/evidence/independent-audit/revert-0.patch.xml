@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="14" failures="8" errors="0" time="0.129984083">
+    <testsuite name="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" timestamp="2026-11-03T22:42:34.196Z" hostname="5cd8c20df6ed" tests="14" failures="8" errors="0" skipped="0" time="0.129984083">
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the compact cookie cache" time="0.053091292">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.065Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;trackingId&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.065Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+            <failure message="expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.067Z,
+-   &quot;cursor&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;cursor&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.067Z,
+    &quot;history&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.067Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the jwt cookie cache" time="0.00895175">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.088Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;trackingId&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.088Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+            <failure message="expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.088Z,
+-   &quot;cursor&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;cursor&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.088Z,
+    &quot;history&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.088Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the jwe cookie cache" time="0.009022208">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.096Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;trackingId&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.096Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+            <failure message="expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.096Z,
+-   &quot;cursor&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;cursor&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.096Z,
+    &quot;history&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.096Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through JWT-plugin cookie signing" time="0.010288791">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.105Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;trackingId&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.105Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:208:4
+            </failure>
+            <failure message="expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.105Z,
+-   &quot;cursor&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++   &quot;cursor&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++     &quot;createdAt&quot;: 2024-01-02T03:04:05.000Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2024-01-02T03:04:05Z&quot;,
++       2024-01-02T03:04:05.000Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++         &quot;updatedAt&quot;: 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2024-01-02T03:04:05Z&quot;,
++       &quot;expiresAt&quot;: 2024-01-02T03:04:05.000Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.105Z,
+    &quot;history&quot;: [
+-     &quot;2024-01-02T03:04:05Z&quot;,
++     2024-01-02T03:04:05.000Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2024-01-02T03:04:05.000Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.105Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:208:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through JSON-string secondary storage" time="0.005937583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through pre-parsed secondary storage" time="0.004490334">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through SQLite array and JSON serialization" time="0.003031667">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the compact cookie cache" time="0.005963958">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.128Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;trackingId&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.128Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+            <failure message="expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.128Z,
+-   &quot;cursor&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;cursor&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.128Z,
+    &quot;history&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.128Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the jwt cookie cache" time="0.004752125">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.134Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;trackingId&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.134Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+            <failure message="expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.134Z,
+-   &quot;cursor&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;cursor&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.134Z,
+    &quot;history&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.134Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the jwe cookie cache" time="0.005600459">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.139Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;trackingId&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.139Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+            <failure message="expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.139Z,
+-   &quot;cursor&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;cursor&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.139Z,
+    &quot;history&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.139Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:203:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through JWT-plugin cookie signing" time="0.007518792">
+            <failure message="expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    &quot;aliases&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.145Z,
+    &quot;emptyTags&quot;: [],
+    &quot;joinedOn&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;optionalText&quot;: null,
+    &quot;preferences&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+-   &quot;trackingId&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;trackingId&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.145Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:101:20
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:179:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:208:4
+            </failure>
+            <failure message="expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)" type="AssertionError">
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    &quot;createdAt&quot;: 2026-11-03T22:42:34.145Z,
+-   &quot;cursor&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++   &quot;cursor&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;data&quot;: {
+-     &quot;createdAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++     &quot;createdAt&quot;: 2031-09-08T07:06:05.123Z,
+      &quot;empty&quot;: [],
+      &quot;items&quot;: [
+-       &quot;2031-09-08T07:06:05.123400Z&quot;,
++       2031-09-08T07:06:05.123Z,
+        &quot;ordinary text&quot;,
+        null,
+        {
+-         &quot;updatedAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++         &quot;updatedAt&quot;: 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      &quot;nested&quot;: {
+        &quot;count&quot;: 7,
+        &quot;enabled&quot;: true,
+-       &quot;expiresAt&quot;: &quot;2031-09-08T07:06:05.123400Z&quot;,
++       &quot;expiresAt&quot;: 2031-09-08T07:06:05.123Z,
+        &quot;missing&quot;: null,
+      },
+    },
+    &quot;emptyHistory&quot;: [],
+    &quot;expiresAt&quot;: 2026-11-10T22:42:34.145Z,
+    &quot;history&quot;: [
+-     &quot;2031-09-08T07:06:05.123400Z&quot;,
++     2031-09-08T07:06:05.123Z,
+      &quot;plain&quot;,
+    ],
+    &quot;nullableText&quot;: null,
+    &quot;reviewDate&quot;: 2031-09-08T07:06:05.123Z,
+    &quot;updatedAt&quot;: 2026-11-03T22:42:34.145Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:115:23
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:180:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:208:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through JSON-string secondary storage" time="0.004168959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through pre-parsed secondary storage" time="0.00346925">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through SQLite array and JSON serialization" time="0.002362333">
+        </testcase>
+    </testsuite>
+</testsuites>

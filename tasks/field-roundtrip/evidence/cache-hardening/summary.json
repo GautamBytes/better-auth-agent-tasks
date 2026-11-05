@@ -1,0 +1,313 @@
+{
+  "verified_at_utc": "2026-11-05T14:21:22.626538+00:00",
+  "base_commit": "e7200d132f5946490c19a389b5a89b31aeead4e7",
+  "image_id": "sha256:312a2d124909a4812d755b91adc9474aa20b22cf8eea50d7a355466d7a0db417",
+  "artifact_sha256": {
+    "tasks/field-roundtrip/test.patch": "cec5c21a30b543f6f71da806d71dfea0b64638815b9a6dc5c2a3bfa05b0e7964",
+    "tasks/field-roundtrip/new_tests.ts": "9434ce8287805c650e91b604c6258865b15c51bba5a05c0e6011b764d117cbd8",
+    "tasks/field-roundtrip/solution.patch": "cb03a752887a01a07930a41032804fb1a73eed7f99c529f712ef5d6867b1437a",
+    "tasks/field-roundtrip/problem_statement.txt": "863750e8de5a60cb5e45c47d999724870c2675d7c6de4a22265c33f33b39f16f",
+    "run_field_audit.py": "2c38cbeca0377c1d06c8eff576702b205c050b089e8bef74d0ac6b8a05e5ec72",
+    "tasks/field-roundtrip/verification/audit_case.py": "cf3e3f4e533c725b38967daf46ab2a54b2707101b1480379706f968cec41c9fc"
+  },
+  "agent_trials": false,
+  "platform_approved": false,
+  "results": [
+    {
+      "scenario": "original",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 2,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 3,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 4,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 5,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 6,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "reference",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 2,
+          "exit": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 3,
+          "exit": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 4,
+          "exit": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 5,
+          "exit": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "run": 6,
+          "exit": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "cache-bypassed",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 8,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "control-adapter-only",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 12,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "control-alternative-cloned-json",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "control-cookie-only",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "control-missing-rewrite-fix",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 4,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "control-persistence-only",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 8,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ]
+    },
+    {
+      "scenario": "revert-0",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 8,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/better-auth/src/cookies/cache.ts"
+    },
+    {
+      "scenario": "revert-1",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 6,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/better-auth/src/cookies/index.ts"
+    },
+    {
+      "scenario": "revert-2",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 2,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/better-auth/src/cookies/jwt.ts"
+    },
+    {
+      "scenario": "revert-3",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 4,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/better-auth/src/db/internal-adapter.ts"
+    },
+    {
+      "scenario": "revert-4",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 12,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/better-auth/src/db/schema.ts"
+    },
+    {
+      "scenario": "revert-5",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 2,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/better-auth/src/plugins/jwt/cookie-cache.ts"
+    },
+    {
+      "scenario": "revert-6",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/core/src/db/adapter/factory.ts"
+    },
+    {
+      "scenario": "revert-7",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "failures": 14,
+          "errors": 0,
+          "skipped": 0,
+          "tests": 14
+        }
+      ],
+      "reverted_file": "packages/core/src/utils/json.ts"
+    }
+  ]
+}

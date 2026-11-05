@@ -1,0 +1,281 @@
+diff --git a/packages/better-auth/src/cookies/cache.ts b/packages/better-auth/src/cookies/cache.ts
+index a52f81a..97eed12 100644
+--- a/packages/better-auth/src/cookies/cache.ts
++++ b/packages/better-auth/src/cookies/cache.ts
+@@ -1,8 +1,14 @@
+-import type { CookieCachePayload } from "@better-auth/core";
++import type { BetterAuthOptions, CookieCachePayload } from "@better-auth/core";
+ import { sessionSchema, userSchema } from "@better-auth/core/db";
+ import { logger } from "@better-auth/core/env";
+ import { safeJSONParse } from "@better-auth/core/utils/json";
+ import * as z from "zod";
++import { restoreModelDates } from "../db/schema";
++
++const storedModelsSchema = z.looseObject({
++	session: z.record(z.string(), z.unknown()),
++	user: z.record(z.string(), z.unknown()),
++});
+ 
+ const cookieCachePayloadSchema: z.ZodType<CookieCachePayload> = z.looseObject({
+ 	session: sessionSchema.loose(),
+@@ -19,14 +25,28 @@ const compactCookieCacheSchema = z.object({
+ 
+ export function parseCookieCachePayload(
+ 	value: unknown,
++	options?: BetterAuthOptions,
+ ): CookieCachePayload | null {
+-	const parsed = safeJSONParse(value);
++	let parsed = safeJSONParse<unknown>(value, {
++		reviveDates: options === undefined,
++	});
+ 	if (parsed === null) {
+ 		// safeJSONParse already logs malformed JSON.
+ 		// otherwise, there is no payload to validate.
+ 		return null;
+ 	}
+ 
++	if (options) {
++		const models = storedModelsSchema.safeParse(parsed);
++		if (models.success) {
++			parsed = {
++				...models.data,
++				session: restoreModelDates(options, "session", models.data.session),
++				user: restoreModelDates(options, "user", models.data.user),
++			};
++		}
++	}
++
+ 	const result = cookieCachePayloadSchema.safeParse(parsed);
+ 	if (result.success) {
+ 		return result.data;
+diff --git a/packages/better-auth/src/cookies/index.ts b/packages/better-auth/src/cookies/index.ts
+index 8e3ca30..9aaba4e 100644
+--- a/packages/better-auth/src/cookies/index.ts
++++ b/packages/better-auth/src/cookies/index.ts
+@@ -288,7 +288,7 @@ export async function decodeCookieCache(
+ 			ctx.context.secretConfig,
+ 			"better-auth-session",
+ 		);
+-		const payload = parseCookieCachePayload(decoded);
++		const payload = parseCookieCachePayload(decoded, ctx.context.options);
+ 		if (!payload) {
+ 			return null;
+ 		}
+@@ -315,7 +315,7 @@ export async function decodeCookieCache(
+ 			value,
+ 			ctx.context.secret,
+ 		);
+-		const payload = parseCookieCachePayload(decoded);
++		const payload = parseCookieCachePayload(decoded, ctx.context.options);
+ 		if (!payload) {
+ 			return null;
+ 		}
+@@ -326,7 +326,9 @@ export async function decodeCookieCache(
+ 	}
+ 
+ 	const parsed = parseCompactCookieCache(
+-		safeJSONParse(binary.decode(base64Url.decode(value))),
++		safeJSONParse(binary.decode(base64Url.decode(value)), {
++			reviveDates: false,
++		}),
+ 	);
+ 	if (!parsed) {
+ 		return null;
+@@ -344,7 +346,7 @@ export async function decodeCookieCache(
+ 		return null;
+ 	}
+ 
+-	const payload = parseCookieCachePayload(parsed.session);
++	const payload = parseCookieCachePayload(parsed.session, ctx.context.options);
+ 	return payload
+ 		? {
+ 				session: payload,
+diff --git a/packages/better-auth/src/cookies/jwt.ts b/packages/better-auth/src/cookies/jwt.ts
+index 2924e95..fe816f0 100644
+--- a/packages/better-auth/src/cookies/jwt.ts
++++ b/packages/better-auth/src/cookies/jwt.ts
+@@ -1,4 +1,4 @@
+-import type { CookieCachePayload } from "@better-auth/core";
++import type { BetterAuthOptions, CookieCachePayload } from "@better-auth/core";
+ import type { JSONWebKeySet, JWTPayload } from "jose";
+ import { decodeProtectedHeader, importJWK, jwtVerify } from "jose";
+ import { parseCookieCachePayload } from "./cache";
+@@ -33,8 +33,9 @@ export function getSessionCookieJwtVerifyOptions(
+ 
+ export function parseSessionCookieJwtPayload(
+ 	payload: JWTPayload,
++	options?: BetterAuthOptions,
+ ): (CookieCachePayload & JWTPayload) | null {
+-	const data = parseCookieCachePayload(payload);
++	const data = parseCookieCachePayload(payload, options);
+ 	if (!data || typeof payload.iss !== "string" || !payload.iss) {
+ 		return null;
+ 	}
+diff --git a/packages/better-auth/src/db/schema.ts b/packages/better-auth/src/db/schema.ts
+index 348f51f..7ca09bf 100644
+--- a/packages/better-auth/src/db/schema.ts
++++ b/packages/better-auth/src/db/schema.ts
+@@ -9,7 +9,7 @@ import { APIError, BASE_ERROR_CODES } from "@better-auth/core/error";
+ import { filterOutputFields } from "@better-auth/core/utils/db";
+ import type { Account, Session, User } from "../types";
+ 
+-type Mode = "input" | "output";
++type Mode = "input" | "output" | "transport";
+ 
+ // Cache for parsed schemas to avoid reparsing on every request
+ const cache = new WeakMap<
+@@ -30,8 +30,14 @@ function getFields(
+ 	if (tableCache.has(cacheKey)) {
+ 		return tableCache.get(cacheKey)!;
+ 	}
++	const schemaOptions =
++		mode === "transport"
++			? { ...options, secondaryStorage: undefined }
++			: options;
+ 	const coreSchema =
+-		mode === "output" ? (getAuthTables(options)[modelName]?.fields ?? {}) : {};
++		mode !== "input"
++			? (getAuthTables(schemaOptions)[modelName]?.fields ?? {})
++			: {};
+ 	const additionalFields =
+ 		modelName === "user" || modelName === "session" || modelName === "account"
+ 			? options[modelName]?.additionalFields
+@@ -57,6 +63,23 @@ function getFields(
+ 	return schema;
+ }
+ 
++/** Restores declared model dates without interpreting strings inside other fields. */
++export function restoreModelDates<T extends Record<string, unknown>>(
++	options: BetterAuthOptions,
++	modelName: "user" | "session",
++	data: T,
++): T {
++	const fields = getFields(options, modelName, "transport");
++	const result = { ...data };
++	for (const [key, field] of Object.entries(fields)) {
++		const value = data[key];
++		if (field.type === "date" && typeof value === "string") {
++			Object.assign(result, { [key]: new Date(value) });
++		}
++	}
++	return result;
++}
++
+ export function parseUserOutput<T extends User>(
+ 	options: BetterAuthOptions,
+ 	user: T,
+diff --git a/packages/better-auth/src/plugins/jwt/cookie-cache.ts b/packages/better-auth/src/plugins/jwt/cookie-cache.ts
+index 899ce24..6d0178b 100644
+--- a/packages/better-auth/src/plugins/jwt/cookie-cache.ts
++++ b/packages/better-auth/src/plugins/jwt/cookie-cache.ts
+@@ -116,7 +116,7 @@ async function verifyCookieCacheJWT(
+ 			algorithms: [key.alg],
+ 		});
+ 
+-		const parsed = parseSessionCookieJwtPayload(payload);
++		const parsed = parseSessionCookieJwtPayload(payload, ctx.context.options);
+ 		if (!parsed) {
+ 			return null;
+ 		}
+diff --git a/packages/core/src/db/adapter/factory.ts b/packages/core/src/db/adapter/factory.ts
+index d58d185..94f0b79 100644
+--- a/packages/core/src/db/adapter/factory.ts
++++ b/packages/core/src/db/adapter/factory.ts
+@@ -358,13 +358,13 @@ export const createAdapterFactory =
+ 							typeof newValue === "string" &&
+ 							field.type === "json"
+ 						) {
+-							newValue = safeJSONParse(newValue);
++							newValue = safeJSONParse(newValue, { reviveDates: false });
+ 						} else if (
+ 							config.supportsArrays === false &&
+ 							typeof newValue === "string" &&
+ 							(field.type === "string[]" || field.type === "number[]")
+ 						) {
+-							newValue = safeJSONParse(newValue);
++							newValue = safeJSONParse(newValue, { reviveDates: false });
+ 						} else if (
+ 							config.supportsDates === false &&
+ 							typeof newValue === "string" &&
+diff --git a/packages/core/src/utils/json.ts b/packages/core/src/utils/json.ts
+index 056b4f2..3cf4953 100644
+--- a/packages/core/src/utils/json.ts
++++ b/packages/core/src/utils/json.ts
+@@ -40,15 +40,20 @@ function reviveDates(value: unknown): any {
+ 	return value;
+ }
+ 
+-export function safeJSONParse<T>(data: unknown): T | null {
++export function safeJSONParse<T>(
++	data: unknown,
++	options?: { reviveDates?: boolean },
++): T | null {
+ 	try {
+ 		if (typeof data !== "string") {
+ 			if (data === null || data === undefined) {
+ 				return null;
+ 			}
+-			return reviveDates(data) as T;
++			return (options?.reviveDates === false ? data : reviveDates(data)) as T;
+ 		}
+-		return JSON.parse(data, (_, value) => reviveDate(value));
++		return options?.reviveDates === false
++			? JSON.parse(data)
++			: JSON.parse(data, (_, value) => reviveDate(value));
+ 	} catch (e) {
+ 		logger.error("Error parsing JSON", { error: e });
+ 		return null;
+diff --git a/packages/better-auth/src/db/internal-adapter.ts b/packages/better-auth/src/db/internal-adapter.ts
+--- a/packages/better-auth/src/db/internal-adapter.ts
++++ b/packages/better-auth/src/db/internal-adapter.ts
+@@ -31,6 +31,7 @@
+ 	getSessionDefaultFields,
+ 	parseSessionOutput,
+ 	parseUserOutput,
++	restoreModelDates,
+ } from "./schema";
+ import {
+ 	getStorageOption,
+@@ -110,6 +111,18 @@
+ 			executeMainFn: false,
+ 		});
+ 	};
++
++	function parseStoredSession(data: unknown) {
++		const parsed = safeJSONParse<{ session: Session; user: User }>(data, {
++			reviveDates: false,
++		});
++		if (!parsed) return null;
++		return {
++			...parsed,
++			session: restoreModelDates(options, "session", parsed.session),
++			user: restoreModelDates(options, "user", parsed.user),
++		};
++	}
+ 
+ 	async function refreshUserSessions(user: User) {
+ 		if (!secondaryStorage) return;
+@@ -694,10 +707,7 @@
+ 					return null;
+ 				}
+ 				if (sessionStringified) {
+-					const s = safeJSONParse<{
+-						session: Session;
+-						user: User;
+-					}>(sessionStringified);
++					const s = parseStoredSession(sessionStringified);
+ 					if (!s || (await isRevokedSession(s.session))) return null;
+ 					const parsedSession = parseSessionOutput(ctx.options, {
+ 						...s.session,
+@@ -865,10 +875,7 @@
+ 									return null;
+ 								}
+ 
+-								const parsedSession = safeJSONParse<{
+-									session: Session;
+-									user: User;
+-								}>(currentSession);
++								const parsedSession = safeJSONParse<{ session: Session; user: User }>(currentSession);
+ 								if (!parsedSession) return null;
+ 
+ 								const mergedSession = {

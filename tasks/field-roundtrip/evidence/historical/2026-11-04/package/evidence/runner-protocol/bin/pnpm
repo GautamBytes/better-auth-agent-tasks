@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import os,sys,pathlib,xml.etree.ElementTree as E
+scenario=os.environ['RUNNER_SCENARIO']
+if 'build' in sys.argv:
+    raise SystemExit(7 if scenario=='build-fail' else 0)
+if scenario=='missing-report':raise SystemExit(9)
+path=pathlib.Path(next(x.split('=',1)[1] for x in sys.argv if x.startswith('--outputFile.junit=')))
+root=E.Element('testsuites',tests='14',failures='0',errors='0')
+s=E.SubElement(root,'testsuite',name='packages/better-auth/src/api/routes/session-field-roundtrip.test.ts',tests='14',failures='0',errors='0',skipped='0')
+if scenario!='zero':
+    for i in range(14):
+        c=E.SubElement(s,'testcase',name=f'actual case {i}')
+        if scenario=='skip' and i==0:E.SubElement(c,'skipped')
+        if scenario=='assertion-fail' and i==0:E.SubElement(c,'failure',message='expected string, got Date').text='AssertionError: expected string'
+else:root.set('tests','0');s.set('tests','0')
+E.ElementTree(root).write(path)
+raise SystemExit(1 if scenario in ['exit-fail-pass-report','assertion-fail'] else 0)

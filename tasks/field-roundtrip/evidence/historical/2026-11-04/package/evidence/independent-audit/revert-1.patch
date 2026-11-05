@@ -1,0 +1,42 @@
+diff --git a/packages/better-auth/src/cookies/index.ts b/packages/better-auth/src/cookies/index.ts
+index 8e3ca30..9aaba4e 100644
+--- a/packages/better-auth/src/cookies/index.ts
++++ b/packages/better-auth/src/cookies/index.ts
+@@ -288,7 +288,7 @@ export async function decodeCookieCache(
+ 			ctx.context.secretConfig,
+ 			"better-auth-session",
+ 		);
+-		const payload = parseCookieCachePayload(decoded);
++		const payload = parseCookieCachePayload(decoded, ctx.context.options);
+ 		if (!payload) {
+ 			return null;
+ 		}
+@@ -315,7 +315,7 @@ export async function decodeCookieCache(
+ 			value,
+ 			ctx.context.secret,
+ 		);
+-		const payload = parseCookieCachePayload(decoded);
++		const payload = parseCookieCachePayload(decoded, ctx.context.options);
+ 		if (!payload) {
+ 			return null;
+ 		}
+@@ -326,7 +326,9 @@ export async function decodeCookieCache(
+ 	}
+ 
+ 	const parsed = parseCompactCookieCache(
+-		safeJSONParse(binary.decode(base64Url.decode(value))),
++		safeJSONParse(binary.decode(base64Url.decode(value)), {
++			reviveDates: false,
++		}),
+ 	);
+ 	if (!parsed) {
+ 		return null;
+@@ -344,7 +346,7 @@ export async function decodeCookieCache(
+ 		return null;
+ 	}
+ 
+-	const payload = parseCookieCachePayload(parsed.session);
++	const payload = parseCookieCachePayload(parsed.session, ctx.context.options);
+ 	return payload
+ 		? {
+ 				session: payload,

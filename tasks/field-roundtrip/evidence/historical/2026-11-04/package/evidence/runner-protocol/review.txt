@@ -1,0 +1,7 @@
+Read-only runner and Dockerfile review. Synthetic runner-protocol controls only; these are not coding-agent evaluations.
+
+One important finding: test.sh final status handling exits1 for a nonzero Vitest process that produced all-pass XML, but leaves the XML success-shaped. Verified in exit-fail-pass-report.xml and results.json. Add a runner-integrity failure when process status is nonzero and no testcase failure/error exists; preserve original cases and failure names.
+
+Build-failure, failure-before-report, zero-collection and skipped-new-test controls all exited1 with useful failing JUnit. A normal success exited0, preserving14 testcase names. A real assertion failure exited1 and retained its assertion details. bash -n passed.
+
+Dockerfile meets static contract: pinned Node digest and pnpm, exact top-level tool versions, WORKDIR /app, COPY . ., USER node with writable source, build-time dependency install and compile only, final CMD /bin/bash. Platform base-image acceptance remains external and is not established by this review.

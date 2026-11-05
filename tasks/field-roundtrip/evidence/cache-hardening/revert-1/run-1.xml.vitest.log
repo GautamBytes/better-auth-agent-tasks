@@ -1,0 +1,503 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [31m❯[39m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts [2m([22m[2m14 tests[22m[2m | [22m[31m6 failed[39m[2m)[22m[32m 235[2mms[22m[39m
+   [31m❯[39m additional-field round trips for 2024-01-02T03:04:05Z [2m(7)[22m
+[31m     [31m×[31m preserves field types through the compact cookie cache[39m[32m 87[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwt cookie cache[39m[32m 14[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwe cookie cache[39m[32m 18[2mms[22m[39m
+     [32m✓[39m preserves field types through JWT-plugin cookie signing[32m 18[2mms[22m[39m
+     [32m✓[39m preserves field types through JSON-string secondary storage[32m 12[2mms[22m[39m
+     [32m✓[39m preserves field types through pre-parsed secondary storage[32m 6[2mms[22m[39m
+     [32m✓[39m preserves field types through SQLite array and JSON serialization[32m 7[2mms[22m[39m
+   [31m❯[39m additional-field round trips for 2031-09-08T07:06:05.123400Z [2m(7)[22m
+[31m     [31m×[31m preserves field types through the compact cookie cache[39m[32m 11[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwt cookie cache[39m[32m 8[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwe cookie cache[39m[32m 11[2mms[22m[39m
+     [32m✓[39m preserves field types through JWT-plugin cookie signing[32m 14[2mms[22m[39m
+     [32m✓[39m preserves field types through JSON-string secondary storage[32m 10[2mms[22m[39m
+     [32m✓[39m preserves field types through pre-parsed secondary storage[32m 8[2mms[22m[39m
+     [32m✓[39m preserves field types through SQLite array and JSON serialization[32m 9[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 6 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the compact cookie cache
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected [ [ { model: 'session', …(2) } ] ] to have a length of +0 but got 1[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 0[39m
+[31m+ 1[39m
+
+[36m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m209:5[22m[39m
+    [90m207|[39m     ),
+    [90m208|[39m    )
+    [90m209|[39m    .toHaveLength(0);
+    [90m   |[39m     [31m^[39m
+    [90m210|[39m  }
+    [90m211|[39m  expect(restored).not.toBeNull();
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:20:29.147Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[32m-   "trackingId": "2024-01-02T03:04:05Z",[39m
+[31m+   "trackingId": 2024-01-02T03:04:05.000Z,[39m
+[2m    "updatedAt": 2026-11-05T14:20:29.147Z,[22m
+[2m  }[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:20:29.148Z,[22m
+[32m-   "cursor": "2024-01-02T03:04:05Z",[39m
+[31m+   "cursor": 2024-01-02T03:04:05.000Z,[39m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:20:29.148Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:20:29.148Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:20:29.161Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[32m-   "trackingId": "2024-01-02T03:04:05Z",[39m
+[31m+   "trackingId": 2024-01-02T03:04:05.000Z,[39m
+[2m    "updatedAt": 2026-11-05T14:20:29.161Z,[22m
+[2m  }[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:20:29.162Z,[22m
+[32m-   "cursor": "2024-01-02T03:04:05Z",[39m
+[31m+   "cursor": 2024-01-02T03:04:05.000Z,[39m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:20:29.162Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:20:29.162Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:20:29.232Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[32m-   "trackingId": "2031-09-08T07:06:05.123400Z",[39m
+[31m+   "trackingId": 2031-09-08T07:06:05.123Z,[39m
+[2m    "updatedAt": 2026-11-05T14:20:29.232Z,[22m
+[2m  }[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:20:29.232Z,[22m
+[32m-   "cursor": "2031-09-08T07:06:05.123400Z",[39m
+[31m+   "cursor": 2031-09-08T07:06:05.123Z,[39m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:20:29.232Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:20:29.232Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:20:29.240Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[32m-   "trackingId": "2031-09-08T07:06:05.123400Z",[39m
+[31m+   "trackingId": 2031-09-08T07:06:05.123Z,[39m
+[2m    "updatedAt": 2026-11-05T14:20:29.240Z,[22m
+[2m  }[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:20:29.240Z,[22m
+[32m-   "cursor": "2031-09-08T07:06:05.123400Z",[39m
+[31m+   "cursor": 2031-09-08T07:06:05.123Z,[39m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:20:29.240Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:20:29.240Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m6 failed[39m[22m[2m | [22m[1m[32m8 passed[39m[22m[90m (14)[39m
+[2m   Start at [22m 14:20:27
+[2m   Duration [22m 2.20s[2m (transform 74%, import 15%, tests 11%)[22m
+
+JUNIT report written to /results/run-1.xml

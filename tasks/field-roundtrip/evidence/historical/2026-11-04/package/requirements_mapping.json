@@ -1,0 +1,32 @@
+{
+  "main_rule": "Non-date field values retain exact types and contents through supported serialization boundaries.",
+  "public_apis": [
+    "auth.api.signUpEmail",
+    "auth.api.getSession",
+    "auth.api.updateUser",
+    "auth.api.updateSession"
+  ],
+  "inputs": [
+    "2024-01-02T03:04:05Z",
+    "2031-09-08T07:06:05.123400Z"
+  ],
+  "routes": [
+    "SQLite serialized arrays/JSON",
+    "compact cookie cache",
+    "secret-signed JWT cookie cache",
+    "JWT-plugin signed cookie cache",
+    "JWE cookie cache",
+    "JSON-string secondary storage",
+    "pre-parsed secondary storage"
+  ],
+  "guards": [
+    "built-in Dates",
+    "declared custom Dates",
+    "nulls",
+    "empty arrays",
+    "ordinary JSON values",
+    "returned:false"
+  ],
+  "new_test_file": "packages/better-auth/src/api/routes/session-field-roundtrip.test.ts",
+  "tests": 14
+}

@@ -1,0 +1,7 @@
+{
+  "source_hashes_match_base": true,
+  "test_sh_absent": true,
+  "new_test_file_absent": true,
+  "runtime_network": "none",
+  "base_commit": "e7200d132f5946490c19a389b5a89b31aeead4e7"
+}

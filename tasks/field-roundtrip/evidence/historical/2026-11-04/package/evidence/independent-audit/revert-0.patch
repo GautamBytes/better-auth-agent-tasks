@@ -1,0 +1,50 @@
+diff --git a/packages/better-auth/src/cookies/cache.ts b/packages/better-auth/src/cookies/cache.ts
+index a52f81a..97eed12 100644
+--- a/packages/better-auth/src/cookies/cache.ts
++++ b/packages/better-auth/src/cookies/cache.ts
+@@ -1,8 +1,14 @@
+-import type { CookieCachePayload } from "@better-auth/core";
++import type { BetterAuthOptions, CookieCachePayload } from "@better-auth/core";
+ import { sessionSchema, userSchema } from "@better-auth/core/db";
+ import { logger } from "@better-auth/core/env";
+ import { safeJSONParse } from "@better-auth/core/utils/json";
+ import * as z from "zod";
++import { restoreModelDates } from "../db/schema";
++
++const storedModelsSchema = z.looseObject({
++	session: z.record(z.string(), z.unknown()),
++	user: z.record(z.string(), z.unknown()),
++});
+ 
+ const cookieCachePayloadSchema: z.ZodType<CookieCachePayload> = z.looseObject({
+ 	session: sessionSchema.loose(),
+@@ -19,14 +25,28 @@ const compactCookieCacheSchema = z.object({
+ 
+ export function parseCookieCachePayload(
+ 	value: unknown,
++	options?: BetterAuthOptions,
+ ): CookieCachePayload | null {
+-	const parsed = safeJSONParse(value);
++	let parsed = safeJSONParse<unknown>(value, {
++		reviveDates: options === undefined,
++	});
+ 	if (parsed === null) {
+ 		// safeJSONParse already logs malformed JSON.
+ 		// otherwise, there is no payload to validate.
+ 		return null;
+ 	}
+ 
++	if (options) {
++		const models = storedModelsSchema.safeParse(parsed);
++		if (models.success) {
++			parsed = {
++				...models.data,
++				session: restoreModelDates(options, "session", models.data.session),
++				user: restoreModelDates(options, "user", models.data.user),
++			};
++		}
++	}
++
+ 	const result = cookieCachePayloadSchema.safeParse(parsed);
+ 	if (result.success) {
+ 		return result.data;

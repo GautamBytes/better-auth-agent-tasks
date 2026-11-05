@@ -1,0 +1,31 @@
+Scope: all 51 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +1855
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1855, reused 235, downloaded 43, added 286
+Progress: resolved 1855, reused 235, downloaded 200, added 447
+Progress: resolved 1855, reused 235, downloaded 343, added 598
+Progress: resolved 1855, reused 235, downloaded 485, added 743
+Progress: resolved 1855, reused 235, downloaded 534, added 792
+Progress: resolved 1855, reused 235, downloaded 604, added 860
+Progress: resolved 1855, reused 235, downloaded 675, added 932
+Progress: resolved 1855, reused 235, downloaded 769, added 1026
+Progress: resolved 1855, reused 235, downloaded 885, added 1142
+Progress: resolved 1855, reused 235, downloaded 947, added 1204
+Progress: resolved 1855, reused 235, downloaded 1059, added 1316
+Progress: resolved 1855, reused 235, downloaded 1129, added 1382
+Progress: resolved 1855, reused 235, downloaded 1269, added 1561
+Progress: resolved 1855, reused 235, downloaded 1311, added 1626
+Progress: resolved 1855, reused 235, downloaded 1335, added 1652
+Progress: resolved 1855, reused 235, downloaded 1375, added 1692
+Progress: resolved 1855, reused 235, downloaded 1420, added 1735
+Progress: resolved 1855, reused 235, downloaded 1458, added 1776
+Progress: resolved 1855, reused 235, downloaded 1518, added 1839
+[WARN] Tarball download average speed 49 KiB/s (size 107 KiB) is below 50 KiB/s: https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.9.12.tgz (GET)
+Progress: resolved 1855, reused 235, downloaded 1527, added 1850
+Progress: resolved 1855, reused 235, downloaded 1528, added 1851
+Progress: resolved 1855, reused 235, downloaded 1529, added 1852
+Progress: resolved 1855, reused 235, downloaded 1532, added 1855, done
+
+Done in 24.6s using pnpm v11.1.1

@@ -1,0 +1,110 @@
+[
+  {
+    "stage": "base",
+    "run": 1,
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "base",
+    "run": 2,
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "base",
+    "run": 3,
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "base",
+    "run": 4,
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "base",
+    "run": 5,
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "base",
+    "run": 6,
+    "exit": 1,
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "fixed",
+    "run": 1,
+    "exit": 0,
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "fixed",
+    "run": 2,
+    "exit": 0,
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "fixed",
+    "run": 3,
+    "exit": 0,
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "fixed",
+    "run": 4,
+    "exit": 0,
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "fixed",
+    "run": 5,
+    "exit": 0,
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  {
+    "stage": "fixed",
+    "run": 6,
+    "exit": 0,
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  }
+]

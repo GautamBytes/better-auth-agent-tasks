@@ -1,0 +1,23 @@
+git:
+  Installed: (none)
+  Candidate: 1:2.39.5-0+deb12u3
+  Version table:
+     1:2.39.5-0+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main arm64 Packages
+     1:2.39.5-0+deb12u2 500
+        500 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages
+python3:
+  Installed: (none)
+  Candidate: 3.11.2-1+b1
+  Version table:
+     3.11.2-1+b1 500
+        500 http://deb.debian.org/debian bookworm/main arm64 Packages
+ca-certificates:
+  Installed: (none)
+  Candidate: 20250419~deb12u2
+  Version table:
+     20250419~deb12u2 500
+        500 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages
+     20230311+deb12u1 500
+        500 http://deb.debian.org/debian bookworm/main arm64 Packages
+        500 http://deb.debian.org/debian bookworm-updates/main arm64 Packages

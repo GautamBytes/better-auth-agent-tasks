@@ -1,0 +1,2036 @@
+
+ RUN  v5.0.5 /Users/gautammanch/Downloads/better-auth-task-investigation-2026-11-04
+
+ ❯ |better-auth| src/api/routes/session-field-roundtrip.test.ts (12 tests | 12 failed) 99ms
+   ❯ additional-field round trips for 2024-01-02T03:04:05Z (6)
+     × preserves field types through the compact cookie cache 55ms
+     × preserves field types through the jwt cookie cache 8ms
+     × preserves field types through the jwe cookie cache 7ms
+     × preserves field types through JSON-string secondary storage 4ms
+     × preserves field types through pre-parsed secondary storage 3ms
+     × preserves field types through SQLite array and JSON serialization 3ms
+   ❯ additional-field round trips for 2031-09-08T07:06:05.123400Z (6)
+     × preserves field types through the compact cookie cache 4ms
+     × preserves field types through the jwt cookie cache 4ms
+     × preserves field types through the jwe cookie cache 4ms
+     × preserves field types through JSON-string secondary storage 2ms
+     × preserves field types through pre-parsed secondary storage 2ms
+     × preserves field types through SQLite array and JSON serialization 2ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the compact cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.367Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.367Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the compact cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.367Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.367Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the compact cookie cache
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.369Z,
+    "cursor": "2024-01-02T03:04:05Z",
+    "data": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.369Z,
+    "history": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.369Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwt cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.389Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.389Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwt cookie cache
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.389Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2024-01-02T03:04:05Z",
++   "trackingId": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.389Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwt cookie cache
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.390Z,
+-   "cursor": "2024-01-02T03:04:05Z",
++   "cursor": 2024-01-02T03:04:05.000Z,
+    "data": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.390Z,
+    "history": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.390Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwe cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.396Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.396Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwe cookie cache
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.396Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2024-01-02T03:04:05Z",
++   "trackingId": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.396Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwe cookie cache
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.396Z,
+-   "cursor": "2024-01-02T03:04:05Z",
++   "cursor": 2024-01-02T03:04:05.000Z,
+    "data": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.396Z,
+    "history": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.396Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through JSON-string secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.403Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.403Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:189:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through JSON-string secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.403Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2024-01-02T03:04:05Z",
++   "trackingId": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.403Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:189:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through JSON-string secondary storage
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.403Z,
+-   "cursor": "2024-01-02T03:04:05Z",
++   "cursor": 2024-01-02T03:04:05.000Z,
+    "data": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.403Z,
+    "history": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.403Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:189:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through pre-parsed secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.406Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.406Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:193:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through pre-parsed secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.406Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2024-01-02T03:04:05Z",
++   "trackingId": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.406Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:193:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through pre-parsed secondary storage
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.406Z,
+-   "cursor": "2024-01-02T03:04:05Z",
++   "cursor": 2024-01-02T03:04:05.000Z,
+    "data": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.406Z,
+    "history": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.406Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:193:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through SQLite array and JSON serialization
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.409Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.409Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:197:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through SQLite array and JSON serialization
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.409Z,
+    "emptyTags": [],
+    "joinedOn": 2024-01-02T03:04:05.000Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2024-01-02T03:04:05Z",
+    "updatedAt": 2026-11-03T22:11:30.409Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:197:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through SQLite array and JSON serialization
+AssertionError: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.409Z,
+    "cursor": "2024-01-02T03:04:05Z",
+    "data": {
+-     "createdAt": "2024-01-02T03:04:05Z",
++     "createdAt": 2024-01-02T03:04:05.000Z,
+      "empty": [],
+      "items": [
+-       "2024-01-02T03:04:05Z",
++       2024-01-02T03:04:05.000Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2024-01-02T03:04:05Z",
++         "updatedAt": 2024-01-02T03:04:05.000Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2024-01-02T03:04:05Z",
++       "expiresAt": 2024-01-02T03:04:05.000Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.409Z,
+    "history": [
+-     "2024-01-02T03:04:05Z",
++     2024-01-02T03:04:05.000Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2024-01-02T03:04:05.000Z,
+    "updatedAt": 2026-11-03T22:11:30.409Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:197:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the compact cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.412Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.412Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the compact cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.412Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.412Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the compact cookie cache
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.412Z,
+    "cursor": "2031-09-08T07:06:05.123400Z",
+    "data": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.412Z,
+    "history": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.412Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwt cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.416Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.416Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwt cookie cache
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.416Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2031-09-08T07:06:05.123400Z",
++   "trackingId": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.416Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwt cookie cache
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.416Z,
+-   "cursor": "2031-09-08T07:06:05.123400Z",
++   "cursor": 2031-09-08T07:06:05.123Z,
+    "data": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.416Z,
+    "history": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.416Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwe cookie cache
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.420Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.420Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwe cookie cache
+AssertionError: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.420Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2031-09-08T07:06:05.123400Z",
++   "trackingId": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.420Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwe cookie cache
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.421Z,
+-   "cursor": "2031-09-08T07:06:05.123400Z",
++   "cursor": 2031-09-08T07:06:05.123Z,
+    "data": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.421Z,
+    "history": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.421Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:184:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through JSON-string secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.424Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.424Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:189:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through JSON-string secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.424Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2031-09-08T07:06:05.123400Z",
++   "trackingId": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.424Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:189:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through JSON-string secondary storage
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.424Z,
+-   "cursor": "2031-09-08T07:06:05.123400Z",
++   "cursor": 2031-09-08T07:06:05.123Z,
+    "data": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.424Z,
+    "history": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.424Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:189:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through pre-parsed secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.426Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.426Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:193:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through pre-parsed secondary storage
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.426Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+-   "trackingId": "2031-09-08T07:06:05.123400Z",
++   "trackingId": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.426Z,
+  }
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:193:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through pre-parsed secondary storage
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.426Z,
+-   "cursor": "2031-09-08T07:06:05.123400Z",
++   "cursor": 2031-09-08T07:06:05.123Z,
+    "data": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.426Z,
+    "history": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.426Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:193:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through SQLite array and JSON serialization
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.428Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.428Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:158:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:197:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through SQLite array and JSON serialization
+AssertionError: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,29 +1,29 @@
+  {
+    "aliases": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "createdAt": 2026-11-03T22:11:30.428Z,
+    "emptyTags": [],
+    "joinedOn": 2031-09-08T07:06:05.123Z,
+    "optionalText": null,
+    "preferences": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "trackingId": "2031-09-08T07:06:05.123400Z",
+    "updatedAt": 2026-11-03T22:11:30.428Z,
+
+ ❯ expectUser src/api/routes/session-field-roundtrip.test.ts:99:20
+     97|
+     98| function expectUser(user: unknown, value: string) {
+     99|  expect.soft(user).toMatchObject({
+       |                    ^
+    100|   trackingId: value,
+    101|   aliases: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:170:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:197:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/36]⎯
+
+ FAIL  |better-auth| src/api/routes/session-field-roundtrip.test.ts > additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through SQLite array and JSON serialization
+AssertionError: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,30 +1,30 @@
+  {
+    "createdAt": 2026-11-03T22:11:30.429Z,
+    "cursor": "2031-09-08T07:06:05.123400Z",
+    "data": {
+-     "createdAt": "2031-09-08T07:06:05.123400Z",
++     "createdAt": 2031-09-08T07:06:05.123Z,
+      "empty": [],
+      "items": [
+-       "2031-09-08T07:06:05.123400Z",
++       2031-09-08T07:06:05.123Z,
+        "ordinary text",
+        null,
+        {
+-         "updatedAt": "2031-09-08T07:06:05.123400Z",
++         "updatedAt": 2031-09-08T07:06:05.123Z,
+        },
+      ],
+      "nested": {
+        "count": 7,
+        "enabled": true,
+-       "expiresAt": "2031-09-08T07:06:05.123400Z",
++       "expiresAt": 2031-09-08T07:06:05.123Z,
+        "missing": null,
+      },
+    },
+    "emptyHistory": [],
+    "expiresAt": 2026-11-10T22:11:30.429Z,
+    "history": [
+-     "2031-09-08T07:06:05.123400Z",
++     2031-09-08T07:06:05.123Z,
+      "plain",
+    ],
+    "nullableText": null,
+    "reviewDate": 2031-09-08T07:06:05.123Z,
+    "updatedAt": 2026-11-03T22:11:30.429Z,
+
+ ❯ expectSession src/api/routes/session-field-roundtrip.test.ts:113:23
+    111|
+    112| function expectSession(session: unknown, value: string) {
+    113|  expect.soft(session).toMatchObject({
+       |                       ^
+    114|   cursor: value,
+    115|   history: [value, "plain"],
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:171:2
+ ❯ src/api/routes/session-field-roundtrip.test.ts:197:4
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/36]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  12 failed (12)
+   Start at  03:41:29
+   Duration  616ms (import 47%, transform 33%, tests 20%)
+
+JUNIT report written to /private/tmp/ba-final-tests-base.xml

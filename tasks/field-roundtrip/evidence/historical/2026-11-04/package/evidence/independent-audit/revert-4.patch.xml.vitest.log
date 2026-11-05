@@ -1,0 +1,52 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [31m❯[39m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts [2m([22m[2m14 tests[22m[2m | [22m[31m10 failed[39m[2m)[22m[32m 110[2mms[22m[39m
+   [31m❯[39m additional-field round trips for 2024-01-02T03:04:05Z [2m(7)[22m
+[31m     [31m×[31m preserves field types through the compact cookie cache[39m[32m 47[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwt cookie cache[39m[32m 7[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwe cookie cache[39m[32m 8[2mms[22m[39m
+     [32m✓[39m preserves field types through JWT-plugin cookie signing[32m 11[2mms[22m[39m
+[31m     [31m×[31m preserves field types through JSON-string secondary storage[39m[32m 3[2mms[22m[39m
+[31m     [31m×[31m preserves field types through pre-parsed secondary storage[39m[32m 2[2mms[22m[39m
+     [32m✓[39m preserves field types through SQLite array and JSON serialization[32m 3[2mms[22m[39m
+   [31m❯[39m additional-field round trips for 2031-09-08T07:06:05.123400Z [2m(7)[22m
+[31m     [31m×[31m preserves field types through the compact cookie cache[39m[32m 3[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwt cookie cache[39m[32m 5[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwe cookie cache[39m[32m 5[2mms[22m[39m
+     [32m✓[39m preserves field types through JWT-plugin cookie signing[32m 7[2mms[22m[39m
+[31m     [31m×[31m preserves field types through JSON-string secondary storage[39m[32m 2[2mms[22m[39m
+[31m     [31m×[31m preserves field types through pre-parsed secondary storage[39m[32m 2[2mms[22m[39m
+     [32m✓[39m preserves field types through SQLite array and JSON serialization[32m 3[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 10 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the compact cookie cache
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JSON-string secondary storage
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the compact cookie cache
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JSON-string secondary storage
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAPIError[22m: Failed to get session[39m
+[31m[1mCaused by: TypeError[22m: restoreModelDates is not a function[39m
+[36m [2m❯[22m parseCookieCachePayload src/cookies/cache.ts:[2m44:14[22m[39m
+[90m [2m❯[22m decodeCookieCache src/cookies/index.ts:[2m349:18[22m[39m
+[90m [2m❯[22m src/api/routes/session.ts:[2m118:9[22m[39m
+[90m [2m❯[22m internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:[2m29:20[22m[39m
+[90m [2m❯[22m src/api/dispatch.ts:[2m399:21[22m[39m
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m177:19[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m203:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m10 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (14)[39m
+[2m   Start at [22m 22:42:43
+[2m   Duration [22m 495ms[2m (transform 41%, import 34%, tests 25%)[22m
+
+JUNIT report written to /audit/revert-4.patch.xml

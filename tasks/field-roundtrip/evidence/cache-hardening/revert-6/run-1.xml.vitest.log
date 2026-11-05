@@ -1,0 +1,3458 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [31m❯[39m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts [2m([22m[2m14 tests[22m[2m | [22m[31m14 failed[39m[2m)[22m[33m 371[2mms[22m[39m
+   [31m❯[39m additional-field round trips for 2024-01-02T03:04:05Z [2m(7)[22m
+[31m     [31m×[31m preserves field types through the compact cookie cache[39m[32m 124[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwt cookie cache[39m[32m 20[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwe cookie cache[39m[32m 24[2mms[22m[39m
+[31m     [31m×[31m preserves field types through JWT-plugin cookie signing[39m[32m 29[2mms[22m[39m
+[31m     [31m×[31m preserves field types through JSON-string secondary storage[39m[32m 23[2mms[22m[39m
+[31m     [31m×[31m preserves field types through pre-parsed secondary storage[39m[32m 22[2mms[22m[39m
+[31m     [31m×[31m preserves field types through SQLite array and JSON serialization[39m[32m 11[2mms[22m[39m
+   [31m❯[39m additional-field round trips for 2031-09-08T07:06:05.123400Z [2m(7)[22m
+[31m     [31m×[31m preserves field types through the compact cookie cache[39m[32m 15[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwt cookie cache[39m[32m 16[2mms[22m[39m
+[31m     [31m×[31m preserves field types through the jwe cookie cache[39m[32m 17[2mms[22m[39m
+[31m     [31m×[31m preserves field types through JWT-plugin cookie signing[39m[32m 24[2mms[22m[39m
+[31m     [31m×[31m preserves field types through JSON-string secondary storage[39m[32m 18[2mms[22m[39m
+[31m     [31m×[31m preserves field types through pre-parsed secondary storage[39m[32m 19[2mms[22m[39m
+[31m     [31m×[31m preserves field types through SQLite array and JSON serialization[39m[32m 9[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 14 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.278Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.278Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.278Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.278Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.283Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.283Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.283Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.278Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.278Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.283Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.283Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.283Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.331Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.331Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.331Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.331Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.332Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.332Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.332Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.331Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.331Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.332Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.332Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.332Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.349Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.349Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.349Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.349Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.350Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.350Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.350Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.349Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.349Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.350Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.350Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.350Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.374Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.374Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.374Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.374Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.374Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.374Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.374Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.374Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.374Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.374Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.374Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.374Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.404Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.404Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.404Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.404Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.404Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.413Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m217:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.404Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.413Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m221:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.425Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.425Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.425Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.425Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.425Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.434Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m217:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     "2024-01-02T03:04:05.000Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.425Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": "2024-01-02T03:04:05.000Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       "2024-01-02T03:04:05.000Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": "2024-01-02T03:04:05.000Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.434Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m221:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through SQLite array and JSON serialization
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.447Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.447Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m253:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through SQLite array and JSON serialization
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.447Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2024-01-02T03:04:05.000Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2024-01-02T03:04:05Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.447Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m253:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2024-01-02T03:04:05Z[2m > [22mpreserves field types through SQLite array and JSON serialization
+[31m[1mAssertionError[22m: expected { …(14) } to match object { Object (cursor, history, ...) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.447Z,[22m
+[2m    "cursor": "2024-01-02T03:04:05Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2024-01-02T03:04:05Z",[39m
+[31m+     "createdAt": 2024-01-02T03:04:05.000Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2024-01-02T03:04:05Z",[39m
+[31m+       2024-01-02T03:04:05.000Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2024-01-02T03:04:05Z",[39m
+[31m+         "updatedAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2024-01-02T03:04:05Z",[39m
+[31m+       "expiresAt": 2024-01-02T03:04:05.000Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.447Z,[22m
+[2m    "history": [[22m
+[32m-     "2024-01-02T03:04:05Z",[39m
+[31m+     2024-01-02T03:04:05.000Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2024-01-02T03:04:05.000Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.447Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m253:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.457Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.457Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.457Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.457Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.457Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.457Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.457Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.457Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.457Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the compact cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.457Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.457Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.457Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.473Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.473Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.473Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.473Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.474Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.474Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.474Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.473Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.473Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwt cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.474Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.474Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.474Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.490Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.490Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.490Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.490Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.490Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.490Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.490Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.490Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.490Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through the jwe cookie cache
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.490Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.490Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.490Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m236:5[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.506Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.506Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.506Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.506Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m187:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[48/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.506Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.506Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.506Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m188:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[49/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { …(13) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.506Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.506Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[50/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JWT-plugin cookie signing
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.506Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.506Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.506Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m241:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[51/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.528Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.528Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[52/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.528Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.528Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[53/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.528Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.535Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m217:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[54/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through JSON-string secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.528Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.535Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m221:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m245:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[55/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.546Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.546Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[56/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.546Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.546Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[57/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.546Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.551Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m217:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[58/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through pre-parsed secondary storage
+[31m[1mAssertionError[22m: expected { name: 'Renamed', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "2031-09-08T07:06:05.123Z",[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.546Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": "2031-09-08T07:06:05.123Z",[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "2031-09-08T07:06:05.123Z",[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": "2031-09-08T07:06:05.123Z",[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.551Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m221:3[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m249:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[59/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through SQLite array and JSON serialization
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.565Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.565Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m167:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m253:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[60/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through SQLite array and JSON serialization
+[31m[1mAssertionError[22m: expected { name: 'Roundtrip', …(12) } to match object { …(8) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,29 +1,29 @@[39m
+[2m  {[22m
+[2m    "aliases": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "createdAt": 2026-11-05T14:21:18.565Z,[22m
+[2m    "emptyTags": [],[22m
+[2m    "joinedOn": 2031-09-08T07:06:05.123Z,[22m
+[2m    "optionalText": null,[22m
+[2m    "preferences": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "trackingId": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.565Z,[22m
+
+[36m [2m❯[22m expectUser src/api/routes/session-field-roundtrip.test.ts:[2m101:20[22m[39m
+    [90m 99|[39m
+    [90m100|[39m function expectUser(user: unknown, value: string) {
+    [90m101|[39m  expect.soft(user).toMatchObject({
+    [90m   |[39m                    [31m^[39m
+    [90m102|[39m   trackingId: value,
+    [90m103|[39m   aliases: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m212:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m253:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[61/62]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/api/routes/session-field-roundtrip.test.ts[2m > [22madditional-field round trips for 2031-09-08T07:06:05.123400Z[2m > [22mpreserves field types through SQLite array and JSON serialization
+[31m[1mAssertionError[22m: expected { …(14) } to match object { …(9) }
+(5 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -1,30 +1,30 @@[39m
+[2m  {[22m
+[2m    "createdAt": 2026-11-05T14:21:18.566Z,[22m
+[2m    "cursor": "2031-09-08T07:06:05.123400Z",[22m
+[2m    "data": {[22m
+[32m-     "createdAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+     "createdAt": 2031-09-08T07:06:05.123Z,[39m
+[2m      "empty": [],[22m
+[2m      "items": [[22m
+[32m-       "2031-09-08T07:06:05.123400Z",[39m
+[31m+       2031-09-08T07:06:05.123Z,[39m
+[2m        "ordinary text",[22m
+[2m        null,[22m
+[2m        {[22m
+[32m-         "updatedAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+         "updatedAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        },[22m
+[2m      ],[22m
+[2m      "nested": {[22m
+[2m        "count": 7,[22m
+[2m        "enabled": true,[22m
+[32m-       "expiresAt": "2031-09-08T07:06:05.123400Z",[39m
+[31m+       "expiresAt": 2031-09-08T07:06:05.123Z,[39m
+[2m        "missing": null,[22m
+[2m      },[22m
+[2m    },[22m
+[2m    "emptyHistory": [],[22m
+[2m    "expiresAt": 2026-11-12T14:21:18.565Z,[22m
+[2m    "history": [[22m
+[32m-     "2031-09-08T07:06:05.123400Z",[39m
+[31m+     2031-09-08T07:06:05.123Z,[39m
+[2m      "plain",[22m
+[2m    ],[22m
+[2m    "nullableText": null,[22m
+[2m    "reviewDate": 2031-09-08T07:06:05.123Z,[22m
+[2m    "updatedAt": 2026-11-05T14:21:18.566Z,[22m
+
+[36m [2m❯[22m expectSession src/api/routes/session-field-roundtrip.test.ts:[2m115:23[22m[39m
+    [90m113|[39m
+    [90m114|[39m function expectSession(session: unknown, value: string) {
+    [90m115|[39m  expect.soft(session).toMatchObject({
+    [90m   |[39m                       [31m^[39m
+    [90m116|[39m   cursor: value,
+    [90m117|[39m   history: [value, "plain"],
+[90m [2m❯[22m expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:[2m213:2[22m[39m
+[90m [2m❯[22m src/api/routes/session-field-roundtrip.test.ts:[2m253:4[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[62/62]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m14 failed[39m[22m[90m (14)[39m
+[2m   Start at [22m 14:21:14
+[2m   Duration [22m 4.32s[2m (transform 74%, import 16%, tests 9%)[22m
+
+JUNIT report written to /results/run-1.xml

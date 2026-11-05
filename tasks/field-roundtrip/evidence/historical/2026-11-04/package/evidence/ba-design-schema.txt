@@ -1,0 +1,50 @@
+Candidate A: raw JSON at typed boundaries, then schema-directed top-level date hydration.
+
+Grounding and caller usage
+The declared fields, not the lexical shape of their values, own decoding. getAuthTables/options already supply field types. The generic safeJSONParse legacy date reviver is also used by unrelated plugins, so its default behavior must remain intact.
+
+Real caller sketches
+1. core/db/adapter/factory.ts, transformSingleOutput: for serialized field.type json/string[]/number[], call safeJSONParse(newValue, { reviveDates: false }). These field containers contain plain JSON data; never recursively revive their strings.
+2. better-auth/cookies/index.ts decodeCookieCache: decode compact outer payload using raw JSON before HMAC verification; pass ctx.context.options to parseCookieCachePayload for the compact/JWT/JWE payload. Do not revive before HMAC verification or schema-aware normalization, because an ISO string without .000 could be irreversibly normalized and change the signed bytes.
+3. better-auth/db/internal-adapter.ts findSession/updateSession/refreshUserSessions: parse session-envelope JSON without revival, normalize user/session date fields using their declared schemas, then retain existing parseSessionOutput/parseUserOutput filtering and session-validity checks.
+
+Minimal interface sketch
+safeJSONParse<T>(data: unknown, options?: { reviveDates?: boolean }): T | null
+  not implemented
+  default true preserves every current caller; false returns JSON.parse(data) or an existing parsed object without recursively interpreting values.
+
+restoreModelDates(options: BetterAuthOptions, model: "user" | "session", data: Record<string, unknown>): Record<string, unknown>
+  not implemented
+  shallow-copy data; iterate schema fields from getAuthTables(options)[model].fields; only field.type === "date" is eligible. Preserve null/undefined. Preserve existing Date values. Convert only valid date representations already accepted by current paths. Leave every non-date value and unknown key unchanged, including JSON subtrees and string arrays. No recursive mutation.
+
+parseCookieCachePayload(value: unknown, options?: BetterAuthOptions): CookieCachePayload | null
+  not implemented
+  With options, raw parse, require object/envelope shape, copy envelope and replace user/session with restored models, then apply existing cookieCachePayloadSchema. Without options, use unchanged legacy safeJSONParse so public getCookieCache helper behavior remains unchanged.
+
+parseSessionCookieJwtPayload(payload: JWTPayload, options?: BetterAuthOptions)
+  not implemented
+  Pass options into parseCookieCachePayload. Existing issuer/subject/session-token checks remain.
+
+Module ownership
+- core/utils/json.ts gains a narrowly scoped raw-JSON parsing mode while retaining its legacy default.
+- core/db/adapter/factory.ts opts out for schema-declared containers.
+- better-auth/db/schema.ts owns schema-based model hydration, adjacent to getFields and output filtering. It can reuse getFields(options, model, "output") rather than maintaining a second date-key list.
+- better-auth/cookies/cache.ts invokes model hydration before structural validation.
+- better-auth/cookies/index.ts passes context options and prevents earlier compact revival.
+- better-auth/cookies/jwt.ts and plugins/jwt/cookie-cache.ts thread ctx options to the existing JWT plugin signer verification path. This branch has runtime ctx and otherwise bypasses ordinary decodeCookieCache payload parsing, so omitting it would leave one jwt strategy implementation broken.
+- better-auth/db/internal-adapter.ts changes envelope reads that feed returned data or rewrite session storage.
+
+Failure behavior
+Malformed raw JSON still logs and returns null. Invalid cookie envelope/model data still fails the existing Zod parser and returns null. Expiry, signature, issuer/audience and revocation checks remain in their existing locations. Hydration must not silently replace invalid input with defaults or apply input/output transforms twice.
+
+Copy and validity details
+Pre-parsed secondary-store values must remain unchanged by the parser. Hydration shallow-copies the envelope and the user/session objects, so it never mutates a storage provider's shared object. JSON-compatible nested values need no copy because the algorithm never walks or writes them. Genuine Date values retain Date behavior. Only declared date fields are interpreted; an invalid date should remain invalid to the existing boundary validator rather than being fabricated.
+
+Rationale and alternatives
+Preferred over post-parse string restoration: Date conversion loses exact lexical representation such as Z versus .000Z or fractional precision, so toISOString cannot restore the original. Preferred over disabling date revival globally: that breaks callers relying on date hydration and unrelated plugin semantics. Preferred over a schema callback in the generic parser: field/path ownership belongs in typed model code, not a generic JSON utility.
+
+Tradeoff
+This adds one internal optional mode and a shallow model hydration helper, rather than changing the generic default. It touches several related call sites because their current early revival destroys the same information. No new user-auth configuration is needed. If adding a publicly exported utility option is considered outside task constraints, use a separate internal safe raw parser with identical logging/null behavior instead; the boundary shape remains the same.
+
+Verification requirements
+All five known repro cases red on base and green on fix. Add different ISO spellings, nested arrays, genuine custom dates, pre-parsed secondary objects, nonmutation and JWT plugin signer coverage where included by the statement. Rebuild core before running host tests because the current workspace resolves compiled core dist. Check partial fixes that cover only adapter, only cookies, or only findSession. Retain legacy safeJSONParse tests and public getCookieCache tests.

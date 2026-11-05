@@ -1,6 +1,6 @@
 import type { BetterAuthOptions } from "@better-auth/core";
 import type { SecondaryStorage } from "@better-auth/core/db";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, onTestFinished, vi } from "vitest";
 import { jwt } from "../../plugins/jwt";
 import { getTestInstance } from "../../test-utils/test-instance";
 
@@ -166,15 +166,48 @@ async function expectStorageRoundTrip(value: string, route: StorageRoute) {
 	});
 	expectUser(signup.response.user, value);
 	const headers = requestCookies(signup.headers);
+	const context = await auth.$context;
+	const databaseReads =
+		route.kind === "cookie" || route.kind === "jwt-plugin"
+			? [
+					vi.spyOn(context.adapter, "findOne"),
+					vi.spyOn(context.adapter, "findMany"),
+					vi.spyOn(context.adapter, "count"),
+				]
+			: [];
+	onTestFinished(() => {
+		for (const read of databaseReads) read.mockRestore();
+	});
 	if (route.kind === "cookie" || route.kind === "jwt-plugin") {
 		const backing = await auth.api.getSession({
 			headers,
 			query: { disableCookieCache: true },
 		});
 		expect(backing).not.toBeNull();
-		expect.soft(backing?.user.trackingId).toBe(value);
+		expectUser(backing?.user, value);
+		expectSession(backing?.session, value);
+		expect(
+			databaseReads.reduce(
+				(total, read) =>
+					total +
+					read.mock.calls.filter(
+						([query]) => query.model === "user" || query.model === "session",
+					).length,
+				0,
+			),
+		).toBeGreaterThan(0);
+		for (const read of databaseReads) read.mockClear();
 	}
 	const restored = await auth.api.getSession({ headers });
+	for (const read of databaseReads) {
+		expect
+			.soft(
+				read.mock.calls.filter(
+					([query]) => query.model === "user" || query.model === "session",
+				),
+			)
+			.toHaveLength(0);
+	}
 	expect(restored).not.toBeNull();
 	expectUser(restored?.user, value);
 	expectSession(restored?.session, value);

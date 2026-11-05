@@ -1,0 +1,20 @@
+diff --git a/packages/core/src/db/adapter/factory.ts b/packages/core/src/db/adapter/factory.ts
+index d58d185..94f0b79 100644
+--- a/packages/core/src/db/adapter/factory.ts
++++ b/packages/core/src/db/adapter/factory.ts
+@@ -358,13 +358,13 @@ export const createAdapterFactory =
+ 							typeof newValue === "string" &&
+ 							field.type === "json"
+ 						) {
+-							newValue = safeJSONParse(newValue);
++							newValue = safeJSONParse(newValue, { reviveDates: false });
+ 						} else if (
+ 							config.supportsArrays === false &&
+ 							typeof newValue === "string" &&
+ 							(field.type === "string[]" || field.type === "number[]")
+ 						) {
+-							newValue = safeJSONParse(newValue);
++							newValue = safeJSONParse(newValue, { reviveDates: false });
+ 						} else if (
+ 							config.supportsDates === false &&
+ 							typeof newValue === "string" &&

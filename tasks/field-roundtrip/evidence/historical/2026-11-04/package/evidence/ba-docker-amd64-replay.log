@@ -1,0 +1,4 @@
+base: 377 cases, 0 failures, 0 errors, 0 skipped; Vitest exit 0
+new: 14 cases, 14 failures, 0 errors, 0 skipped; Vitest exit 1
+base: 377 cases, 0 failures, 0 errors, 0 skipped; Vitest exit 0
+new: 14 cases, 0 failures, 0 errors, 0 skipped; Vitest exit 0

@@ -1,0 +1,4 @@
+uid=1000(node) gid=1000(node) groups=1000(node)
+aarch64
+v24.19.0
+11.1.1

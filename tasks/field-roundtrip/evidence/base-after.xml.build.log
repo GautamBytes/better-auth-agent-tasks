@@ -2,7 +2,7 @@ Scope: 7 of 51 workspace projects
 packages/core build$ tsdown
 packages/core build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
 packages/core build: ℹ config file: /app/packages/core/tsdown.config.ts 
-packages/core build: ℹ entry: src/index.ts, src/api/index.ts, src/async_hooks/index.ts, src/async_hooks/pure.index.ts, src/context/index.ts, src/env/index.ts, src/error/index.ts, src/db/index.ts, src/db/internal.ts, src/instrumentation/index.ts, src/instrumentation/pure.index.ts, src/social-providers/index.ts, src/oauth2/index.ts, src/oauth2/internal.ts, src/utils/async.ts, src/utils/db.ts, src/utils/deprecate.ts, src/utils/email.ts, src/utils/error-codes.ts, src/utils/fetch-metadata.ts, src/utils/host.ts, src/utils/id.ts, src/utils/ip.ts, src/utils/is-api-error.ts, src/utils/json.ts, src/utils/redirect-uri.ts, src/utils/string.ts, src/utils/url.ts, src/db/adapter/index.ts
+packages/core build: ℹ entry: src/index.ts, src/api/index.ts, src/env/index.ts, src/db/index.ts, src/db/internal.ts, src/async_hooks/index.ts, src/async_hooks/pure.index.ts, src/context/index.ts, src/error/index.ts, src/instrumentation/index.ts, src/instrumentation/pure.index.ts, src/oauth2/index.ts, src/oauth2/internal.ts, src/social-providers/index.ts, src/utils/async.ts, src/utils/db.ts, src/utils/deprecate.ts, src/utils/email.ts, src/utils/error-codes.ts, src/utils/fetch-metadata.ts, src/utils/host.ts, src/utils/id.ts, src/utils/ip.ts, src/utils/is-api-error.ts, src/utils/json.ts, src/utils/redirect-uri.ts, src/utils/string.ts, src/utils/url.ts, src/db/adapter/index.ts
 packages/core build: ℹ tsconfig: tsconfig.json
 packages/core build: ℹ Build start
 packages/core build: ℹ Cleaning 241 files
@@ -232,10 +232,6 @@ packages/core build: ℹ dist/db/adapter/utils.d.mts                      0.31 k
 packages/core build: ℹ dist/db/adapter/get-default-model-name.d.mts     0.28 kB │ gzip:  0.21 kB
 packages/core build: ℹ dist/db/adapter/get-model-name.d.mts             0.27 kB │ gzip:  0.21 kB
 packages/core build: ℹ dist/db/schema/shared.d.mts                      0.23 kB │ gzip:  0.17 kB
-packages/core build: ℹ dist/context/global.d.mts                        0.17 kB │ gzip:  0.15 kB
-packages/core build: ℹ dist/env/color-depth.d.mts                       0.10 kB │ gzip:  0.10 kB
-packages/core build: ℹ 228 files, total: 721.32 kB
-packages/core build: ✔ Build complete in 2802ms
 packages/core build: src/db/adapter/factory.ts (5:7) [33m[UNRESOLVED_IMPORT] [0mCould not resolve '@better-auth/core/instrumentation' in src/db/adapter/factory.ts
 packages/core build:    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/db/adapter/factory.ts:5:8 [38;5;246m][0m
 packages/core build:    [38;5;246m│[0m
@@ -243,18 +239,25 @@ packages/core build:  [38;5;246m5 │[0m [38;5;249m}[0m[38;5;249m [0m[38;
 packages/core build:  [38;5;240m  │[0m        ─────────────────┬─────────────────  
 packages/core build:  [38;5;240m  │[0m                         ╰─────────────────── Module not found, treating it as an external dependency
 packages/core build: [38;5;246m───╯[0m
+packages/core build: ℹ dist/context/global.d.mts                        0.17 kB │ gzip:  0.15 kB
+packages/core build: ℹ dist/env/color-depth.d.mts                       0.10 kB │ gzip:  0.10 kB
+packages/core build: ℹ 228 files, total: 721.32 kB
+packages/core build: ✔ Build complete in 2756ms
 packages/core build: Done
-packages/drizzle-adapter build$ tsdown
 packages/kysely-adapter build$ tsdown
+packages/drizzle-adapter build$ tsdown
 packages/memory-adapter build$ tsdown
 packages/mongo-adapter build$ tsdown
-packages/memory-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
 packages/drizzle-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
-packages/kysely-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
 packages/mongo-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/kysely-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/memory-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/kysely-adapter build: ℹ config file: /app/packages/kysely-adapter/tsdown.config.ts 
 packages/drizzle-adapter build: ℹ config file: /app/packages/drizzle-adapter/tsdown.config.ts 
 packages/memory-adapter build: ℹ config file: /app/packages/memory-adapter/tsdown.config.ts 
-packages/kysely-adapter build: ℹ config file: /app/packages/kysely-adapter/tsdown.config.ts 
+packages/kysely-adapter build: ℹ entry: ./src/index.ts, ./src/node-sqlite-dialect.ts
+packages/kysely-adapter build: ℹ tsconfig: tsconfig.json
+packages/kysely-adapter build: ℹ Build start
 packages/drizzle-adapter build: ℹ entry: ./src/index.ts, ./src/relations-v2/index.ts
 packages/drizzle-adapter build: ℹ tsconfig: tsconfig.json
 packages/drizzle-adapter build: ℹ Build start
@@ -262,33 +265,30 @@ packages/memory-adapter build: ℹ entry: ./src/index.ts
 packages/memory-adapter build: ℹ tsconfig: tsconfig.json
 packages/memory-adapter build: ℹ Build start
 packages/mongo-adapter build: ℹ config file: /app/packages/mongo-adapter/tsdown.config.ts 
-packages/kysely-adapter build: ℹ entry: ./src/index.ts, ./src/node-sqlite-dialect.ts
-packages/kysely-adapter build: ℹ tsconfig: tsconfig.json
-packages/kysely-adapter build: ℹ Build start
-packages/drizzle-adapter build: ℹ Cleaning 7 files
+packages/kysely-adapter build: ℹ Cleaning 7 files
 packages/mongo-adapter build: ℹ entry: ./src/index.ts
-packages/memory-adapter build: ℹ Cleaning 2 files
 packages/mongo-adapter build: ℹ tsconfig: tsconfig.json
 packages/mongo-adapter build: ℹ Build start
-packages/kysely-adapter build: ℹ Cleaning 7 files
+packages/drizzle-adapter build: ℹ Cleaning 7 files
+packages/memory-adapter build: ℹ Cleaning 2 files
 packages/mongo-adapter build: ℹ Cleaning 2 files
 packages/memory-adapter build: ℹ dist/index.mjs    14.85 kB │ gzip: 4.06 kB
 packages/memory-adapter build: ℹ dist/index.d.mts   0.55 kB │ gzip: 0.27 kB
 packages/memory-adapter build: ℹ 2 files, total: 15.40 kB
-packages/memory-adapter build: ✔ Build complete in 1532ms
+packages/memory-adapter build: ✔ Build complete in 1883ms
 packages/memory-adapter build: Done
 packages/prisma-adapter build$ tsdown
 packages/prisma-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
 packages/mongo-adapter build: ℹ dist/index.mjs    20.46 kB │ gzip: 4.77 kB
 packages/mongo-adapter build: ℹ dist/index.d.mts   1.16 kB │ gzip: 0.54 kB
 packages/mongo-adapter build: ℹ 2 files, total: 21.62 kB
-packages/mongo-adapter build: ✔ Build complete in 1629ms
-packages/mongo-adapter build: Done
-packages/telemetry build$ tsdown
+packages/mongo-adapter build: ✔ Build complete in 2050ms
 packages/prisma-adapter build: ℹ config file: /app/packages/prisma-adapter/tsdown.config.ts 
 packages/prisma-adapter build: ℹ entry: ./src/index.ts
 packages/prisma-adapter build: ℹ tsconfig: tsconfig.json
 packages/prisma-adapter build: ℹ Build start
+packages/mongo-adapter build: Done
+packages/telemetry build$ tsdown
 packages/prisma-adapter build: ℹ Cleaning 2 files
 packages/telemetry build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
 packages/telemetry build: ℹ config file: /app/packages/telemetry/tsdown.config.ts 
@@ -306,7 +306,8 @@ packages/kysely-adapter build: ℹ dist/bun-sqlite-dialect-DN2jcl8c.mjs    3.01 
 packages/kysely-adapter build: ℹ dist/index.d.mts                        4.42 kB │ gzip: 1.66 kB
 packages/kysely-adapter build: ℹ dist/node-sqlite-dialect.d.mts          0.85 kB │ gzip: 0.43 kB
 packages/kysely-adapter build: ℹ 7 files, total: 52.01 kB
-packages/kysely-adapter build: ✔ Build complete in 2106ms
+packages/kysely-adapter build: ✔ Build complete in 2729ms
+packages/kysely-adapter build: Done
 packages/drizzle-adapter build: ℹ dist/index.mjs                             28.00 kB │ gzip: 5.67 kB
 packages/drizzle-adapter build: ℹ dist/relations-v2/index.mjs                26.17 kB │ gzip: 5.91 kB
 packages/drizzle-adapter build: ℹ dist/generate-drizzle-schema-CO7dqwud.mjs  17.85 kB │ gzip: 4.56 kB
@@ -314,13 +315,12 @@ packages/drizzle-adapter build: ℹ dist/schema-check-BSenoulG.mjs              
 packages/drizzle-adapter build: ℹ dist/relations-v2/index.d.mts               1.89 kB │ gzip: 0.80 kB
 packages/drizzle-adapter build: ℹ dist/index.d.mts                            1.89 kB │ gzip: 0.79 kB
 packages/drizzle-adapter build: ℹ 6 files, total: 81.92 kB
-packages/drizzle-adapter build: ✔ Build complete in 2122ms
-packages/kysely-adapter build: Done
+packages/drizzle-adapter build: ✔ Build complete in 2820ms
 packages/drizzle-adapter build: Done
 packages/prisma-adapter build: ℹ dist/index.mjs    18.74 kB │ gzip: 4.11 kB
 packages/prisma-adapter build: ℹ dist/index.d.mts   1.01 kB │ gzip: 0.48 kB
 packages/prisma-adapter build: ℹ 2 files, total: 19.75 kB
-packages/prisma-adapter build: ✔ Build complete in 1223ms
+packages/prisma-adapter build: ✔ Build complete in 1457ms
 packages/prisma-adapter build: Done
 packages/telemetry build: ℹ dist/node.mjs    16.88 kB │ gzip: 4.62 kB
 packages/telemetry build: ℹ dist/node.d.mts   7.56 kB │ gzip: 1.91 kB
@@ -328,6 +328,6 @@ packages/telemetry build: ℹ 2 files, total: 24.44 kB
 packages/telemetry build: ℹ dist/index.mjs    14.31 kB │ gzip: 3.96 kB
 packages/telemetry build: ℹ dist/index.d.mts   7.56 kB │ gzip: 1.91 kB
 packages/telemetry build: ℹ 2 files, total: 21.87 kB
-packages/telemetry build: ✔ Build complete in 1484ms
-packages/telemetry build: ✔ Build complete in 1484ms
+packages/telemetry build: ✔ Build complete in 1948ms
+packages/telemetry build: ✔ Build complete in 1948ms
 packages/telemetry build: Done

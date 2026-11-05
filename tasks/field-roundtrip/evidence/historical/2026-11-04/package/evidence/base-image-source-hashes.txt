@@ -1,0 +1,8 @@
+b65009506afb22cf09a0adffbd04db8b4ec59d88beb6a73649ff2ec175a8e3f3  packages/better-auth/src/cookies/cache.ts
+185fdd91ba14ee389a5bb58610e6586168caa6809cf8429f1732650ad343ac38  packages/better-auth/src/cookies/index.ts
+b247309f00d3af14691601a43960ee42e135dcd05ef2d1483028ac996c3b5eaa  packages/better-auth/src/cookies/jwt.ts
+225044224655fd38e3f18bfafe89010032f6877194bfdc8c3116101671141be6  packages/better-auth/src/db/internal-adapter.ts
+4955f33b7c97a69ab1dfb6d3680665c5b774eaf3ac8d5fd36bcd8d74da78e05e  packages/better-auth/src/db/schema.ts
+6b69686313fb7878a52265efaf9df12a28a9e89b2acbd2e70c69d60ae005583b  packages/better-auth/src/plugins/jwt/cookie-cache.ts
+0ed2b6af32268701af823a0bcd6145684062d0248889e7b85c2fbae40e0770c4  packages/core/src/db/adapter/factory.ts
+9512d6396e8b276ca554c8ed08d3b09f80dfe96a02336036aea1acec5ddf4e72  packages/core/src/utils/json.ts

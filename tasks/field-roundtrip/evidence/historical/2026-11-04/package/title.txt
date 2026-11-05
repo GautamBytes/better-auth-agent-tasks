@@ -1,0 +1,1 @@
+Preserve additional-field types across auth.api.signUpEmail, auth.api.getSession, auth.api.updateUser and auth.api.updateSession

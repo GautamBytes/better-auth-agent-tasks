@@ -25,7 +25,8 @@
     "nulls",
     "empty arrays",
     "ordinary JSON values",
-    "returned:false"
+    "returned:false",
+    "Valid unexpired cookie cache serves exact fields without backing user/session reads; cache-disabled control confirms reads are observable."
   ],
   "new_test_file": "packages/better-auth/src/api/routes/session-field-roundtrip.test.ts",
   "tests": 14

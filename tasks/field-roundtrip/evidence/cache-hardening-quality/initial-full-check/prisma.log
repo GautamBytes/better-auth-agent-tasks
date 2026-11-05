@@ -1,0 +1,3 @@
+undefined
+/app/e2e/adapter/test/prisma-adapter:
+[ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL] Command "prisma" not found

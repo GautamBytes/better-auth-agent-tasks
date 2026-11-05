@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites tests="1" failures="1" errors="0"><testsuite name="test runner" tests="1" failures="1" errors="0" skipped="0"><testcase name="environment and collection" classname="runner"><failure type="HarnessError" message="Workspace dependency build failed with exit 7; see /private/tmp/ba-runner-review/build-fail.xml.build.log">Workspace dependency build failed with exit 7; see /private/tmp/ba-runner-review/build-fail.xml.build.log</failure></testcase></testsuite></testsuites>

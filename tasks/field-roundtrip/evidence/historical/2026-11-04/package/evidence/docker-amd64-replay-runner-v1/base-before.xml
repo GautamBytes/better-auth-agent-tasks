@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="377" failures="0" errors="0" time="4.478790505">
+    <testsuite name="packages/better-auth/src/api/routes/session-api.test.ts" timestamp="2026-11-03T22:23:44.530Z" hostname="8d1fcdc641ac" tests="80" failures="0" errors="0" skipped="0" time="0.986641376">
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should set cookies correctly on sign in" time="0.036799958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should return null when not authenticated" time="0.002837417">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should keep the store failure as a server-only cause" time="0.039153042">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should require a fresh session based on session creation time" time="0.024601125">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should require a fresh session to list sessions" time="0.023419667">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; session refresh and expiration &gt; returns the expected session expiration after 0 seconds" time="0.019049833">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; session refresh and expiration &gt; returns the expected session expiration after 59 seconds" time="0.012884333">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; session refresh and expiration &gt; returns the expected session expiration after 60 seconds" time="0.012841083">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; session refresh and expiration &gt; returns the expected session expiration after 61 seconds" time="0.012185334">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; session refresh and expiration &gt; persists successive session refreshes beyond the original expiration" time="0.029361625">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; session refresh and expiration &gt; clears an expired session without refreshing it" time="0.014621458">
+            <system-out>
+2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should update the session every time when set to 0" time="0.019287084">
+            <system-out>
+2026-11-03T22:23:42.908Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should handle &apos;don&apos;t remember me&apos; option" time="0.010227542">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should set cookies correctly on sign in after changing config" time="0.005571625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should clear session on sign out" time="0.014982375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should list sessions" time="0.009043584">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should revoke session" time="0.021678291">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should return session headers" time="0.009010333">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session &gt; should not exceed the 400-day browser Max-Age ceiling on session refresh" time="0.018602667">
+            <system-out>
+2026-11-03T22:23:42.998Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session storage &gt; should store session in secondary storage" time="0.007010583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session storage &gt; should list sessions" time="0.00576025">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session storage &gt; revoke session and list sessions" time="0.010544541">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="session storage &gt; should revoke session" time="0.013263167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache &gt; serves cached sessions without querying the database" time="0.018210458">
+            <system-out>
+2026-11-03T22:23:43.054Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.054Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache &gt; reads fresh user data when cookie caching is bypassed" time="0.016000334">
+            <system-out>
+2026-11-03T22:23:43.071Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.071Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache &gt; refreshes expired cache and reuses the replacement cookie" time="0.017827541">
+            <system-out>
+2026-11-03T22:23:43.085Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.085Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy &gt; should cache cookies with JWT strategy" time="0.00796">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy &gt; should not allow tampering with the cookie" time="0.009509666">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy &gt; should have max age expiry" time="0.004478292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy &gt; should handle multiple concurrent requests with JWT cache" time="0.010406959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy backed by JWKS &gt; should cache cookies with JWKS-backed JWT strategy" time="0.017922833">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy backed by JWKS &gt; should ignore a JWKS cookie cache from a different session token" time="0.033400375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy backed by JWKS &gt; should not allow tampering with the cookie in JWKS mode" time="0.010919542">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy backed by JWKS &gt; should reject a secret-signed cookie cache and fall back to the database" time="0.008716291">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWT strategy backed by JWKS &gt; should verify existing cookie-cache JWTs across JWKS rotation grace period" time="0.014324458">
+            <system-out>
+2026-11-03T22:23:43.206Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:43.206Z WARN [Better Auth]: [better-auth] `session.cookieCache.maxAge` (300s) exceeds the JWT plugin JWKS grace period (60s). Rotated keys may stop verifying cookie-cache JWTs before the cookie expires.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWE strategy &gt; serves cached sessions without querying the database" time="0.02809625">
+            <system-out>
+2026-11-03T22:23:43.224Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWE strategy &gt; reads fresh user data when cookie caching is bypassed" time="0.017003208">
+            <system-out>
+2026-11-03T22:23:43.251Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWE strategy &gt; refreshes expired cache and reuses the replacement cookie" time="0.0248515">
+            <system-out>
+2026-11-03T22:23:43.266Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache with JWE strategy &gt; serves concurrent requests from the cache" time="0.020744791">
+            <system-out>
+2026-11-03T22:23:43.294Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; uses cached data before the refresh threshold" time="0.022068709">
+            <system-out>
+2026-11-03T22:23:43.316Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:43.315Z WARN [Better Auth]: [better-auth] `session.cookieCache.refreshCache` is enabled while `database` or `secondaryStorage` is configured. `refreshCache` is meant for stateless (DB-less) setups. Disabling `refreshCache` — remove it from your config to silence this warning.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; does not perform stateless refresh when a database is configured" time="0.014990166">
+            <system-out>
+2026-11-03T22:23:43.337Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:43.336Z WARN [Better Auth]: [better-auth] `session.cookieCache.refreshCache` is enabled while `database` or `secondaryStorage` is configured. `refreshCache` is meant for stateless (DB-less) setups. Disabling `refreshCache` — remove it from your config to silence this warning.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; should not refresh cache when refreshCache is disabled (false)" time="0.015170208">
+            <system-out>
+2026-11-03T22:23:43.351Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; should work without database (session stored in cookie only)" time="0.012533125">
+            <system-out>
+2026-11-03T22:23:43.366Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:43.366Z WARN [Better Auth]: [better-auth] `session.cookieCache.refreshCache` is enabled while `database` or `secondaryStorage` is configured. `refreshCache` is meant for stateless (DB-less) setups. Disabling `refreshCache` — remove it from your config to silence this warning.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; should preserve session expiry when refreshing stateless cookie cache" time="0.012259917">
+            <system-out>
+2026-11-03T22:23:43.378Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.378Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; should work without database when refreshCache threshold is reached" time="0.011450125">
+            <system-out>
+2026-11-03T22:23:43.390Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.391Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; should forward cookie cache headers from getSessionFromCtx" time="0.010063083">
+            <system-out>
+2026-11-03T22:23:43.403Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache refreshCache &gt; should extend session_token cookie expiry when refreshCache threshold is reached" time="0.012810958">
+            <system-out>
+2026-11-03T22:23:43.412Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.412Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache versioning &gt; should invalidate cookie cache when version changes (string version)" time="0.0149665">
+            <system-out>
+2026-11-03T22:23:43.425Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:43.434Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache versioning &gt; should work with function-based version" time="0.006842">
+            <system-out>
+2026-11-03T22:23:43.440Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache versioning &gt; should work with async function-based version" time="0.042373458">
+            <system-out>
+2026-11-03T22:23:43.446Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache versioning &gt; should work with compact strategy" time="0.006725125">
+            <system-out>
+2026-11-03T22:23:43.489Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache versioning &gt; should work with jwt strategy" time="0.0058675">
+            <system-out>
+2026-11-03T22:23:43.496Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache versioning &gt; should default to version &apos;1&apos; when not specified" time="0.008187042">
+            <system-out>
+2026-11-03T22:23:43.502Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="cookie cache versioning &gt; should include additionalFields when retrieving from cookie cache" time="0.0076635">
+            <system-out>
+2026-11-03T22:23:43.510Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should return needsRefresh flag on GET when enabled" time="0.005849833">
+            <system-out>
+2026-11-03T22:23:43.518Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should return needsRefresh: false when session is fresh" time="0.008715042">
+            <system-out>
+2026-11-03T22:23:43.523Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should not update session on GET when deferSessionRefresh is enabled" time="0.00458125">
+            <system-out>
+2026-11-03T22:23:43.532Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should update session on POST when deferSessionRefresh is enabled" time="0.004441083">
+            <system-out>
+2026-11-03T22:23:43.537Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should reject POST when deferSessionRefresh is not enabled" time="0.005063584">
+            <system-out>
+2026-11-03T22:23:43.541Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should not delete expired session on GET when deferSessionRefresh is enabled" time="0.0038765">
+            <system-out>
+2026-11-03T22:23:43.546Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should delete expired session on POST when deferSessionRefresh is enabled" time="0.004087625">
+            <system-out>
+2026-11-03T22:23:43.550Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should still update session on GET when deferSessionRefresh is not enabled (default behavior)" time="0.004639291">
+            <system-out>
+2026-11-03T22:23:43.554Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="deferSessionRefresh &gt; should respect disableSessionRefresh config when deferSessionRefresh is enabled" time="0.004326792">
+            <system-out>
+2026-11-03T22:23:43.559Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="date field type consistency &gt; should have consistent date types between cookie cache and refresh paths" time="0.005933833">
+            <system-out>
+2026-11-03T22:23:43.563Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.563Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession &gt; should update a custom additional field on a session" time="0.00631275">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession &gt; should ignore core session fields" time="0.003452292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession &gt; should ignore core field userId" time="0.002673875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession &gt; should reject input: false fields" time="0.003106959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession &gt; should return error when no fields to update" time="0.002603167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession &gt; should update session cookie after mutation" time="0.003314375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession plugin authority fields &gt; should reject forging the activeOrganizationId session field" time="0.002976042">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession plugin authority fields &gt; should reject forging the activeTeamId session field" time="0.003384167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="updateSession plugin authority fields &gt; should reject forging the impersonatedBy session field" time="0.002955792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="update-session cookie cache revocation &gt; fails closed when the backing session is revoked in a stateful deployment" time="0.011115208">
+            <system-out>
+2026-11-03T22:23:43.601Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="update-session cookie cache revocation &gt; still refreshes the cookie in a DB-less deployment when no row exists" time="0.010099541">
+            <system-out>
+2026-11-03T22:23:43.611Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.612Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="forced strict session validation &gt; a request cannot re-enable the cookie cache on a route that forces it off" time="0.008992167">
+            <system-out>
+2026-11-03T22:23:43.622Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="forced strict session validation &gt; uses the signed cookie as the authoritative session record without a server store" time="0.007492833">
+            <system-out>
+2026-11-03T22:23:43.630Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;memory&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.630Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="get-session cache headers &gt; sets Cache-Control: no-store on authenticated GET /get-session responses" time="0.009124291">
+            <system-out>
+2026-11-03T22:23:43.639Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="get-session cache headers &gt; sets Cache-Control: no-store on unauthenticated GET /get-session responses" time="0.005416">
+            <system-out>
+2026-11-03T22:23:43.648Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-api.test.ts" name="get-session cache headers &gt; does not set Cache-Control: no-store on session-gated endpoints" time="0.009032208">
+            <system-out>
+2026-11-03T22:23:43.655Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="packages/better-auth/src/api/routes/update-user.test.ts" timestamp="2026-11-03T22:23:44.551Z" hostname="8d1fcdc641ac" tests="39" failures="0" errors="0" skipped="0" time="0.881193126">
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should update the user&apos;s name" time="0.050750166">
+            <system-out>
+2026-11-03T22:23:42.537Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should unset image" time="0.032616166">
+            <system-out>
+2026-11-03T22:23:42.588Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should change email only after confirming both addresses" time="0.058952291">
+            <system-out>
+2026-11-03T22:23:42.622Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should update the user&apos;s password" time="0.040875083">
+            <system-out>
+2026-11-03T22:23:42.679Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.699Z WARN [Better Auth]: Invalid password
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; with revokeOtherSessions, when a step fails &gt; keeps the old password when revocation fails" time="0.025454541">
+            <system-out>
+2026-11-03T22:23:42.719Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.728Z ERROR [Better Auth]: Error Error: session store unavailable
+    at /app/packages/better-auth/src/api/routes/update-user.test.ts:178:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20
+
+# SERVER_ERROR:  Error: session store unavailable
+    at /app/packages/better-auth/src/api/routes/update-user.test.ts:178:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20
+
+2026-11-03T22:23:42.734Z WARN [Better Auth]: Invalid password
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; with revokeOtherSessions, when a step fails &gt; keeps existing sessions when the password write fails" time="0.019723833">
+            <system-out>
+2026-11-03T22:23:42.744Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.754Z ERROR [Better Auth]: Error Error: database unavailable
+    at /app/packages/better-auth/src/api/routes/update-user.test.ts:191:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20
+
+# SERVER_ERROR:  Error: database unavailable
+    at /app/packages/better-auth/src/api/routes/update-user.test.ts:191:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; with revokeOtherSessions, when a step fails &gt; keeps the old password and sessions when the replacement session cannot be created" time="0.027607208">
+            <system-out>
+2026-11-03T22:23:42.764Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.783Z WARN [Better Auth]: Invalid password
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; with revokeOtherSessions, when a step fails &gt; keeps the old password when secondary storage cannot store the replacement session" time="0.022111833">
+            <system-out>
+2026-11-03T22:23:42.792Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.802Z ERROR [Better Auth]: Error Error: storage unavailable
+    at Object.set (/app/packages/better-auth/src/api/routes/update-user.test.ts:219:29)
+    at mirrorSessionToSecondaryStorage (/app/packages/better-auth/src/db/internal-adapter.ts:615:29)
+
+# SERVER_ERROR:  Error: storage unavailable
+    at Object.set (/app/packages/better-auth/src/api/routes/update-user.test.ts:219:29)
+    at mirrorSessionToSecondaryStorage (/app/packages/better-auth/src/db/internal-adapter.ts:615:29)
+
+2026-11-03T22:23:42.807Z WARN [Better Auth]: Invalid password
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; with revokeOtherSessions, when a step fails &gt; does not cache the replacement session when the transaction fails" time="0.016298292">
+            <system-out>
+2026-11-03T22:23:42.814Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.826Z ERROR [Better Auth]: Error Error: commit failed
+    at Object.&lt;anonymous&gt; (/app/packages/better-auth/src/api/routes/update-user.test.ts:277:11)
+
+# SERVER_ERROR:  Error: commit failed
+    at Object.&lt;anonymous&gt; (/app/packages/better-auth/src/api/routes/update-user.test.ts:277:11)
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should update account&apos;s updatedAt when changing password" time="0.121780916">
+            <system-out>
+2026-11-03T22:23:42.833Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should not update password if current password is wrong" time="0.014983">
+            <system-out>
+2026-11-03T22:23:42.953Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.964Z WARN [Better Auth]: Invalid password
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should revoke other sessions" time="0.023150375">
+            <system-out>
+2026-11-03T22:23:42.968Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should preserve the replacement session in secondary storage" time="0.020407542">
+            <system-out>
+2026-11-03T22:23:42.992Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; shouldn&apos;t pass defaults" time="0.014351167">
+            <system-out>
+2026-11-03T22:23:43.013Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should propagate updates across sessions when secondaryStorage is enabled" time="0.030461625">
+            <system-out>
+2026-11-03T22:23:43.026Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should not write to secondary storage multiple times for the same session token during updateUser" time="0.011948542">
+            <system-out>
+2026-11-03T22:23:43.058Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="updateUser &gt; should not allow updating user with additional fields that are input: false" time="0.011277708">
+            <system-out>
+2026-11-03T22:23:43.068Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; should not delete user if deleteUser is disabled" time="0.01771875">
+            <system-out>
+2026-11-03T22:23:43.079Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+{ data: null, error: { status: 404, statusText: &apos;NOT_FOUND&apos; } }
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:43.092Z ERROR [Better Auth]: Delete user is disabled. Enable it in the options
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; should delete the user with a fresh session" time="0.017729375">
+            <system-out>
+2026-11-03T22:23:43.098Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; should require password when session is no longer fresh" time="0.015862834">
+            <system-out>
+2026-11-03T22:23:43.116Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; should delete every session from deleted user" time="0.010455417">
+            <system-out>
+2026-11-03T22:23:43.130Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; should delete with verification flow and password" time="0.021850833">
+            <system-out>
+2026-11-03T22:23:43.141Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; should delete only once when the same token is used concurrently" time="0.076951541">
+            <system-out>
+2026-11-03T22:23:43.163Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; should ignore cookie cache for sensitive operations like changePassword" time="0.018354125">
+            <system-out>
+2026-11-03T22:23:43.241Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="delete user &gt; rejects /delete-user/callback when the backing session was revoked" time="0.015431333">
+            <system-out>
+2026-11-03T22:23:43.259Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email enumeration protection &gt; should return 200 when target email already exists" time="0.007248042">
+            <system-out>
+2026-11-03T22:23:43.278Z INFO [Better Auth]: Change email attempt for existing email
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email enumeration protection &gt; should not change the user&apos;s email" time="0.003280667">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email without sendVerificationEmail &gt; should return the same error for existing and non-existing emails" time="0.00904425">
+            <system-err>
+2026-11-03T22:23:43.288Z ERROR [Better Auth]: Verification email isn&apos;t enabled.
+
+2026-11-03T22:23:43.290Z ERROR [Better Auth]: Verification email isn&apos;t enabled.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email callbackURL preservation &gt; preserves a callbackURL that carries its own query string" time="0.007573167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email rejects confirmation-only config for verified users &gt; returns 400 when sendVerificationEmail is not configured" time="0.008140916">
+            <system-err>
+2026-11-03T22:23:43.306Z ERROR [Better Auth]: Verification email isn&apos;t enabled.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="credential identity across email changes &gt; keeps one credential account when the user changes their sign-in email" time="0.018767917">
+            <system-out>
+2026-11-03T22:23:43.310Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:43.322Z WARN [Better Auth]: User not found
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="setPassword &gt; sets the password on the existing passwordless credential account" time="0.013849333">
+            <system-out>
+2026-11-03T22:23:43.329Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="password length on verify-only fields &gt; change-password should reject a currentPassword longer than maxPasswordLength before hashing" time="0.005602417">
+            <system-err>
+2026-11-03T22:23:43.344Z WARN [Better Auth]: Password is too long
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="password length on verify-only fields &gt; delete-user should reject a password longer than maxPasswordLength before hashing" time="0.005028083">
+            <system-err>
+2026-11-03T22:23:43.350Z WARN [Better Auth]: Password is too long
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email token binding &gt; does not let a stale token act on a later owner of the old address" time="0.02233425">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email token binding &gt; rejects a change-email token once the account&apos;s email has changed" time="0.010879625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email token binding &gt; rejects a change-email token on second use" time="0.008195375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email token binding &gt; completes a legitimate change without an active session but does not sign in" time="0.008230208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/update-user.test.ts" name="change-email token binding &gt; rejects a change-email token redeemed by a different signed-in user" time="0.009326291">
+        </testcase>
+    </testsuite>
+    <testsuite name="packages/better-auth/src/cookies/cookies.test.ts" timestamp="2026-11-03T22:23:44.562Z" hostname="8d1fcdc641ac" tests="115" failures="0" errors="0" skipped="0" time="0.797750001">
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookies &gt; should set cookies with default options" time="0.026613166">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookies &gt; should set multiple cookies" time="0.027288917">
+            <system-out>
+2026-11-03T22:23:42.555Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookies &gt; should use secure cookies" time="0.019522042">
+            <system-out>
+2026-11-03T22:23:42.580Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookies &gt; should use secure cookies when the base url is https" time="0.017351958">
+            <system-out>
+2026-11-03T22:23:42.600Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookies &gt; production environment &gt; should use secure cookies when baseURL is not configured" time="0.062427334">
+            <system-out>
+2026-11-03T22:23:42.657Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:23:42.653Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="crossSubdomainCookies &gt; should update cookies with custom domain" time="0.030767833">
+            <system-out>
+2026-11-03T22:23:42.682Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.682Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="crossSubdomainCookies &gt; should use default domain from baseURL if not provided" time="0.010581458">
+            <system-out>
+2026-11-03T22:23:42.708Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.709Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie configuration &gt; should return correct cookie options based on configuration" time="0.000431291">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; handles Expires with commas and multiple cookies" time="0.000680292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; decodes URI-encoded cookie values" time="0.001265708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; handles cookie with Expires followed by cookie without Expires" time="0.000215459">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; handles Expires when cookie value contains gmt substring" time="0.000099334">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; handles non-standard Expires=0" time="0.000355917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; handles RFC 850 date format" time="0.000067375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; handles asctime date format (no comma in date)" time="0.000065958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; handles mixed cookies with and without Expires" time="0.000089834">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; parses partitioned as a boolean cookie attribute" time="0.000081084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils parseSetCookieHeader &gt; converts parsed cookie attributes into cookie options" time="0.000373458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should strip __Secure- prefix from cookie name" time="0.00008575">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should strip __Host- prefix from cookie name" time="0.000458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should return cookie name unchanged if no prefix" time="0.000086291">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should handle cookie names with prefix-like strings in the middle" time="0.000035959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should handle empty string" time="0.000032792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should handle cookie names that are exactly the prefix" time="0.00004">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should prioritize __Secure- prefix over __Host- prefix" time="0.000036875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils stripSecureCookiePrefix &gt; should handle cookie names with dots and special characters" time="0.000035625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils setRequestCookie &gt; writes a cookie when the header is empty" time="0.000200959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils setRequestCookie &gt; preserves existing cookies and joins with `; ` per RFC 6265" time="0.000342583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils setRequestCookie &gt; replaces an existing cookie of the same name rather than duplicating it" time="0.000071458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils setRequestCookie &gt; ignores malformed pairs in the existing header" time="0.000086125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils setRequestCookie &gt; percent-encodes reserved cookie-octet bytes when serializing" time="0.000439584">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="cookie-utils setRequestCookie &gt; treats input as semantic and percent-encodes literal double-quotes" time="0.000175083">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should return the correct session cookie" time="0.012010375">
+            <system-out>
+2026-11-03T22:23:42.725Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.725Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should work with Headers object directly" time="0.007678417">
+            <system-out>
+2026-11-03T22:23:42.736Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.737Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should work with Headers-like object that has inherited &apos;headers&apos; property" time="0.014507334">
+            <system-out>
+2026-11-03T22:23:42.744Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.745Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should work with cross-realm Headers-like object (instanceof fails)" time="0.012991709">
+            <system-out>
+2026-11-03T22:23:42.761Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.761Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should return the correct session cookie on production" time="0.007742875">
+            <system-out>
+2026-11-03T22:23:42.771Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.772Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {}" time="0.000171292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;}" time="0.000065792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000067208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;,&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000067208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {}" time="0.000062583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;}" time="0.000048917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000051125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;.&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;,&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000148">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {}" time="0.000142875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;}" time="0.0000695">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000066583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with  prefix (regular) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;,&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000047416">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {}" time="0.000087833">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;}" time="0.000066625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000257">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; with &apos;-&apos; separator &gt; with __Secure- prefix (secure) &gt; finds cookie with config {&quot;cookiePrefix&quot;:&quot;myprefix&quot;,&quot;cookieName&quot;:&quot;my_token&quot;}" time="0.000074458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; prefers the __Secure- cookie when a non-secure leftover is also present" time="0.000165625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; does not fall back to a non-secure cookie when the __Secure- value is empty" time="0.000093291">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should allow override cookie prefix with secure cookies" time="0.008820416">
+            <system-out>
+2026-11-03T22:23:42.783Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.783Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should allow override cookie name" time="0.008165792">
+            <system-out>
+2026-11-03T22:23:42.791Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.791Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should return cookie cache" time="0.014154667">
+            <system-out>
+2026-11-03T22:23:42.799Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.800Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should respect dontRememberMe when storing session in cookie cache" time="0.010039833">
+            <system-out>
+2026-11-03T22:23:42.813Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.814Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should return null if the cookie is invalid" time="0.0116865">
+            <system-out>
+2026-11-03T22:23:42.823Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.824Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should throw an error if the secret is not provided" time="0.013927417">
+            <system-out>
+2026-11-03T22:23:42.835Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.836Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getSessionCookie &gt; should chunk large cookies instead of logging error" time="0.011367917">
+            <system-out>
+2026-11-03T22:23:42.849Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.849Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:42.856Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: &apos;Session cookie exceeds the 4050 byte limit and was split into 3 chunks.&apos;,
+  valueSize: 8940,
+  chunkCount: 3,
+  chunkSizes: [ 3977, 3977, 986 ]
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="sensitive session middleware cookie cache &gt; should not let request query re-enable cookie cache on sensitive endpoints" time="0.026819667">
+            <system-out>
+2026-11-03T22:23:42.860Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.861Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should exclude user fields with returned: false from cookie cache" time="0.012905042">
+            <system-out>
+2026-11-03T22:23:42.888Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.888Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should correctly filter multiple user fields based on returned config" time="0.0113435">
+            <system-out>
+2026-11-03T22:23:42.901Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.901Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should reduce cookie size when large fields are excluded" time="0.014170458">
+            <system-out>
+2026-11-03T22:23:42.912Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.912Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should maintain session field filtering (regression check)" time="0.012561417">
+            <system-out>
+2026-11-03T22:23:42.926Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.927Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should include unknown user fields for backward compatibility" time="0.009371333">
+            <system-out>
+2026-11-03T22:23:42.938Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.939Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should work with JWT strategy" time="0.014951292">
+            <system-out>
+2026-11-03T22:23:42.948Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.948Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should work with JWT strategy backed by JWKS keys" time="0.042596125">
+            <system-out>
+2026-11-03T22:23:42.965Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:42.966Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should work with compact strategy" time="0.011853583">
+            <system-out>
+2026-11-03T22:23:43.007Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.007Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should use the configured logger for an invalid signed compact cookie" time="0.006099209">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should return null for invalid JWT token" time="0.001736167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should require a secret when helper verification has no JWKS" time="0.000461458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should reject JWT plugin tokens that are not cookie-cache JWTs" time="0.011754208">
+            <system-out>
+2026-11-03T22:23:43.026Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.026Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should return null when JWKS verification uses the wrong key set" time="0.014784917">
+            <system-out>
+2026-11-03T22:23:43.038Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.038Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Cache Field Filtering &gt; should default to compact strategy when not specified" time="0.00912725">
+            <system-out>
+2026-11-03T22:23:43.052Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.052Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; should chunk cookies when they exceed 4KB" time="0.011625042">
+            <system-out>
+2026-11-03T22:23:43.061Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.062Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:43.068Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: &apos;Session cookie exceeds the 4050 byte limit and was split into 2 chunks.&apos;,
+  valueSize: 6227,
+  chunkCount: 2,
+  chunkSizes: [ 3977, 2250 ]
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; should chunk JWKS-backed JWT cookies when they exceed 4KB" time="0.0230595">
+            <system-out>
+2026-11-03T22:23:43.073Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.073Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:43.090Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: &apos;Session cookie exceeds the 4050 byte limit and was split into 2 chunks.&apos;,
+  valueSize: 6568,
+  chunkCount: 2,
+  chunkSizes: [ 3977, 2591 ]
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; should reconstruct chunked cookies correctly" time="0.009531083">
+            <system-out>
+2026-11-03T22:23:43.096Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.097Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:43.102Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: &apos;Session cookie exceeds the 4050 byte limit and was split into 2 chunks.&apos;,
+  valueSize: 4232,
+  chunkCount: 2,
+  chunkSizes: [ 3977, 255 ]
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; should clean up all chunks when deleting session" time="0.015619875">
+            <system-out>
+2026-11-03T22:23:43.106Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.106Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:43.112Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: &apos;Session cookie exceeds the 4050 byte limit and was split into 2 chunks.&apos;,
+  valueSize: 6246,
+  chunkCount: 2,
+  chunkSizes: [ 3977, 2269 ]
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; should NOT chunk cookies when they are under 4KB" time="0.00826575">
+            <system-out>
+2026-11-03T22:23:43.121Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.121Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; should chunk session cache when attributes push the line over the limit" time="0.011139916">
+            <system-out>
+2026-11-03T22:23:43.129Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.130Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:43.136Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: &apos;Session cookie exceeds the 4050 byte limit and was split into 2 chunks.&apos;,
+  valueSize: 4088,
+  chunkCount: 2,
+  chunkSizes: [ 3896, 192 ]
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; skips the session cache and warns when it is too large to chunk" time="0.044628">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie Chunking &gt; skips the session cache and warns when the prefix alone overflows" time="0.011792125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parse cookies &gt; should parse cookies into key-value map" time="0.00017575">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parse cookies &gt; should securely parse the signed cookies with padding" time="0.000071333">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie header without whitespace after semicolon &gt; parseCookies returns each pair when separator is `;` only" time="0.000056708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie header without whitespace after semicolon &gt; parseCookies tolerates mixed `;`, `; `, and `;\t` separators" time="0.000064209">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie header without whitespace after semicolon &gt; getSessionCookie finds the session cookie when separator is `;` only" time="0.000197375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="Cookie header without whitespace after semicolon &gt; getChunkedCookie reconstructs chunks across `;`-only separators" time="0.000128">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getChunkedCookie &gt; ignores non-canonical chunk name better-auth.session_data.0junk" time="0.00008225">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getChunkedCookie &gt; ignores non-canonical chunk name better-auth.session_data.nested.0" time="0.000057333">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getChunkedCookie &gt; ignores non-canonical chunk name better-auth.session_data.01" time="0.0000985">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getChunkedCookie &gt; ignores non-canonical chunk name better-auth.session_data.-1" time="0.000239875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parseCookies validation &gt; returns empty map for empty header" time="0.000046375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parseCookies validation &gt; rejects names containing characters outside RFC 7230 token" time="0.0000835">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parseCookies validation &gt; rejects values containing control chars, double-quote, or backslash" time="0.000073">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parseCookies validation &gt; accepts values with space and comma (real-world deviation)" time="0.000055375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parseCookies validation &gt; splits on first `=` only, preserving subsequent `=` in value" time="0.000035084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parseCookies validation &gt; rejects entries with CR/LF in raw key or value (no trim escape)" time="0.000055333">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="parseCookies validation &gt; strips double-quoted values per RFC 6265 §4.1.1" time="0.000052708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="applySetCookies &gt; merges into empty Cookie header" time="0.0000775">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="applySetCookies &gt; strips Set-Cookie attributes (only name=value lands)" time="0.00016">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="applySetCookies &gt; merges multiple Set-Cookie values" time="0.000089833">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="applySetCookies &gt; last-wins on duplicate cookie name (existing + new)" time="0.000062959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="applySetCookies &gt; re-encodes Set-Cookie values containing reserved bytes on wire join" time="0.000053084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="applySetCookies &gt; strips RFC 6265 quoted-string wrapping from Set-Cookie values" time="0.000046209">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="expireCookie &gt; preserves attributes" time="0.000507375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="expireCookie &gt; scrubs collapsed Set-Cookie headers when getSetCookie is unavailable" time="0.00109425">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="account cookie sync on user switch &gt; keeps the fresh account cookie issued for the new user when the request carries another user&apos;s stale account cookie" time="0.074369375">
+            <system-out>
+2026-11-03T22:23:43.210Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.211Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="account cookie sync on user switch &gt; still expires another user&apos;s stale account cookie when the response issues no fresh one" time="0.028193333">
+            <system-out>
+2026-11-03T22:23:43.284Z DEBUG [Better Auth]: Schema validation is not available for adapter &quot;kysely&quot;. Skipping schema validation. Database operations will proceed normally.
+
+2026-11-03T22:23:43.285Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getCookieCache expiry (compact strategy) &gt; returns the session for a fresh snapshot" time="0.001065083">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getCookieCache expiry (compact strategy) &gt; returns null when the embedded session has expired" time="0.000930542">
+        </testcase>
+        <testcase classname="packages/better-auth/src/cookies/cookies.test.ts" name="getCookieCache expiry (compact strategy) &gt; returns null when the cache window has elapsed" time="0.001160958">
+        </testcase>
+    </testsuite>
+    <testsuite name="packages/better-auth/src/plugins/jwt/jwt.test.ts" timestamp="2026-11-03T22:23:44.581Z" hostname="8d1fcdc641ac" tests="107" failures="0" errors="0" skipped="0" time="1.705075835">
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; Client gets a token from session" time="0.020886125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; Client gets a token" time="0.006488875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; Get JWKS" time="0.012374584">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; Signed tokens can be validated with the JWKS" time="0.010972333">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; should set subject to user id by default" time="0.010007125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm can be used to generate JWKS" time="0.003877917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm: Client can sign in" time="0.008461625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm: Client gets a token" time="0.005283167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm: Client gets a token from session" time="0.006137416">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm: Signed tokens can be validated with the JWKS" time="0.011368625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm: Should set subject to user id by default" time="0.008485959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm without private key encryption can be used to generate JWKS" time="0.00439125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm without private key encryption: Client can sign in" time="0.004598542">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm without private key encryption: Client gets a token" time="0.00473025">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm without private key encryption: Client gets a token from session" time="0.004301917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm without private key encryption: Signed tokens can be validated with the JWKS" time="0.005967875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; EdDSA(Ed25519) algorithm without private key encryption: Should set subject to user id by default" time="0.007167959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm can be used to generate JWKS" time="0.008661083">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm: Client can sign in" time="0.004267041">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm: Client gets a token" time="0.007694375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm: Client gets a token from session" time="0.00599225">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm: Signed tokens can be validated with the JWKS" time="0.007692125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm: Should set subject to user id by default" time="0.007760666">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm without private key encryption can be used to generate JWKS" time="0.003825834">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm without private key encryption: Client can sign in" time="0.004164458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm without private key encryption: Client gets a token" time="0.004382791">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm without private key encryption: Client gets a token from session" time="0.006466917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm without private key encryption: Signed tokens can be validated with the JWKS" time="0.006667875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES256 algorithm without private key encryption: Should set subject to user id by default" time="0.006523708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm can be used to generate JWKS" time="0.008245917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm: Client can sign in" time="0.004908791">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm: Client gets a token" time="0.008607916">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm: Client gets a token from session" time="0.007480584">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm: Signed tokens can be validated with the JWKS" time="0.013699667">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm: Should set subject to user id by default" time="0.012108625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm without private key encryption can be used to generate JWKS" time="0.00639225">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm without private key encryption: Client can sign in" time="0.007064292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm without private key encryption: Client gets a token" time="0.0080845">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm without private key encryption: Client gets a token from session" time="0.006693125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm without private key encryption: Signed tokens can be validated with the JWKS" time="0.012814791">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; ES512 algorithm without private key encryption: Should set subject to user id by default" time="0.01103625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm can be used to generate JWKS" time="0.203041916">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm: Client can sign in" time="0.004104292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm: Client gets a token" time="0.0092615">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm: Client gets a token from session" time="0.005814375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm: Signed tokens can be validated with the JWKS" time="0.009107708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm: Should set subject to user id by default" time="0.007466834">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm without private key encryption can be used to generate JWKS" time="0.281257542">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm without private key encryption: Client can sign in" time="0.004328">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm without private key encryption: Client gets a token" time="0.00880775">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm without private key encryption: Client gets a token from session" time="0.005402875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm without private key encryption: Signed tokens can be validated with the JWKS" time="0.00690725">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; PS256 algorithm without private key encryption: Should set subject to user id by default" time="0.005071125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm can be used to generate JWKS" time="0.238884292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm: Client can sign in" time="0.003986791">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm: Client gets a token" time="0.004236459">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm: Client gets a token from session" time="0.003825625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm: Signed tokens can be validated with the JWKS" time="0.004740625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm: Should set subject to user id by default" time="0.004589084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm without private key encryption can be used to generate JWKS" time="0.152528125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm without private key encryption: Client can sign in" time="0.00339975">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm without private key encryption: Client gets a token" time="0.004518417">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm without private key encryption: Client gets a token from session" time="0.004174375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm without private key encryption: Signed tokens can be validated with the JWKS" time="0.005283125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt &gt; RS256 algorithm without private key encryption: Should set subject to user id by default" time="0.00460275">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: EdDSA &gt; should sign a JWT" time="0.002356">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: EdDSA &gt; should be a valid JWT" time="0.002831583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: EdDSA &gt; shouldn&apos;t let you sign from a client" time="0.002184833">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: ES256 &gt; should sign a JWT" time="0.001839291">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: ES256 &gt; should be a valid JWT" time="0.001611">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: ES256 &gt; shouldn&apos;t let you sign from a client" time="0.000618083">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: ES512 &gt; should sign a JWT" time="0.005998959">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: ES512 &gt; should be a valid JWT" time="0.005416667">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: ES512 &gt; shouldn&apos;t let you sign from a client" time="0.0005065">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: PS256 &gt; should sign a JWT" time="0.140645416">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: PS256 &gt; should be a valid JWT" time="0.003559417">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: PS256 &gt; shouldn&apos;t let you sign from a client" time="0.00077675">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: RS256 &gt; should sign a JWT" time="0.039047917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: RS256 &gt; should be a valid JWT" time="0.003566833">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="signJWT - alg: RS256 &gt; shouldn&apos;t let you sign from a client" time="0.000609541">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote signing &gt; should fail if sign is defined and remoteUrl is not" time="0.000963125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should require specifying the alg when using remoteUrl" time="0.000184709">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should accept remoteUrl with alg specified" time="0.003662166">
+            <system-out>
+2026-11-03T22:23:44.328Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should disable /jwks endpoint when remoteUrl is configured" time="0.014387375">
+            <system-out>
+2026-11-03T22:23:44.331Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should work with different algorithms when remoteUrl is set" time="0.018549042">
+            <system-out>
+2026-11-03T22:23:44.346Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.349Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.352Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.355Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.358Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should still allow token generation when remoteUrl is set" time="0.008444917">
+            <system-out>
+2026-11-03T22:23:44.365Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should work with custom sign function and remoteUrl" time="0.007049583">
+            <system-out>
+2026-11-03T22:23:44.372Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should validate that remoteUrl is a valid URL format" time="0.010779167">
+            <system-out>
+2026-11-03T22:23:44.379Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.382Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.384Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.387Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should work with remoteUrl pointing to different paths" time="0.009956708">
+            <system-out>
+2026-11-03T22:23:44.390Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.393Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.395Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+2026-11-03T22:23:44.398Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should handle remoteUrl with query parameters" time="0.002719334">
+            <system-out>
+2026-11-03T22:23:44.400Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - remote url &gt; should not interfere with other JWT endpoints when remoteUrl is set" time="0.010455583">
+            <system-out>
+2026-11-03T22:23:44.403Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - custom adapter &gt; should use custom adapter" time="0.004691167">
+            <system-out>
+2026-11-03T22:23:44.414Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - custom jwksPath &gt; should use custom jwksPath when specified" time="0.005268625">
+            <system-out>
+2026-11-03T22:23:44.418Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - JWKS minting inside an active transaction &gt; mints the first signing key through the transaction-scoped adapter instead of deadlocking on the connection" time="0.065448876">
+            <system-err>
+2026-11-03T22:23:44.424Z ERROR [Better Auth]: Database schema mismatch
+
+  Missing tables
+    user, session, account, verification, jwks
+
+  help: Run `npx auth migrate` to add the missing tables and columns.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="toExpJWT &gt; with number input &gt; should return the number as-is" time="0.000120208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="toExpJWT &gt; with Date input &gt; should convert Date to seconds timestamp" time="0.000070875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="toExpJWT &gt; with Date input &gt; should floor milliseconds" time="0.000044625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="toExpJWT &gt; with valid TimeString input &gt; should parse short format and add to iat" time="0.000235125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="toExpJWT &gt; with valid TimeString input &gt; should parse long format and add to iat" time="0.000126458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="toExpJWT &gt; with valid TimeString input &gt; should handle negative values" time="0.000078708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="toExpJWT &gt; with invalid string input &gt; should throw TypeError for invalid format" time="0.000164833">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwtClient types &gt; should be assignable to BetterAuthClientPlugin" time="0.000126958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwtClient types &gt; should preserve additional user fields when combined with inferAdditionalFields" time="0.00041675">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - signing algorithm comes from the key &gt; verifyJWT rejects a token whose header names another algorithm for the key" time="0.005963167">
+            <system-out>
+2026-11-03T22:23:44.492Z DEBUG [Better Auth]: JWT verification failed JOSEAlgNotAllowed: &quot;alg&quot; (Algorithm) Header Parameter value not allowed
+    at flattenedVerify (file:///app/node_modules/.pnpm/jose@6.2.3/node_modules/jose/dist/webapi/jws/flattened/verify.js:62:15)
+    at compactVerify (file:///app/node_modules/.pnpm/jose@6.2.3/node_modules/jose/dist/webapi/jws/compact/verify.js:15:28)
+    at jwtVerify (file:///app/node_modules/.pnpm/jose@6.2.3/node_modules/jose/dist/webapi/jwt/verify.js:5:28)
+    at verifyJWT (/app/packages/better-auth/src/plugins/jwt/verify.ts:63:29)
+    at /app/packages/better-auth/src/plugins/jwt/index.ts:341:22
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at /app/packages/better-auth/src/plugins/jwt/jwt.test.ts:980:3
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20 {
+  code: &apos;ERR_JOSE_ALG_NOT_ALLOWED&apos;
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - signing algorithm comes from the key &gt; does not take the cookie-cache algorithm from the token header" time="0.009983916">
+            <system-out>
+2026-11-03T22:23:44.503Z DEBUG [Better Auth]: Cookie-cache JWT verification failed JOSENotSupported: Invalid or unsupported JWK &quot;alg&quot; (Algorithm) Parameter value
+    at subtleMapping (file:///app/node_modules/.pnpm/jose@6.2.3/node_modules/jose/dist/webapi/lib/jwk_to_key.js:45:27)
+    at jwkToKey (file:///app/node_modules/.pnpm/jose@6.2.3/node_modules/jose/dist/webapi/lib/jwk_to_key.js:100:38)
+    at importJWK (file:///app/node_modules/.pnpm/jose@6.2.3/node_modules/jose/dist/webapi/key/import.js:41:20)
+    at importLocalPublicKey (/app/packages/better-auth/src/plugins/jwt/cookie-cache.ts:58:20)
+    at verifyCookieCacheJWT (/app/packages/better-auth/src/plugins/jwt/cookie-cache.ts:107:15)
+    at /app/packages/better-auth/src/plugins/jwt/jwt.test.ts:1008:3
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20 {
+  code: &apos;ERR_JOSE_NOT_SUPPORTED&apos;
+}
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - unresolved issuer and audience &gt; warns when it signs a token without an issuer or audience" time="0.002985209">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/jwt/jwt.test.ts" name="jwt - unresolved issuer and audience &gt; warns when it accepts a token without checking its issuer or audience" time="0.001182542">
+        </testcase>
+    </testsuite>
+    <testsuite name="packages/core/src/db/adapter/factory.test.ts" timestamp="2026-11-03T22:23:44.594Z" hostname="8d1fcdc641ac" tests="36" failures="0" errors="0" skipped="0" time="0.108130167">
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="createAdapterFactory model identity &gt; keeps the schema model when its custom name matches another schema key" time="0.008322375">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="createAdapterFactory atomic primitives &gt; delegates consumeOne to the native adapter with transformed where and output" time="0.005394041">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="createAdapterFactory atomic primitives &gt; delegates incrementOne to the native adapter with mapped increment fields" time="0.002532709">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="createAdapterFactory atomic primitives &gt; throws before native incrementOne when every update field is transformed away" time="0.00288425">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="createAdapterFactory atomic primitives &gt; throws a clear error when updateMany does not return a finite count" time="0.001545166">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="createAdapterFactory where value coercion &gt; coerces string where values to match field types before querying" time="0.0014915">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; lets only one independent adapter consume a credential" time="0.0381865">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; does not lose concurrent increments starting from null" time="0.007023334">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; increments despite unrelated concurrent writes" time="0.002526459">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; treats an undefined legacy read as a missing row" time="0.005646625">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; uses stored counters even when output transformation is lossy" time="0.002768125">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; returns the row produced by its own update" time="0.001429291">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; does not return a credential replaced between read and delete" time="0.000738">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; keeps OR selectors from widening the guarded deletion" time="0.001429583">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects contention exhaustion instead of reporting a missing row" time="0.001054375">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects invalid affected counts (2)" time="0.000928084">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects invalid affected counts (-1)" time="0.0009915">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects invalid affected counts (0.5)" time="0.001172375">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects invalid affected counts (NaN)" time="0.001791458">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; identifies invalid increment input before writing" time="0.001372084">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects bigint counters without coercion or writes" time="0.000784709">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects invalid counters before writing" time="0.000786458">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; handles an absent nullable counter with the null guard" time="0.001198958">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; honors a counter guard after losing a race" time="0.000658625">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; completes a no-op without relying on changed-row counts" time="0.000419542">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; compares date values when a set-only update is a no-op" time="0.002032625">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; fails before writing when the row id is missing" time="0.001687792">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; allows unrelated structured data in returned rows" time="0.000887125">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects malformed reads instead of treating them as missing" time="0.000700792">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; propagates write failures without reporting a successful increment" time="0.000497541">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; uses adapter-owned transforms for object IDs" time="0.00046925">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; rejects increments that cannot change a large counter" time="0.000662084">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; omits undefined assignments even when input transformation is disabled" time="0.003628584">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; preserves explicit null assignments" time="0.000543958">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; treats undefined-only assignments as a no-op" time="0.000430625">
+        </testcase>
+        <testcase classname="packages/core/src/db/adapter/factory.test.ts" name="legacy adapter atomic fallbacks &gt; returns null when the selector does not match" time="0.00057025">
+        </testcase>
+    </testsuite>
+</testsuites>

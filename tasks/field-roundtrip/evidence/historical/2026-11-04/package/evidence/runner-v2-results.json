@@ -1,0 +1,66 @@
+[
+  {
+    "architecture": "linux/arm64",
+    "stage": "base-before",
+    "tests": 488,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "architecture": "linux/arm64",
+    "stage": "new-before",
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "architecture": "linux/arm64",
+    "stage": "base-after",
+    "tests": 488,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "architecture": "linux/arm64",
+    "stage": "new-after",
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "architecture": "linux/amd64",
+    "stage": "base-before",
+    "tests": 488,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "architecture": "linux/amd64",
+    "stage": "new-before",
+    "tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "architecture": "linux/amd64",
+    "stage": "base-after",
+    "tests": 488,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  {
+    "architecture": "linux/amd64",
+    "stage": "new-after",
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+]

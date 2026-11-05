@@ -1,0 +1,61 @@
+{
+  "base": "e7200d132f5946490c19a389b5a89b31aeead4e7",
+  "tests": 12,
+  "failures": 12,
+  "errors": 0,
+  "skipped": 0,
+  "cases": [
+    "additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the compact cookie cache",
+    "additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwt cookie cache",
+    "additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through the jwe cookie cache",
+    "additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through JSON-string secondary storage",
+    "additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through pre-parsed secondary storage",
+    "additional-field round trips for 2024-01-02T03:04:05Z > preserves field types through SQLite array and JSON serialization",
+    "additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the compact cookie cache",
+    "additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwt cookie cache",
+    "additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through the jwe cookie cache",
+    "additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through JSON-string secondary storage",
+    "additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through pre-parsed secondary storage",
+    "additional-field round trips for 2031-09-08T07:06:05.123400Z > preserves field types through SQLite array and JSON serialization"
+  ],
+  "requirements": {
+    "exact_lexical_strings": [
+      "2024-01-02T03:04:05Z",
+      "2031-09-08T07:06:05.123400Z"
+    ],
+    "storage_routes": [
+      "compact cookie",
+      "jwt cookie",
+      "jwe cookie",
+      "JSON-string secondary",
+      "pre-parsed secondary",
+      "SQLite serialized arrays and JSON"
+    ],
+    "observable_apis": [
+      "auth.api.signUpEmail",
+      "auth.api.getSession",
+      "auth.api.getSession with disableCookieCache:true"
+    ],
+    "type_preservation": [
+      "user trackingId string",
+      "user aliases string[]",
+      "user preferences json",
+      "session cursor string",
+      "session history string[]",
+      "session data json"
+    ],
+    "guards": [
+      "genuine custom date fields",
+      "built-in createdAt/updatedAt/expiresAt Date fields",
+      "null fields",
+      "empty arrays",
+      "ordinary text and JSON boolean/number/null",
+      "returned:false field omitted"
+    ],
+    "json_keys": [
+      "createdAt",
+      "nested.expiresAt",
+      "items[3].updatedAt"
+    ]
+  }
+}

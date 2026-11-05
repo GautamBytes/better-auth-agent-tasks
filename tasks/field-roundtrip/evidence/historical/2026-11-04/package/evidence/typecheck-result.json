@@ -1,0 +1,9 @@
+{
+  "command": "pnpm typecheck",
+  "node": "24.19.0",
+  "pnpm": "11.1.1",
+  "exit_code": 0,
+  "prerequisite": "pnpm --filter @better-auth-test/prisma-adapter exec prisma generate --schema base.prisma",
+  "log": "ba-full-typecheck-final.log",
+  "initial_missing_prerequisite_recorded": true
+}

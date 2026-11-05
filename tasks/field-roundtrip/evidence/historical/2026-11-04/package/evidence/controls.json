@@ -1,0 +1,43 @@
+[
+  {
+    "control": "adapter-only",
+    "process_exit": 1,
+    "new_tests": 14,
+    "failures": 10,
+    "errors": 0,
+    "expected": "fail"
+  },
+  {
+    "control": "cookie-only",
+    "process_exit": 1,
+    "new_tests": 14,
+    "failures": 14,
+    "errors": 0,
+    "expected": "fail"
+  },
+  {
+    "control": "persistence-only",
+    "process_exit": 1,
+    "new_tests": 14,
+    "failures": 6,
+    "errors": 0,
+    "expected": "fail"
+  },
+  {
+    "control": "missing-rewrite-fix",
+    "process_exit": 1,
+    "new_tests": 14,
+    "failures": 4,
+    "errors": 0,
+    "expected": "fail"
+  },
+  {
+    "control": "alternative-cloned-json",
+    "process_exit": 0,
+    "new_tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "expected": "pass",
+    "base_tests": 377
+  }
+]

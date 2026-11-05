@@ -1,0 +1,12 @@
+ts	phase	decision	why	evidence	result
+2026-11-03T22:22:12.424374+00:00	start	Continue candidate as a local task package	User explicitly authorized steps1-5 only	README.txt	local-only
+2026-11-03T22:22:12.424374+00:00	design	Choose raw JSON parsing plus schema-directed date restoration	Preserve exact strings before interpretation, keep unrelated parser defaults	evidence/ba-design-targeted.txt	implemented
+2026-11-03T22:22:12.424374+00:00	tests	Broaden the red matrix to14cases	Cover both lexical spellings and every named storage route	evidence/docker-replay/new-before.xml	14assertion failures
+2026-11-03T22:22:12.424374+00:00	fix	Correct transport schema independent of physical tables	Existing update-user tests caught omitted secondary-store timestamps	evidence/ba-reference-summary.txt	391passed
+2026-11-03T22:22:12.424374+00:00	runner	Record post-report process failure in JUnit	Independent synthetic control found success-shaped XML on exit1	evidence/runner-protocol/results.json	corrected
+2026-11-03T22:22:12.424374+00:00	docker	Verify clean and no-cache builds, offline non-root replay	Exclude host caches and external services from runtime proof	evidence/docker-replay/exits.txt	0 1 0 0
+2026-11-03T22:22:12.424374+00:00	controls	Reject4incomplete fixes and accept1validalternative	Check discrimination without requiring reference-code identity	evidence/controls.json	all expected outcomes
+2026-11-03T22:22:12.424374+00:00	typecheck	Generate missing existing Prisma client then rerun required check	Full check initially lacked a generated integration prerequisite	evidence/ba-full-typecheck-final.log	exit0
+2026-11-03T22:25:42.820720+00:00	portability	Repeat final patch replay on Linux amd64	Verify the same offline contract beyond the native arm64 host	evidence/docker-amd64-replay/exits.txt	0 1 0 0
+2026-11-03T23:07:34.681958+00:00	guideline-repair	Name exact public APIs in title and expand existing-test runner	Close observed title gap and include 111 independently checked affected-area regressions	GUIDELINE_REVIEW.md	runner v2; final replay pending
+2026-11-03T23:08:15.985555+00:00	replay-v2	Replay final patch on arm64 and amd64 offline as node	Verify expanded runner against clean base and reference fix	evidence/runner-v2-results.json	488 pass before/after; 14 fail before and pass after; exits 0 1 0 0

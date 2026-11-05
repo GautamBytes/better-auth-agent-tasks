@@ -1,0 +1,342 @@
+Scope: 7 of 51 workspace projects
+packages/core build$ tsdown
+packages/core build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/core build: ℹ config file: /app/packages/core/tsdown.config.ts 
+packages/core build: ℹ entry: src/index.ts, src/api/index.ts, src/context/index.ts, src/env/index.ts, src/async_hooks/index.ts, src/async_hooks/pure.index.ts, src/db/index.ts, src/db/internal.ts, src/error/index.ts, src/instrumentation/index.ts, src/instrumentation/pure.index.ts, src/oauth2/index.ts, src/oauth2/internal.ts, src/social-providers/index.ts, src/utils/async.ts, src/utils/db.ts, src/utils/deprecate.ts, src/utils/email.ts, src/utils/error-codes.ts, src/utils/fetch-metadata.ts, src/utils/host.ts, src/utils/id.ts, src/utils/ip.ts, src/utils/is-api-error.ts, src/utils/json.ts, src/utils/redirect-uri.ts, src/utils/string.ts, src/utils/url.ts, src/db/adapter/index.ts
+packages/core build: ℹ tsconfig: tsconfig.json
+packages/core build: ℹ Build start
+packages/core build: ℹ Cleaning 241 files
+packages/core build: ℹ dist/utils/host.mjs                             12.21 kB │ gzip:  4.06 kB
+packages/core build: ℹ dist/utils/ip.mjs                                8.20 kB │ gzip:  2.86 kB
+packages/core build: ℹ dist/api/index.mjs                               4.15 kB │ gzip:  1.83 kB
+packages/core build: ℹ dist/utils/redirect-uri.mjs                      3.73 kB │ gzip:  1.64 kB
+packages/core build: ℹ dist/utils/url.mjs                               3.35 kB │ gzip:  1.42 kB
+packages/core build: ℹ dist/oauth2/index.mjs                            2.96 kB │ gzip:  0.78 kB
+packages/core build: ℹ dist/social-providers/index.mjs                  2.65 kB │ gzip:  0.82 kB
+packages/core build: ℹ dist/async_hooks/index.mjs                       1.76 kB │ gzip:  0.66 kB
+packages/core build: ℹ dist/utils/json.mjs                              1.51 kB │ gzip:  0.67 kB
+packages/core build: ℹ dist/async_hooks/pure.index.mjs                  1.14 kB │ gzip:  0.51 kB
+packages/core build: ℹ dist/db/internal.mjs                             1.04 kB │ gzip:  0.33 kB
+packages/core build: ℹ dist/utils/string.mjs                            0.98 kB │ gzip:  0.43 kB
+packages/core build: ℹ dist/context/index.mjs                           0.98 kB │ gzip:  0.26 kB
+packages/core build: ℹ dist/db/adapter/index.mjs                        0.88 kB │ gzip:  0.32 kB
+packages/core build: ℹ dist/utils/async.mjs                             0.86 kB │ gzip:  0.48 kB
+packages/core build: ℹ dist/error/index.mjs                             0.82 kB │ gzip:  0.38 kB
+packages/core build: ℹ dist/utils/email.mjs                             0.62 kB │ gzip:  0.40 kB
+packages/core build: ℹ dist/utils/db.mjs                                0.61 kB │ gzip:  0.37 kB
+packages/core build: ℹ dist/instrumentation/pure.index.mjs              0.60 kB │ gzip:  0.29 kB
+packages/core build: ℹ dist/db/index.mjs                                0.50 kB │ gzip:  0.18 kB
+packages/core build: ℹ dist/env/index.mjs                               0.43 kB │ gzip:  0.21 kB
+packages/core build: ℹ dist/instrumentation/index.mjs                   0.42 kB │ gzip:  0.18 kB
+packages/core build: ℹ dist/utils/deprecate.mjs                         0.36 kB │ gzip:  0.24 kB
+packages/core build: ℹ dist/utils/is-api-error.mjs                      0.30 kB │ gzip:  0.19 kB
+packages/core build: ℹ dist/utils/error-codes.mjs                       0.25 kB │ gzip:  0.19 kB
+packages/core build: ℹ dist/utils/id.mjs                                0.24 kB │ gzip:  0.18 kB
+packages/core build: ℹ dist/utils/fetch-metadata.mjs                    0.18 kB │ gzip:  0.15 kB
+packages/core build: ℹ dist/oauth2/internal.mjs                         0.06 kB │ gzip:  0.07 kB
+packages/core build: ℹ dist/index.mjs                                   0.01 kB │ gzip:  0.03 kB
+packages/core build: ℹ dist/db/adapter/factory.mjs                     36.17 kB │ gzip:  6.71 kB
+packages/core build: ℹ dist/oauth2/verify.mjs                          14.44 kB │ gzip:  4.79 kB
+packages/core build: ℹ dist/oauth2/dpop.mjs                            11.04 kB │ gzip:  3.55 kB
+packages/core build: ℹ dist/db/database-index.mjs                       9.79 kB │ gzip:  2.79 kB
+packages/core build: ℹ dist/db/get-tables.mjs                           8.36 kB │ gzip:  1.75 kB
+packages/core build: ℹ dist/social-providers/microsoft-entra-id.mjs     6.86 kB │ gzip:  2.51 kB
+packages/core build: ℹ dist/db/schema-diff.mjs                          6.47 kB │ gzip:  2.22 kB
+packages/core build: ℹ dist/social-providers/google.mjs                 5.88 kB │ gzip:  2.04 kB
+packages/core build: ℹ dist/social-providers/cognito.mjs                5.63 kB │ gzip:  1.91 kB
+packages/core build: ℹ dist/social-providers/facebook.mjs               5.56 kB │ gzip:  1.97 kB
+packages/core build: ℹ dist/db/adapter/atomic-fallback.mjs              5.38 kB │ gzip:  1.85 kB
+packages/core build: ℹ dist/context/transaction.mjs                     4.42 kB │ gzip:  1.45 kB
+packages/core build: ℹ dist/db/adapter/get-id-field.mjs                 4.40 kB │ gzip:  1.73 kB
+packages/core build: ℹ dist/social-providers/paypal.mjs                 4.13 kB │ gzip:  1.32 kB
+packages/core build: ℹ dist/oauth2/verify-id-token.mjs                  4.09 kB │ gzip:  1.65 kB
+packages/core build: ℹ dist/oauth2/client-assertion.mjs                 4.07 kB │ gzip:  1.50 kB
+packages/core build: ℹ dist/oauth2/token-endpoint-auth.mjs              4.07 kB │ gzip:  1.04 kB
+packages/core build: ℹ dist/social-providers/wechat.mjs                 3.89 kB │ gzip:  1.32 kB
+packages/core build: ℹ dist/social-providers/apple.mjs                  3.55 kB │ gzip:  1.35 kB
+packages/core build: ℹ dist/social-providers/salesforce.mjs             3.50 kB │ gzip:  1.15 kB
+packages/core build: ℹ dist/social-providers/line.mjs                   3.46 kB │ gzip:  1.20 kB
+packages/core build: ℹ dist/oauth2/utils.mjs                            3.39 kB │ gzip:  1.47 kB
+packages/core build: ℹ dist/db/schema-check.mjs                         3.33 kB │ gzip:  1.26 kB
+packages/core build: ℹ dist/oauth2/validate-authorization-code.mjs      3.26 kB │ gzip:  1.17 kB
+packages/core build: ℹ dist/social-providers/github.mjs                 3.18 kB │ gzip:  1.10 kB
+packages/core build: ℹ dist/social-providers/cloudflare.mjs             3.07 kB │ gzip:  1.14 kB
+packages/core build: ℹ dist/env/logger.mjs                              3.06 kB │ gzip:  1.09 kB
+packages/core build: ℹ dist/oauth2/basic-credentials.mjs                2.94 kB │ gzip:  1.27 kB
+packages/core build: ℹ dist/social-providers/tiktok.mjs                 2.93 kB │ gzip:  1.11 kB
+packages/core build: ℹ dist/social-providers/twitter.mjs                2.89 kB │ gzip:  0.99 kB
+packages/core build: ℹ dist/error/codes.mjs                             2.84 kB │ gzip:  1.17 kB
+packages/core build: ℹ dist/social-providers/figma.mjs                  2.77 kB │ gzip:  1.03 kB
+packages/core build: ℹ dist/social-providers/atlassian.mjs              2.76 kB │ gzip:  1.02 kB
+packages/core build: ℹ dist/oauth2/refresh-access-token.mjs             2.73 kB │ gzip:  0.97 kB
+packages/core build: ℹ dist/social-providers/discord.mjs                2.73 kB │ gzip:  1.04 kB
+packages/core build: ℹ dist/env/color-depth.mjs                         2.72 kB │ gzip:  0.99 kB
+packages/core build: ℹ dist/oauth2/create-authorization-url.mjs         2.72 kB │ gzip:  1.07 kB
+packages/core build: ℹ dist/social-providers/gitlab.mjs                 2.69 kB │ gzip:  0.99 kB
+packages/core build: ℹ dist/social-providers/vk.mjs                     2.61 kB │ gzip:  0.96 kB
+packages/core build: ℹ dist/social-providers/paybin.mjs                 2.60 kB │ gzip:  0.96 kB
+packages/core build: ℹ dist/social-providers/reddit.mjs                 2.57 kB │ gzip:  0.95 kB
+packages/core build: ℹ dist/social-providers/vercel.mjs                 2.47 kB │ gzip:  0.92 kB
+packages/core build: ℹ dist/env/env-impl.mjs                            2.47 kB │ gzip:  0.86 kB
+packages/core build: ℹ dist/social-providers/linear.mjs                 2.44 kB │ gzip:  0.92 kB
+packages/core build: ℹ dist/social-providers/dropbox.mjs                2.36 kB │ gzip:  0.88 kB
+packages/core build: ℹ dist/social-providers/roblox.mjs                 2.36 kB │ gzip:  0.90 kB
+packages/core build: ℹ dist/social-providers/kakao.mjs                  2.35 kB │ gzip:  0.88 kB
+packages/core build: ℹ dist/social-providers/notion.mjs                 2.32 kB │ gzip:  0.88 kB
+packages/core build: ℹ dist/social-providers/railway.mjs                2.29 kB │ gzip:  0.82 kB
+packages/core build: ℹ dist/social-providers/huggingface.mjs            2.25 kB │ gzip:  0.83 kB
+packages/core build: ℹ dist/social-providers/linkedin.mjs               2.23 kB │ gzip:  0.82 kB
+packages/core build: ℹ dist/social-providers/polar.mjs                  2.21 kB │ gzip:  0.83 kB
+packages/core build: ℹ dist/social-providers/twitch.mjs                 2.20 kB │ gzip:  0.81 kB
+packages/core build: ℹ dist/social-providers/slack.mjs                  2.18 kB │ gzip:  0.81 kB
+packages/core build: ℹ dist/social-providers/spotify.mjs                2.15 kB │ gzip:  0.80 kB
+packages/core build: ℹ dist/social-providers/naver.mjs                  2.14 kB │ gzip:  0.82 kB
+packages/core build: ℹ dist/social-providers/kick.mjs                   2.11 kB │ gzip:  0.80 kB
+packages/core build: ℹ dist/oauth2/client-credentials-token.mjs         2.10 kB │ gzip:  0.81 kB
+packages/core build: ℹ dist/social-providers/zoom.mjs                   2.04 kB │ gzip:  0.79 kB
+packages/core build: ℹ dist/context/endpoint-context.mjs                1.99 kB │ gzip:  0.60 kB
+packages/core build: ℹ dist/instrumentation/tracer.mjs                  1.85 kB │ gzip:  0.85 kB
+packages/core build: ℹ dist/oauth2/reject-redirects.mjs                 1.73 kB │ gzip:  0.81 kB
+packages/core build: ℹ dist/context/request-state.mjs                   1.66 kB │ gzip:  0.60 kB
+packages/core build: ℹ dist/db/adapter/get-default-field-name.mjs       1.41 kB │ gzip:  0.67 kB
+packages/core build: ℹ dist/db/adapter/get-default-model-name.mjs       1.30 kB │ gzip:  0.63 kB
+packages/core build: ℹ dist/db/adapter/get-field-attributes.mjs         1.26 kB │ gzip:  0.46 kB
+packages/core build: ℹ dist/db/adapter/utils.mjs                        1.15 kB │ gzip:  0.46 kB
+packages/core build: ℹ dist/context/global.mjs                          1.11 kB │ gzip:  0.52 kB
+packages/core build: ℹ dist/db/adapter/get-field-name.mjs               1.07 kB │ gzip:  0.47 kB
+packages/core build: ℹ dist/instrumentation/attributes.mjs              0.99 kB │ gzip:  0.47 kB
+packages/core build: ℹ dist/oauth2/authorization-params.mjs             0.96 kB │ gzip:  0.54 kB
+packages/core build: ℹ dist/db/schema/account.mjs                       0.94 kB │ gzip:  0.44 kB
+packages/core build: ℹ dist/instrumentation/noop.mjs                    0.94 kB │ gzip:  0.42 kB
+packages/core build: ℹ dist/db/adapter/get-model-name.mjs               0.89 kB │ gzip:  0.42 kB
+packages/core build: ℹ dist/instrumentation/api.mjs                     0.47 kB │ gzip:  0.23 kB
+packages/core build: ℹ dist/db/schema/rate-limit.mjs                    0.34 kB │ gzip:  0.23 kB
+packages/core build: ℹ dist/db/schema/user.mjs                          0.33 kB │ gzip:  0.23 kB
+packages/core build: ℹ dist/db/schema/session.mjs                       0.33 kB │ gzip:  0.21 kB
+packages/core build: ℹ dist/db/schema/shared.mjs                        0.27 kB │ gzip:  0.19 kB
+packages/core build: ℹ dist/db/schema/verification.mjs                  0.27 kB │ gzip:  0.19 kB
+packages/core build: ℹ dist/social-providers/index.d.mts               55.18 kB │ gzip:  4.65 kB
+packages/core build: ℹ dist/db/adapter/index.d.mts                     19.71 kB │ gzip:  5.08 kB
+packages/core build: ℹ dist/api/index.d.mts                            12.51 kB │ gzip:  2.13 kB
+packages/core build: ℹ dist/utils/host.d.mts                            7.57 kB │ gzip:  2.87 kB
+packages/core build: ℹ dist/oauth2/index.d.mts                          4.85 kB │ gzip:  1.16 kB
+packages/core build: ℹ dist/utils/ip.d.mts                              2.69 kB │ gzip:  1.15 kB
+packages/core build: ℹ dist/index.d.mts                                 2.22 kB │ gzip:  0.56 kB
+packages/core build: ℹ dist/utils/url.d.mts                             2.10 kB │ gzip:  0.99 kB
+packages/core build: ℹ dist/db/index.d.mts                              1.74 kB │ gzip:  0.47 kB
+packages/core build: ℹ dist/db/internal.d.mts                           1.42 kB │ gzip:  0.42 kB
+packages/core build: ℹ dist/utils/redirect-uri.d.mts                    1.23 kB │ gzip:  0.70 kB
+packages/core build: ℹ dist/context/index.d.mts                         1.10 kB │ gzip:  0.30 kB
+packages/core build: ℹ dist/error/index.d.mts                           1.08 kB │ gzip:  0.43 kB
+packages/core build: ℹ dist/utils/error-codes.d.mts                     0.97 kB │ gzip:  0.48 kB
+packages/core build: ℹ dist/utils/async.d.mts                           0.76 kB │ gzip:  0.47 kB
+packages/core build: ℹ dist/instrumentation/pure.index.d.mts            0.71 kB │ gzip:  0.33 kB
+packages/core build: ℹ dist/env/index.d.mts                             0.58 kB │ gzip:  0.27 kB
+packages/core build: ℹ dist/utils/email.d.mts                           0.57 kB │ gzip:  0.31 kB
+packages/core build: ℹ dist/utils/db.d.mts                              0.43 kB │ gzip:  0.29 kB
+packages/core build: ℹ dist/instrumentation/index.d.mts                 0.42 kB │ gzip:  0.18 kB
+packages/core build: ℹ dist/utils/string.d.mts                          0.35 kB │ gzip:  0.15 kB
+packages/core build: ℹ dist/utils/deprecate.d.mts                       0.29 kB │ gzip:  0.22 kB
+packages/core build: ℹ dist/async_hooks/index.d.mts                     0.22 kB │ gzip:  0.15 kB
+packages/core build: ℹ dist/async_hooks/pure.index.d.mts                0.19 kB │ gzip:  0.15 kB
+packages/core build: ℹ dist/utils/is-api-error.d.mts                    0.17 kB │ gzip:  0.14 kB
+packages/core build: ℹ dist/utils/json.d.mts                            0.15 kB │ gzip:  0.15 kB
+packages/core build: ℹ dist/utils/fetch-metadata.d.mts                  0.13 kB │ gzip:  0.13 kB
+packages/core build: ℹ dist/utils/id.d.mts                              0.10 kB │ gzip:  0.11 kB
+packages/core build: ℹ dist/oauth2/internal.d.mts                       0.08 kB │ gzip:  0.07 kB
+packages/core build: ℹ dist/types/init-options.d.mts                   53.38 kB │ gzip: 13.81 kB
+packages/core build: ℹ dist/types/context.d.mts                        15.30 kB │ gzip:  4.70 kB
+packages/core build: ℹ dist/oauth2/oauth-provider.d.mts                15.09 kB │ gzip:  4.91 kB
+packages/core build: ℹ dist/db/type.d.mts                               8.55 kB │ gzip:  2.31 kB
+packages/core build: ℹ dist/social-providers/zoom.d.mts                 7.59 kB │ gzip:  2.52 kB
+packages/core build: ℹ dist/social-providers/microsoft-entra-id.d.mts   7.29 kB │ gzip:  2.55 kB
+packages/core build: ℹ dist/oauth2/dpop.d.mts                           5.58 kB │ gzip:  1.98 kB
+packages/core build: ℹ dist/social-providers/tiktok.d.mts               5.50 kB │ gzip:  1.40 kB
+packages/core build: ℹ dist/oauth2/verify.d.mts                         5.45 kB │ gzip:  2.12 kB
+packages/core build: ℹ dist/social-providers/twitter.d.mts              4.89 kB │ gzip:  1.47 kB
+packages/core build: ℹ dist/social-providers/kakao.d.mts                4.81 kB │ gzip:  1.32 kB
+packages/core build: ℹ dist/social-providers/google.d.mts               4.35 kB │ gzip:  1.61 kB
+packages/core build: ℹ dist/social-providers/apple.d.mts                4.17 kB │ gzip:  1.63 kB
+packages/core build: ℹ dist/types/plugin-client.d.mts                   4.02 kB │ gzip:  1.51 kB
+packages/core build: ℹ dist/db/adapter/types.d.mts                      4.01 kB │ gzip:  1.25 kB
+packages/core build: ℹ dist/social-providers/cognito.d.mts              3.92 kB │ gzip:  1.38 kB
+packages/core build: ℹ dist/social-providers/discord.d.mts              3.87 kB │ gzip:  1.28 kB
+packages/core build: ℹ dist/social-providers/cloudflare.d.mts           3.85 kB │ gzip:  1.23 kB
+packages/core build: ℹ dist/types/plugin.d.mts                          3.80 kB │ gzip:  1.37 kB
+packages/core build: ℹ dist/error/codes.d.mts                           3.49 kB │ gzip:  0.96 kB
+packages/core build: ℹ dist/db/schema-diff.d.mts                        3.43 kB │ gzip:  1.32 kB
+packages/core build: ℹ dist/social-providers/paypal.d.mts               2.92 kB │ gzip:  0.99 kB
+packages/core build: ℹ dist/social-providers/wechat.d.mts               2.86 kB │ gzip:  1.07 kB
+packages/core build: ℹ dist/oauth2/client-assertion.d.mts               2.84 kB │ gzip:  1.11 kB
+packages/core build: ℹ dist/social-providers/facebook.d.mts             2.67 kB │ gzip:  0.99 kB
+packages/core build: ℹ dist/social-providers/gitlab.d.mts               2.63 kB │ gzip:  0.93 kB
+packages/core build: ℹ dist/social-providers/slack.d.mts                2.53 kB │ gzip:  0.77 kB
+packages/core build: ℹ dist/db/schema-check.d.mts                       2.51 kB │ gzip:  1.04 kB
+packages/core build: ℹ dist/social-providers/github.d.mts               2.51 kB │ gzip:  0.85 kB
+packages/core build: ℹ dist/oauth2/validate-authorization-code.d.mts    2.50 kB │ gzip:  0.95 kB
+packages/core build: ℹ dist/social-providers/line.d.mts                 2.42 kB │ gzip:  0.83 kB
+packages/core build: ℹ dist/context/transaction.d.mts                   2.40 kB │ gzip:  0.92 kB
+packages/core build: ℹ dist/social-providers/naver.d.mts                2.30 kB │ gzip:  0.83 kB
+packages/core build: ℹ dist/social-providers/salesforce.d.mts           2.27 kB │ gzip:  0.86 kB
+packages/core build: ℹ dist/social-providers/huggingface.d.mts          2.24 kB │ gzip:  0.78 kB
+packages/core build: ℹ dist/types/index.d.mts                           2.22 kB │ gzip:  0.57 kB
+packages/core build: ℹ dist/social-providers/atlassian.d.mts            2.20 kB │ gzip:  0.73 kB
+packages/core build: ℹ dist/social-providers/polar.d.mts                2.16 kB │ gzip:  0.70 kB
+packages/core build: ℹ dist/social-providers/roblox.d.mts               2.16 kB │ gzip:  0.78 kB
+packages/core build: ℹ dist/db/database-index.d.mts                     2.11 kB │ gzip:  0.76 kB
+packages/core build: ℹ dist/oauth2/verify-id-token.d.mts                2.08 kB │ gzip:  0.93 kB
+packages/core build: ℹ dist/db/adapter/get-id-field.d.mts               2.04 kB │ gzip:  0.97 kB
+packages/core build: ℹ dist/social-providers/twitch.d.mts               1.97 kB │ gzip:  0.74 kB
+packages/core build: ℹ dist/social-providers/vercel.d.mts               1.97 kB │ gzip:  0.78 kB
+packages/core build: ℹ dist/social-providers/paybin.d.mts               1.92 kB │ gzip:  0.71 kB
+packages/core build: ℹ dist/social-providers/dropbox.d.mts              1.84 kB │ gzip:  0.70 kB
+packages/core build: ℹ dist/social-providers/vk.d.mts                   1.81 kB │ gzip:  0.68 kB
+packages/core build: ℹ dist/social-providers/railway.d.mts              1.77 kB │ gzip:  0.67 kB
+packages/core build: ℹ dist/social-providers/kick.d.mts                 1.74 kB │ gzip:  0.64 kB
+packages/core build: ℹ dist/social-providers/linkedin.d.mts             1.74 kB │ gzip:  0.66 kB
+packages/core build: ℹ dist/social-providers/linear.d.mts               1.72 kB │ gzip:  0.65 kB
+packages/core build: ℹ dist/social-providers/notion.d.mts               1.69 kB │ gzip:  0.64 kB
+packages/core build: ℹ dist/env/logger.d.mts                            1.68 kB │ gzip:  0.63 kB
+packages/core build: ℹ dist/oauth2/create-authorization-url.d.mts       1.68 kB │ gzip:  0.71 kB
+packages/core build: ℹ dist/social-providers/reddit.d.mts               1.67 kB │ gzip:  0.63 kB
+packages/core build: ℹ dist/social-providers/spotify.d.mts              1.63 kB │ gzip:  0.61 kB
+packages/core build: ℹ dist/social-providers/figma.d.mts                1.59 kB │ gzip:  0.61 kB
+packages/core build: ℹ dist/db/schema/account.d.mts                     1.58 kB │ gzip:  0.58 kB
+packages/core build: ℹ dist/oauth2/utils.d.mts                          1.48 kB │ gzip:  0.72 kB
+packages/core build: ℹ dist/context/endpoint-context.d.mts              1.39 kB │ gzip:  0.46 kB
+packages/core build: ℹ dist/oauth2/basic-credentials.d.mts              1.30 kB │ gzip:  0.68 kB
+packages/core build: ℹ dist/oauth2/refresh-access-token.d.mts           1.29 kB │ gzip:  0.46 kB
+packages/core build: ℹ dist/oauth2/token-endpoint-auth.d.mts            1.25 kB │ gzip:  0.54 kB
+packages/core build: ℹ dist/context/request-state.d.mts                 1.24 kB │ gzip:  0.56 kB
+packages/core build: ℹ dist/env/env-impl.d.mts                          1.23 kB │ gzip:  0.45 kB
+packages/core build: ℹ dist/db/adapter/factory.d.mts                    1.23 kB │ gzip:  0.38 kB
+packages/core build: ℹ dist/oauth2/client-credentials-token.d.mts       1.21 kB │ gzip:  0.44 kB
+packages/core build: ℹ dist/db/schema/session.d.mts                     1.15 kB │ gzip:  0.48 kB
+packages/core build: ℹ dist/db/schema/user.d.mts                        1.08 kB │ gzip:  0.48 kB
+packages/core build: ℹ dist/db/schema/verification.d.mts                1.06 kB │ gzip:  0.45 kB
+packages/core build: ℹ dist/instrumentation/attributes.d.mts            0.93 kB │ gzip:  0.44 kB
+packages/core build: ℹ dist/db/schema/rate-limit.d.mts                  0.88 kB │ gzip:  0.40 kB
+packages/core build: ℹ dist/instrumentation/tracer.d.mts                0.83 kB │ gzip:  0.39 kB
+packages/core build: ℹ dist/types/cookie.d.mts                          0.74 kB │ gzip:  0.35 kB
+packages/core build: ℹ dist/db/adapter/get-field-attributes.d.mts       0.68 kB │ gzip:  0.33 kB
+packages/core build: ℹ dist/types/helper.d.mts                          0.60 kB │ gzip:  0.33 kB
+packages/core build: ℹ dist/types/database.d.mts                        0.55 kB │ gzip:  0.31 kB
+packages/core build: ℹ dist/db/get-tables.d.mts                         0.53 kB │ gzip:  0.27 kB
+packages/core build: ℹ dist/oauth2/authorization-params.d.mts           0.48 kB │ gzip:  0.34 kB
+packages/core build: ℹ dist/db/plugin.d.mts                             0.41 kB │ gzip:  0.27 kB
+packages/core build: ℹ dist/instrumentation/noop.d.mts                  0.39 kB │ gzip:  0.22 kB
+packages/core build: ℹ dist/types/secret.d.mts                          0.35 kB │ gzip:  0.26 kB
+packages/core build: ℹ dist/db/adapter/get-default-field-name.d.mts     0.34 kB │ gzip:  0.23 kB
+packages/core build: ℹ dist/db/adapter/get-field-name.d.mts             0.33 kB │ gzip:  0.23 kB
+packages/core build: ℹ dist/db/adapter/utils.d.mts                      0.31 kB │ gzip:  0.22 kB
+packages/core build: ℹ dist/db/adapter/get-default-model-name.d.mts     0.28 kB │ gzip:  0.21 kB
+packages/core build: ℹ dist/db/adapter/get-model-name.d.mts             0.27 kB │ gzip:  0.21 kB
+packages/core build: ℹ dist/db/schema/shared.d.mts                      0.23 kB │ gzip:  0.17 kB
+packages/core build: ℹ dist/context/global.d.mts                        0.17 kB │ gzip:  0.15 kB
+packages/core build: ℹ dist/env/color-depth.d.mts                       0.10 kB │ gzip:  0.10 kB
+packages/core build: ℹ 228 files, total: 721.41 kB
+packages/core build: ✔ Build complete in 4660ms
+packages/core build: src/db/adapter/factory.ts (5:7) [33m[UNRESOLVED_IMPORT] [0mCould not resolve '@better-auth/core/instrumentation' in src/db/adapter/factory.ts
+packages/core build:    [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/db/adapter/factory.ts:5:8 [38;5;246m][0m
+packages/core build:    [38;5;246m│[0m
+packages/core build:  [38;5;246m5 │[0m [38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m"@better-auth/core/instrumentation"[38;5;249m;[0m
+packages/core build:  [38;5;240m  │[0m        ─────────────────┬─────────────────  
+packages/core build:  [38;5;240m  │[0m                         ╰─────────────────── Module not found, treating it as an external dependency
+packages/core build: [38;5;246m───╯[0m
+packages/core build: [33m[PLUGIN_TIMINGS] [0mJavaScript callbacks ran for 4.5s of this 4.5s build (98%).
+packages/core build: The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+packages/core build:   - plugin tsdown:deps resolveId (86%, 3.9s, 457 calls)
+packages/core build:   - plugin rolldown-plugin-dts:generate load (84%, 3.8s, 119 calls)
+packages/core build: These rows add up to more than the total. Callbacks can overlap, so the same time counts for more than one row.
+packages/core build: 2 callbacks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
+packages/core build:   - plugin rolldown-plugin-dts:resolver resolveId (2046 calls)
+packages/core build:   - plugin rolldown-plugin-dts:fake-js transform (119 calls)
+packages/core build: See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+packages/core build: Done
+packages/drizzle-adapter build$ tsdown
+packages/memory-adapter build$ tsdown
+packages/kysely-adapter build$ tsdown
+packages/mongo-adapter build$ tsdown
+packages/drizzle-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/memory-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/kysely-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/mongo-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/drizzle-adapter build: ℹ config file: /app/packages/drizzle-adapter/tsdown.config.ts 
+packages/drizzle-adapter build: ℹ entry: ./src/index.ts, ./src/relations-v2/index.ts
+packages/drizzle-adapter build: ℹ tsconfig: tsconfig.json
+packages/drizzle-adapter build: ℹ Build start
+packages/memory-adapter build: ℹ config file: /app/packages/memory-adapter/tsdown.config.ts 
+packages/drizzle-adapter build: ℹ Cleaning 7 files
+packages/memory-adapter build: ℹ entry: ./src/index.ts
+packages/memory-adapter build: ℹ tsconfig: tsconfig.json
+packages/memory-adapter build: ℹ Build start
+packages/mongo-adapter build: ℹ config file: /app/packages/mongo-adapter/tsdown.config.ts 
+packages/memory-adapter build: ℹ Cleaning 2 files
+packages/kysely-adapter build: ℹ config file: /app/packages/kysely-adapter/tsdown.config.ts 
+packages/mongo-adapter build: ℹ entry: ./src/index.ts
+packages/mongo-adapter build: ℹ tsconfig: tsconfig.json
+packages/mongo-adapter build: ℹ Build start
+packages/kysely-adapter build: ℹ entry: ./src/index.ts, ./src/node-sqlite-dialect.ts
+packages/kysely-adapter build: ℹ tsconfig: tsconfig.json
+packages/kysely-adapter build: ℹ Build start
+packages/mongo-adapter build: ℹ Cleaning 2 files
+packages/kysely-adapter build: ℹ Cleaning 7 files
+packages/memory-adapter build: ℹ dist/index.mjs    14.85 kB │ gzip: 4.06 kB
+packages/memory-adapter build: ℹ dist/index.d.mts   0.55 kB │ gzip: 0.27 kB
+packages/memory-adapter build: ℹ 2 files, total: 15.40 kB
+packages/memory-adapter build: ✔ Build complete in 1872ms
+packages/memory-adapter build: Done
+packages/prisma-adapter build$ tsdown
+packages/prisma-adapter build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/mongo-adapter build: ℹ dist/index.mjs    20.46 kB │ gzip: 4.77 kB
+packages/mongo-adapter build: ℹ dist/index.d.mts   1.16 kB │ gzip: 0.54 kB
+packages/mongo-adapter build: ℹ 2 files, total: 21.62 kB
+packages/mongo-adapter build: ✔ Build complete in 1980ms
+packages/mongo-adapter build: Done
+packages/telemetry build$ tsdown
+packages/prisma-adapter build: ℹ config file: /app/packages/prisma-adapter/tsdown.config.ts 
+packages/prisma-adapter build: ℹ entry: ./src/index.ts
+packages/prisma-adapter build: ℹ tsconfig: tsconfig.json
+packages/prisma-adapter build: ℹ Build start
+packages/prisma-adapter build: ℹ Cleaning 2 files
+packages/telemetry build: ℹ tsdown v0.23.1 powered by rolldown v1.2.14
+packages/telemetry build: ℹ config file: /app/packages/telemetry/tsdown.config.ts 
+packages/telemetry build: ℹ entry: ./src/index.ts
+packages/telemetry build: ℹ tsconfig: tsconfig.json
+packages/telemetry build: ℹ entry: ./src/node.ts
+packages/telemetry build: ℹ tsconfig: tsconfig.json
+packages/telemetry build: ℹ Build start
+packages/telemetry build: ℹ Cleaning 4 files
+packages/drizzle-adapter build: ℹ dist/index.mjs                             28.00 kB │ gzip: 5.67 kB
+packages/drizzle-adapter build: ℹ dist/relations-v2/index.mjs                26.17 kB │ gzip: 5.91 kB
+packages/drizzle-adapter build: ℹ dist/generate-drizzle-schema-CO7dqwud.mjs  17.85 kB │ gzip: 4.56 kB
+packages/drizzle-adapter build: ℹ dist/schema-check-BSenoulG.mjs              6.13 kB │ gzip: 2.31 kB
+packages/drizzle-adapter build: ℹ dist/relations-v2/index.d.mts               1.89 kB │ gzip: 0.80 kB
+packages/drizzle-adapter build: ℹ dist/index.d.mts                            1.89 kB │ gzip: 0.79 kB
+packages/drizzle-adapter build: ℹ 6 files, total: 81.92 kB
+packages/drizzle-adapter build: ✔ Build complete in 2588ms
+packages/drizzle-adapter build: Done
+packages/kysely-adapter build: ℹ dist/index.mjs                         32.00 kB │ gzip: 7.40 kB
+packages/kysely-adapter build: ℹ dist/node-sqlite-dialect.mjs            3.02 kB │ gzip: 1.03 kB
+packages/kysely-adapter build: ℹ dist/d1-sqlite-dialect-BgJMzZQp.mjs     5.12 kB │ gzip: 1.68 kB
+packages/kysely-adapter build: ℹ dist/sqlite-introspector-_wy6Ac6e.mjs   3.59 kB │ gzip: 1.37 kB
+packages/kysely-adapter build: ℹ dist/bun-sqlite-dialect-DN2jcl8c.mjs    3.01 kB │ gzip: 1.03 kB
+packages/kysely-adapter build: ℹ dist/index.d.mts                        4.42 kB │ gzip: 1.66 kB
+packages/kysely-adapter build: ℹ dist/node-sqlite-dialect.d.mts          0.85 kB │ gzip: 0.43 kB
+packages/kysely-adapter build: ℹ 7 files, total: 52.01 kB
+packages/kysely-adapter build: ✔ Build complete in 2748ms
+packages/kysely-adapter build: Done
+packages/prisma-adapter build: ℹ dist/index.mjs    18.74 kB │ gzip: 4.11 kB
+packages/prisma-adapter build: ℹ dist/index.d.mts   1.01 kB │ gzip: 0.48 kB
+packages/prisma-adapter build: ℹ 2 files, total: 19.75 kB
+packages/prisma-adapter build: ✔ Build complete in 1440ms
+packages/prisma-adapter build: Done
+packages/telemetry build: ℹ dist/index.mjs    14.31 kB │ gzip: 3.96 kB
+packages/telemetry build: ℹ dist/index.d.mts   7.56 kB │ gzip: 1.91 kB
+packages/telemetry build: ℹ 2 files, total: 21.87 kB
+packages/telemetry build: ✔ Build complete in 1696ms
+packages/telemetry build: ℹ dist/node.mjs    16.88 kB │ gzip: 4.62 kB
+packages/telemetry build: ℹ dist/node.d.mts   7.56 kB │ gzip: 1.91 kB
+packages/telemetry build: ℹ 2 files, total: 24.44 kB
+packages/telemetry build: ✔ Build complete in 1696ms
+packages/telemetry build: Done

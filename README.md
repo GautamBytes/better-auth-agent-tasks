@@ -32,3 +32,7 @@ Each command starts a disposable container, tests the original code, applies the
 These tasks are locally verified. No model training, agent difficulty trials, or platform acceptance is claimed. The wildcard bug is in an internal helper, with no demonstrated sign-in failure.
 
 This repository contains the answers and hidden tests for review. An evaluated agent should receive only the pinned upstream code and the task statement.
+
+## Field-roundtrip audit
+
+The field-roundtrip task includes cache-hit assertions and a replayable audit matrix. See its [guide review](tasks/field-roundtrip/GUIDELINE_REVIEW.md) and [evidence index](tasks/field-roundtrip/evidence/README.md). Verify the saved reports without Docker with `python3 verify_field_evidence.py`.

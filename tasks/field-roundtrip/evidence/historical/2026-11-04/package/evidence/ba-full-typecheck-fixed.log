@@ -1,0 +1,4 @@
+$ tsc --build --force
+e2e/adapter/test/prisma-adapter/generate-prisma-schema.ts(6,35): error TS2307: Cannot find module './.tmp/prisma-client-base/client' or its corresponding type declarations.
+e2e/adapter/test/prisma-adapter/get-prisma-client.ts(2,35): error TS2307: Cannot find module './.tmp/prisma-client-base/client' or its corresponding type declarations.
+[ELIFECYCLE] Command failed with exit code 2.

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="14" failures="12" errors="0" time="0.282352334">
+    <testsuite name="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" timestamp="2026-11-05T14:21:01.282Z" hostname="4086d321af59" tests="14" failures="12" errors="0" skipped="0" time="0.282352334">
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the compact cookie cache" time="0.107330875">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_4__.restoreModelDates) is not a function
+    at parseCookieCachePayload (/app/packages/better-auth/src/cookies/cache.ts:44:14)
+    at decodeCookieCache (/app/packages/better-auth/src/cookies/index.ts:349:18)
+    at /app/packages/better-auth/src/api/routes/session.ts:118:9
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseCookieCachePayload src/cookies/cache.ts:44:14
+ ❯ decodeCookieCache src/cookies/index.ts:349:18
+ ❯ src/api/routes/session.ts:118:9
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:236:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the jwt cookie cache" time="0.019590791">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_4__.restoreModelDates) is not a function
+    at parseCookieCachePayload (/app/packages/better-auth/src/cookies/cache.ts:44:14)
+    at decodeCookieCache (/app/packages/better-auth/src/cookies/index.ts:318:19)
+    at /app/packages/better-auth/src/api/routes/session.ts:118:9
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseCookieCachePayload src/cookies/cache.ts:44:14
+ ❯ decodeCookieCache src/cookies/index.ts:318:19
+ ❯ src/api/routes/session.ts:118:9
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:236:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through the jwe cookie cache" time="0.023527083">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_4__.restoreModelDates) is not a function
+    at parseCookieCachePayload (/app/packages/better-auth/src/cookies/cache.ts:44:14)
+    at decodeCookieCache (/app/packages/better-auth/src/cookies/index.ts:291:19)
+    at /app/packages/better-auth/src/api/routes/session.ts:118:9
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseCookieCachePayload src/cookies/cache.ts:44:14
+ ❯ decodeCookieCache src/cookies/index.ts:291:19
+ ❯ src/api/routes/session.ts:118:9
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:236:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through JWT-plugin cookie signing" time="0.037586125">
+            <failure message="expected [ [ { model: &apos;session&apos;, …(2) } ] ] to have a length of +0 but got 1" type="AssertionError">
+AssertionError: expected [ [ { model: &apos;session&apos;, …(2) } ] ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:209:5
+ ❯ src/api/routes/session-field-roundtrip.test.ts:241:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through JSON-string secondary storage" time="0.008024083">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_9__.restoreModelDates) is not a function
+    at parseStoredSession (/app/packages/better-auth/src/db/internal-adapter.ts:122:13)
+    at Object.findSession (/app/packages/better-auth/src/db/internal-adapter.ts:710:16)
+    at /app/packages/better-auth/src/api/routes/session.ts:288:6
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:245:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:245:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseStoredSession src/db/internal-adapter.ts:122:13
+ ❯ Object.findSession src/db/internal-adapter.ts:710:16
+ ❯ src/api/routes/session.ts:288:6
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:245:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through pre-parsed secondary storage" time="0.006413">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_9__.restoreModelDates) is not a function
+    at parseStoredSession (/app/packages/better-auth/src/db/internal-adapter.ts:122:13)
+    at Object.findSession (/app/packages/better-auth/src/db/internal-adapter.ts:710:16)
+    at /app/packages/better-auth/src/api/routes/session.ts:288:6
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:249:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:249:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseStoredSession src/db/internal-adapter.ts:122:13
+ ❯ Object.findSession src/db/internal-adapter.ts:710:16
+ ❯ src/api/routes/session.ts:288:6
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:249:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2024-01-02T03:04:05Z &gt; preserves field types through SQLite array and JSON serialization" time="0.007310958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the compact cookie cache" time="0.007942791">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_4__.restoreModelDates) is not a function
+    at parseCookieCachePayload (/app/packages/better-auth/src/cookies/cache.ts:44:14)
+    at decodeCookieCache (/app/packages/better-auth/src/cookies/index.ts:349:18)
+    at /app/packages/better-auth/src/api/routes/session.ts:118:9
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseCookieCachePayload src/cookies/cache.ts:44:14
+ ❯ decodeCookieCache src/cookies/index.ts:349:18
+ ❯ src/api/routes/session.ts:118:9
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:236:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the jwt cookie cache" time="0.015981375">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_4__.restoreModelDates) is not a function
+    at parseCookieCachePayload (/app/packages/better-auth/src/cookies/cache.ts:44:14)
+    at decodeCookieCache (/app/packages/better-auth/src/cookies/index.ts:318:19)
+    at /app/packages/better-auth/src/api/routes/session.ts:118:9
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseCookieCachePayload src/cookies/cache.ts:44:14
+ ❯ decodeCookieCache src/cookies/index.ts:318:19
+ ❯ src/api/routes/session.ts:118:9
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:236:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through the jwe cookie cache" time="0.013548042">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_4__.restoreModelDates) is not a function
+    at parseCookieCachePayload (/app/packages/better-auth/src/cookies/cache.ts:44:14)
+    at decodeCookieCache (/app/packages/better-auth/src/cookies/index.ts:291:19)
+    at /app/packages/better-auth/src/api/routes/session.ts:118:9
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:236:5
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseCookieCachePayload src/cookies/cache.ts:44:14
+ ❯ decodeCookieCache src/cookies/index.ts:291:19
+ ❯ src/api/routes/session.ts:118:9
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:236:5
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through JWT-plugin cookie signing" time="0.017736291">
+            <failure message="expected [ [ { model: &apos;session&apos;, …(2) } ] ] to have a length of +0 but got 1" type="AssertionError">
+AssertionError: expected [ [ { model: &apos;session&apos;, …(2) } ] ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:209:5
+ ❯ src/api/routes/session-field-roundtrip.test.ts:241:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through JSON-string secondary storage" time="0.005251125">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_9__.restoreModelDates) is not a function
+    at parseStoredSession (/app/packages/better-auth/src/db/internal-adapter.ts:122:13)
+    at Object.findSession (/app/packages/better-auth/src/db/internal-adapter.ts:710:16)
+    at /app/packages/better-auth/src/api/routes/session.ts:288:6
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:245:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:245:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseStoredSession src/db/internal-adapter.ts:122:13
+ ❯ Object.findSession src/db/internal-adapter.ts:710:16
+ ❯ src/api/routes/session.ts:288:6
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:245:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through pre-parsed secondary storage" time="0.004100875">
+            <failure message="Failed to get session" type="APIError">
+APIError: Failed to get session
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { status: &apos;INTERNAL_SERVER_ERROR&apos;, body: { message: &apos;Failed to get session&apos;, code: &apos;FAILED_TO_GET_SESSION&apos;, cause: { stack: &apos;TypeError: (0 , __vite_ssr_import_9__.restoreModelDates) is not a function
+    at parseStoredSession (/app/packages/better-auth/src/db/internal-adapter.ts:122:13)
+    at Object.findSession (/app/packages/better-auth/src/db/internal-adapter.ts:710:16)
+    at /app/packages/better-auth/src/api/routes/session.ts:288:6
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:249:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos;, message: &apos;restoreModelDates is not a function&apos;, constructor: &apos;Function&lt;TypeError&gt;&apos;, name: &apos;TypeError&apos;, toString: &apos;Function&lt;toString&gt;&apos; } }, headers: {}, statusCode: 500, errorStack: &apos;APIError: 
+    at new APIError (/app/packages/core/dist/error/index.mjs:14:3)
+    at APIError.from (/app/packages/core/dist/error/index.mjs:25:10)
+    at /app/packages/better-auth/src/api/routes/session.ts:432:20
+    at /app/packages/core/dist/api/index.mjs:56:11
+    at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+    at /app/packages/better-auth/src/api/dispatch.ts:399:21
+    at expectStorageRoundTrip (/app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:201:19)
+    at /app/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts:249:4
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20&apos; }
+Caused by: TypeError: restoreModelDates is not a function
+ ❯ parseStoredSession src/db/internal-adapter.ts:122:13
+ ❯ Object.findSession src/db/internal-adapter.ts:710:16
+ ❯ src/api/routes/session.ts:288:6
+ ❯ internalHandler ../../node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20
+ ❯ src/api/dispatch.ts:399:21
+ ❯ expectStorageRoundTrip src/api/routes/session-field-roundtrip.test.ts:201:19
+ ❯ src/api/routes/session-field-roundtrip.test.ts:249:4
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/session-field-roundtrip.test.ts" name="additional-field round trips for 2031-09-08T07:06:05.123400Z &gt; preserves field types through SQLite array and JSON serialization" time="0.005386583">
+        </testcase>
+    </testsuite>
+</testsuites>

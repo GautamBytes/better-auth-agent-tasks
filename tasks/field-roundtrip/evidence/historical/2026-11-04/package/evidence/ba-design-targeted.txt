@@ -1,0 +1,56 @@
+Targeted JSON preservation plus explicit field-date hydration
+
+Problem
+The three affected boundaries do different jobs. Adapter fields have explicit JSON/array types and must not revive any contained dates. Session transport objects need only schema-declared date properties restored. The legacy safeJSONParse helper also serves unrelated callers and public cookie helpers, so changing its default behavior would be a broad compatibility change.
+
+Caller usage first
+1. Adapter output branch for supportsJSON:false or supportsArrays:false:
+   newValue = safeJSONParse(newValue, { reviveDates: false });
+   No model hydration follows; a JSON value remains JSON and an array remains its declared array.
+2. Cookie decode with runtime auth options:
+   const payload = parseCookieCachePayload(decoded, ctx.context.options);
+   This parses raw JSON without revival, shallow-copies user/session records, hydrates only schema-declared date fields, then validates with the existing payload schema. Compact wrapper parsing must also opt out BEFORE HMAC verification and before payload parsing. Otherwise an ISO string without .000 will change lexical form and invalidate the signature, or lose precision.
+3. Secondary-storage lookup:
+   const cached = safeJSONParse<StoredSession>(raw, { reviveDates: false });
+   return {
+     session: parseSessionOutput(options, restoreModelDates(options, 'session', cached.session)),
+     user: parseUserOutput(options, restoreModelDates(options, 'user', cached.user)),
+   };
+   Use this at each session JSON-backed read that can reach the scoped APIs. A typed helper does not replace validity/revocation/expiry checks.
+
+Shape
+- packages/core/src/utils/json.ts
+  safeJSONParse<T>(data: unknown, options?: { reviveDates?: boolean }): T | null
+  Existing omitted options preserve current recursive date revival. reviveDates:false uses JSON.parse without a reviver for strings and returns pre-parsed JSON-compatible input unchanged. Existing error logging and null-on-malformed behavior stay intact. This is an optional internal parsing policy, not a new public auth configuration option.
+- packages/core/src/db/adapter/factory.ts
+  Only the two serialized JSON/array transformOutput branches use reviveDates:false. Existing date, boolean, ID and custom output-transform behavior remains unchanged.
+- packages/better-auth/src/db/schema.ts
+  restoreModelDates(options: BetterAuthOptions, modelName: 'user' | 'session', value: Record<string, unknown>): Record<string, unknown>
+  Uses existing getFields(options, modelName, 'output') so built-in, additional and plugin dates have one source of truth. Produces a shallow copy; only present non-null type:'date' values are converted, preserves existing Date values, and never walks string arrays/JSON. Null and absent values remain unchanged. It does not repair non-date Date values after the fact because the original string spelling is lost.
+- packages/better-auth/src/cookies/cache.ts
+  parseCookieCachePayload(value: unknown, authOptions?: BetterAuthOptions): CookieCachePayload | null
+  With options, nonreviving parse, guarded user/session object check, date hydration and existing Zod validation. Without options, retain exact legacy behavior for standalone getCookieCache and its tests.
+- packages/better-auth/src/cookies/index.ts
+  decodeCookieCache passes auth options for JWE, HMAC JWT and compact payloads; compact wrapper parse opts out of revival. Standalone public getCookieCache remains unchanged because it does not have full runtime schemas.
+- packages/better-auth/src/db/internal-adapter.ts
+  Secondary session reads use nonreviving parse and date restoration before public output filtering. Remove now-redundant hand-written built-in date conversion only where the new helper fully owns it.
+
+Potential seventh file / supported JWT plugin path
+The optional JWT plugin signer at plugins/jwt/cookie-cache.ts calls cookies/jwt.ts:parseSessionCookieJwtPayload(payload), which itself calls parseCookieCachePayload without runtime options. If session.cookieCache.strategy='jwt' plus jwt({sessionCookieCache:true}) is in final scope, propagate options through parseSessionCookieJwtPayload(payload, authOptions?) and call it with ctx.context.options from the plugin signer. Keep verifySessionCookieJwtWithJwks and standalone getCookieCache legacy behavior when no full auth options exist. Do not post-normalize verified.payload because its original strings may already be Date objects and their spelling cannot be recovered.
+
+Unknown-shape and failure semantics
+Malformed JSON still logs and returns null. Cache hydration checks unknown envelope is a non-null, non-array object with user and session non-null, non-array objects before property access. Existing Zod payload schema remains the final validation gate, so invalid core dates and missing core records are rejected through the existing null path. Do not invent silent fallback success or catch and suppress unrelated business errors. Pre-parsed secondary objects must not be mutated while restoring dates, since external caches may return shared objects.
+
+Why this design
+This keeps the data policy at the boundary that knows the declared type. The parsing switch hides no schema logic and preserves all existing generic callers. A single shallow model date helper avoids duplicating the built-in timestamp list and supports plugin/additional dates naturally. It adds an optional parser policy but no public BetterAuthOptions field.
+
+Alternatives considered
+- A schema-aware recursive JSON parser receives model paths and decides conversions inside its reviver. It centralizes parsing but needs nested path tracking or a complete model-envelope abstraction and risks coupling the generic core JSON helper to Better Auth options. That is a larger interface than the present three boundary needs.
+- Parse through legacy safeJSONParse then coerce string fields back to strings. Rejected because Date.toISOString normalizes spelling and fractional precision, so exact values cannot be restored.
+- Globally disable safeJSONParse date revival. Rejected because existing generic consumers and standalone cookie helpers rely on it; declared additional dates would also lose hydration unless every affected caller migrated together.
+
+Tradeoffs and risks
+This adds explicit nonreviving mode to a shared helper while leaving default behavior intact. Runtime-options-aware cookie parsing and legacy standalone parsing are necessarily distinct contracts; name the difference clearly and avoid ambiguous boolean positional parameters. The generic output record helper must not introduce forced casts or any. Existing safeJSONParse itself already has a generic typed return, but shape validation must occur before hydration at untrusted cache boundaries. Custom transform.output behavior on date fields should not be rerun merely to hydrate transport data.
+
+Next implementation step
+First introduce the nonreviving parse mode and adapter decoding changes, then a single shallow model-date hydration helper, then wire typed cookie and secondary-storage boundaries and verify red/green with exact-spelling and custom-date guards.

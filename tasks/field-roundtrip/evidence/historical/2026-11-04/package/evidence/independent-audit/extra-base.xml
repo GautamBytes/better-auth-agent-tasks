@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="111" failures="0" errors="0" time="0.709961624">
+    <testsuite name="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" timestamp="2026-11-03T22:51:58.433Z" hostname="0c82f30a62e7" tests="11" failures="0" errors="0" skipped="0" time="0.184952917">
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="disabled cookie cache fallback &gt; ignores retired session_data when caching is disabled in configuration" time="0.061781042">
+            <system-out>
+2026-11-03T22:51:58.202Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="disabled cookie cache fallback &gt; ignores retired session_data when caching is disabled for the request" time="0.011845584">
+            <system-out>
+2026-11-03T22:51:58.232Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="disabled cookie cache fallback &gt; clears retired session_data when session_token is missing" time="0.006595584">
+            <system-out>
+2026-11-03T22:51:58.243Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="disabled cookie cache fallback &gt; clears retired session_data when session_token is invalid" time="0.005015">
+            <system-out>
+2026-11-03T22:51:58.250Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="cookieCache HMAC verification failure fallback &gt; should fall through to session_token DB validation when session_data HMAC fails" time="0.01456975">
+            <system-out>
+2026-11-03T22:51:58.255Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="cookieCache HMAC verification failure fallback &gt; should expire malformed compact session_data and fall through to session_token DB validation" time="0.016367666">
+            <system-out>
+2026-11-03T22:51:58.270Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:51:58.276Z ERROR [Better Auth]: Error parsing JSON {
+  error: SyntaxError: Unexpected token &apos;o&apos;, &quot;not-json&quot; is not valid JSON
+      at JSON.parse (&lt;anonymous&gt;)
+      at safeJSONParse (/app/packages/core/dist/utils/json.mjs:34:15)
+      at decodeCookieCache (/app/packages/better-auth/src/cookies/index.ts:329:3)
+      at /app/packages/better-auth/src/api/routes/session.ts:118:15
+      at /app/packages/core/dist/api/index.mjs:56:11
+      at async internalHandler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/endpoint.mjs:29:20)
+      at /app/packages/better-auth/src/api/dispatch.ts:399:21
+      at async processRequest (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/router.mjs:82:11)
+      at async handler (file:///app/node_modules/.pnpm/better-call@1.4.5_zod@4.5.4/node_modules/better-call/dist/router.mjs:105:16)
+      at /app/packages/core/dist/context/transaction.mjs:38:13
+}
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="cookieCache HMAC verification failure fallback &gt; should still return null when both session_data and session_token are invalid" time="0.009163458">
+            <system-out>
+2026-11-03T22:51:58.286Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="cookieCache HMAC verification failure fallback &gt; should work with JWT strategy when HMAC verification fails" time="0.01091375">
+            <system-out>
+2026-11-03T22:51:58.295Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="cookieCache HMAC verification failure fallback &gt; should work with JWE strategy when decryption fails" time="0.014184333">
+            <system-out>
+2026-11-03T22:51:58.306Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="cookieCache HMAC verification failure fallback &gt; should handle cross-subdomain cookie migration without silent logout" time="0.021298083">
+            <system-out>
+2026-11-03T22:51:58.325Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts" name="cookieCache HMAC verification failure fallback &gt; should work during cookieCache window even with stale session_data" time="0.011748042">
+            <system-out>
+2026-11-03T22:51:58.341Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="packages/better-auth/src/db/internal-adapter.test.ts" timestamp="2026-11-03T22:51:58.438Z" hostname="0c82f30a62e7" tests="72" failures="0" errors="0" skipped="0" time="0.245516916">
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should create oauth user with custom generate id" time="0.004185875">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should abort oauth account creation when user creation is vetoed" time="0.008208041">
+            <system-err>
+2026-11-03T22:51:58.189Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; rejects createUser outside an endpoint context when validateUserInfo is configured" time="0.023085833">
+            <system-err>
+2026-11-03T22:51:58.218Z ERROR [Better Auth]: Unable to run validateUserInfo: missing endpoint context Error: No auth context found. Please make sure you are calling this function within a `runWithEndpointContext` callback.
+    at getCurrentAuthEndpointContext (/app/packages/core/dist/context/endpoint-context.mjs:35:34)
+    at Object.createUser (/app/packages/better-auth/src/db/internal-adapter.ts:337:7)
+    at /app/packages/better-auth/src/db/internal-adapter.test.ts:268:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; requires a provisioning source when validateUserInfo is configured" time="0.0024125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; forces create-user as the createUser validation action" time="0.002733459">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should find session with custom userId" time="0.024166208">
+            <system-out>
+2026-11-03T22:51:58.228Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should delete expired verification values on find" time="0.001861333">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should delete verification by value with hooks" time="0.000649792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should delete verification by identifier with hooks" time="0.000391084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should not call adapter.delete for missing verification record (prevents Prisma P2025)" time="0.00061125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification token storage &gt; should hash identifier when storeIdentifier is &apos;hashed&apos;" time="0.003318375">
+            <system-err>
+2026-11-03T22:51:58.253Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification token storage &gt; should use overrides for specific prefixes" time="0.001686792">
+            <system-err>
+2026-11-03T22:51:58.257Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification token storage &gt; should fallback to plain lookup for old tokens" time="0.002143916">
+            <system-err>
+2026-11-03T22:51:58.258Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+2026-11-03T22:51:58.259Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; runs the after hook after adding user to db" time="0.067234459">
+            <system-err>
+2026-11-03T22:51:58.261Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should calculate TTL correctly with Math.floor for secondary storage" time="0.006122708">
+            <system-err>
+2026-11-03T22:51:58.329Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should create on secondary storage" time="0.00232225">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should delete on secondary storage" time="0.00323725">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should delete a single account" time="0.0009125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; rejects ambiguous account keys with joins=false" time="0.004047042">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; rejects ambiguous account keys with joins=true" time="0.003628583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; finds an account owner by the exact account key" time="0.001348375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reports an account whose owner is missing" time="0.000417917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; finds the same credential account after the user email changes" time="0.000684917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should delete multiple accounts for a user" time="0.000796208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; listSessions should skip missing sessions without blanking the list" time="0.00190525">
+            <system-err>
+2026-11-03T22:51:58.351Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; defers secondary session deletion until commit and discards it on rollback" time="0.002757458">
+            <system-err>
+2026-11-03T22:51:58.353Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; defers secondary session creation until commit and discards it on rollback" time="0.004603458">
+            <system-err>
+2026-11-03T22:51:58.358Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; rejects deferred secondary-only session creation when persistence fails" time="0.002036667">
+            <system-err>
+2026-11-03T22:51:58.361Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; keeps a secondary-only session write inside the transaction even when deferral is requested" time="0.001777542">
+            <system-err>
+2026-11-03T22:51:58.363Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; preserves sessions created after user session deletion is requested" time="0.001562625">
+            <system-err>
+2026-11-03T22:51:58.364Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; keeps stored sessions when the revocation snapshot cannot be read" time="0.001531041">
+            <system-err>
+2026-11-03T22:51:58.366Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; listSessions should skip malformed session data (valid JSON but wrong structure)" time="0.001379083">
+            <system-err>
+2026-11-03T22:51:58.367Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; listSessions should skip corrupt/unparsable sessions without blanking the list" time="0.001399875">
+            <system-err>
+2026-11-03T22:51:58.369Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; listSessions should return empty array when all sessions are missing/corrupt" time="0.001033084">
+            <system-err>
+2026-11-03T22:51:58.370Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; findSessions skips malformed JSON sessions without discarding valid sessions" time="0.001022291">
+            <system-err>
+2026-11-03T22:51:58.371Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; findSessions skips JSON null sessions without discarding valid sessions" time="0.001042958">
+            <system-err>
+2026-11-03T22:51:58.372Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should update session and active-sessions list in secondary storage" time="0.001114042">
+            <system-err>
+2026-11-03T22:51:58.373Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; should deduplicate sessions when active-sessions list contains duplicates" time="0.000892875">
+            <system-err>
+2026-11-03T22:51:58.374Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification secondary storage &gt; should store verification in secondary storage by default" time="0.000544958">
+            <system-err>
+2026-11-03T22:51:58.375Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification secondary storage &gt; should find verification from secondary storage" time="0.002789958">
+            <system-err>
+2026-11-03T22:51:58.378Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification secondary storage &gt; should NOT store in database when secondary-only mode" time="0.000605667">
+            <system-err>
+2026-11-03T22:51:58.378Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification secondary storage &gt; should delete verification from secondary storage" time="0.000489917">
+            <system-err>
+2026-11-03T22:51:58.379Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification secondary storage &gt; should store in both when storeInDatabase is true" time="0.000863167">
+            <system-err>
+2026-11-03T22:51:58.379Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification secondary storage &gt; should fallback to database when not in secondary storage" time="0.000775458">
+            <system-err>
+2026-11-03T22:51:58.380Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; verification secondary storage &gt; should set correct TTL based on expiresAt" time="0.000398333">
+            <system-err>
+2026-11-03T22:51:58.381Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; safeJSONParse date revival in secondary storage &gt; should return Date objects from findVerificationValue when storage returns pre-parsed objects" time="0.000515">
+            <system-err>
+2026-11-03T22:51:58.381Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; safeJSONParse date revival in secondary storage &gt; should correctly detect expired verification when storage returns pre-parsed objects" time="0.000444958">
+            <system-err>
+2026-11-03T22:51:58.382Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; safeJSONParse date revival in secondary storage &gt; should return Date objects for all date fields across multiple reads" time="0.000553542">
+            <system-err>
+2026-11-03T22:51:58.382Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; safeJSONParse date revival in secondary storage &gt; should preserve non-date string fields when reviving dates" time="0.000498">
+            <system-err>
+2026-11-03T22:51:58.383Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; returns the row to the first caller and null to subsequent reads" time="0.002003709">
+            <system-err>
+2026-11-03T22:51:58.384Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; yields exactly one winner under concurrent consume" time="0.001738417">
+            <system-err>
+2026-11-03T22:51:58.386Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; returns null for an unknown identifier" time="0.001662041">
+            <system-err>
+2026-11-03T22:51:58.387Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; returns null when the row exists but has already expired" time="0.003570959">
+            <system-err>
+2026-11-03T22:51:58.389Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; aborts the consume when a delete.before hook returns false" time="0.003330167">
+            <system-err>
+2026-11-03T22:51:58.394Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; fires delete.after only for the winning racer" time="0.001623542">
+            <system-err>
+2026-11-03T22:51:58.396Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; consumes via the original identifier when storeIdentifier is hashed" time="0.001878">
+            <system-err>
+2026-11-03T22:51:58.398Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; consumes the latest row and invalidates stale rows for the identifier" time="0.0082465">
+            <system-err>
+2026-11-03T22:51:58.400Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; uses secondary storage getAndDelete when verification values are storage-only" time="0.00132975">
+            <system-err>
+2026-11-03T22:51:58.408Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; returns null when the secondary storage row has already expired" time="0.001034959">
+            <system-err>
+2026-11-03T22:51:58.409Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; rehydrates string `expiresAt` from secondary storage JSON" time="0.000741333">
+            <system-err>
+2026-11-03T22:51:58.410Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; consumeVerificationValue &gt; returns null when secondary storage `expiresAt` cannot be parsed" time="0.000565125">
+            <system-err>
+2026-11-03T22:51:58.411Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; returns true the first time and the row is findable" time="0.001333833">
+            <system-err>
+2026-11-03T22:51:58.412Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; returns false the second time for the same identifier" time="0.001183333">
+            <system-err>
+2026-11-03T22:51:58.413Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; yields exactly one winner under concurrent reserve" time="0.001316417">
+            <system-err>
+2026-11-03T22:51:58.414Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; reserves independently across different identifiers" time="0.001047042">
+            <system-err>
+2026-11-03T22:51:58.415Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; fails closed when verification reservation is secondary-storage-only" time="0.000918709">
+            <system-err>
+2026-11-03T22:51:58.416Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; with configured id strategies &gt; yields exactly one winner when ids are uuids" time="0.001868041">
+            <system-err>
+2026-11-03T22:51:58.418Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; with configured id strategies &gt; keeps reserving when ids are database-generated numbers" time="0.000967791">
+            <system-err>
+2026-11-03T22:51:58.419Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+2026-11-03T22:51:58.419Z WARN [Better Auth]: Single-use checks (such as SAML assertion IDs, DPoP proofs, and private_key_jwt assertions) need string ids and are not enforced with `advanced.database.generateId: &quot;serial&quot;`.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; returns true the first time and the row is findable" time="0.001261083">
+            <system-err>
+2026-11-03T22:51:58.420Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; returns false the second time for the same identifier" time="0.001034208">
+            <system-err>
+2026-11-03T22:51:58.422Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; yields exactly one winner under concurrent reserve" time="0.001034375">
+            <system-err>
+2026-11-03T22:51:58.423Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/db/internal-adapter.test.ts" name="internal adapter test &gt; reserveVerificationValue &gt; reserves independently across different identifiers" time="0.001550834">
+            <system-err>
+2026-11-03T22:51:58.424Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+            </system-err>
+        </testcase>
+    </testsuite>
+    <testsuite name="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" timestamp="2026-11-03T22:51:58.455Z" hostname="0c82f30a62e7" tests="15" failures="0" errors="0" skipped="0" time="0.133596458">
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should return the session" time="0.023009958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; preserves no-store when a custom session callback sets cache headers" time="0.021978083">
+            <system-out>
+2026-11-03T22:51:58.314Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; propagates session lookup failures to server and HTTP clients" time="0.018585458">
+            <system-out>
+2026-11-03T22:51:58.337Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+            <system-err>
+2026-11-03T22:51:58.342Z ERROR [Better Auth]: INTERNAL_SERVER_ERROR Error: database unavailable
+    at /app/packages/better-auth/src/plugins/custom-session/custom-session.test.ts:96:23
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20
+
+2026-11-03T22:51:58.349Z ERROR [Better Auth]: INTERNAL_SERVER_ERROR Error: database unavailable
+    at /app/packages/better-auth/src/plugins/custom-session/custom-session.test.ts:96:23
+    at async file:///app/node_modules/.pnpm/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/vitest/dist/chunks/run.BPv-BBRv.js:2801:20
+
+            </system-err>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should return set cookie headers as separate entries" time="0.008303458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should not double-encode session cookie during get-session refresh" time="0.007433375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should return the custom session for multi-session" time="0.005651167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should preserve individual cookie Max-Age when cookieCache is enabled" time="0.006944416">
+            <system-out>
+2026-11-03T22:51:58.373Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should accept disableRefresh as a query string without validation error" time="0.003305416">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should not comma-join Set-Cookie headers" time="0.004076042">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should preserve partitioned cookie attributes during get-session refresh" time="0.009462541">
+            <system-out>
+2026-11-03T22:51:58.387Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should expire the session cookies when the session is no longer valid" time="0.006761958">
+            <system-out>
+2026-11-03T22:51:58.397Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should not create memory leaks with multiple plugin instances" time="0.008767208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should infer the session type" time="0.002989334">
+            <system-out>
+2026-11-03T22:51:58.412Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should not add user/session to client getSession type when custom session omits them" time="0.002350667">
+            <system-out>
+2026-11-03T22:51:58.415Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/custom-session/custom-session.test.ts" name="Custom Session Plugin Tests &gt; should infer both customSessionClient and inferAdditionalFields when combined" time="0.002587459">
+            <system-out>
+2026-11-03T22:51:58.417Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" timestamp="2026-11-03T22:51:58.458Z" hostname="0c82f30a62e7" tests="13" failures="0" errors="0" skipped="0" time="0.145895333">
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session database fallback &gt; lists database-backed device sessions after cache eviction" time="0.023545958">
+            <system-out>
+2026-11-03T22:51:58.221Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session database fallback &gt; activates a remaining database session after revoking the active session" time="0.018746709">
+            <system-out>
+2026-11-03T22:51:58.244Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session database fallback &gt; selects the first held session after revocation across mixed cache hits" time="0.021403709">
+            <system-out>
+2026-11-03T22:51:58.262Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+            </system-out>
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should set multi session when there is set-cookie header" time="0.006879584">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should get active session" time="0.002216583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should list all device sessions" time="0.004601709">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should set active session when only multi-session cookies are present" time="0.002295167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should set active session" time="0.003794625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should revoke a session and set the next active" time="0.006913958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should sign-out all sessions" time="0.013489958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should replace old multi-session cookie when same user signs in again" time="0.016039917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; should reject forged multi-session cookies on sign-out" time="0.012577625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/plugins/multi-session/multi-session.test.ts" name="multi-session &gt; binds set-active and revoke to the signed cookie value, not the body token" time="0.011590708">
+        </testcase>
+    </testsuite>
+</testsuites>

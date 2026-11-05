@@ -1,0 +1,13 @@
+diff --git a/packages/better-auth/src/plugins/jwt/cookie-cache.ts b/packages/better-auth/src/plugins/jwt/cookie-cache.ts
+index 899ce24..6d0178b 100644
+--- a/packages/better-auth/src/plugins/jwt/cookie-cache.ts
++++ b/packages/better-auth/src/plugins/jwt/cookie-cache.ts
+@@ -116,7 +116,7 @@ async function verifyCookieCacheJWT(
+ 			algorithms: [key.alg],
+ 		});
+ 
+-		const parsed = parseSessionCookieJwtPayload(payload);
++		const parsed = parseSessionCookieJwtPayload(payload, ctx.context.options);
+ 		if (!parsed) {
+ 			return null;
+ 		}

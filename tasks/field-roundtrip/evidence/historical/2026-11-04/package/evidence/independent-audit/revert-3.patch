@@ -1,0 +1,64 @@
+diff --git a/packages/better-auth/src/db/internal-adapter.ts b/packages/better-auth/src/db/internal-adapter.ts
+index 0370714..0c63931 100644
+--- a/packages/better-auth/src/db/internal-adapter.ts
++++ b/packages/better-auth/src/db/internal-adapter.ts
+@@ -31,6 +31,7 @@ import {
+ 	getSessionDefaultFields,
+ 	parseSessionOutput,
+ 	parseUserOutput,
++	restoreModelDates,
+ } from "./schema";
+ import {
+ 	getStorageOption,
+@@ -111,6 +112,18 @@ export const createInternalAdapter = (
+ 		});
+ 	};
+ 
++	function parseStoredSession(data: unknown) {
++		const parsed = safeJSONParse<{ session: Session; user: User }>(data, {
++			reviveDates: false,
++		});
++		if (!parsed) return null;
++		return {
++			...parsed,
++			session: restoreModelDates(options, "session", parsed.session),
++			user: restoreModelDates(options, "user", parsed.user),
++		};
++	}
++
+ 	async function refreshUserSessions(user: User) {
+ 		if (!secondaryStorage) return;
+ 
+@@ -126,7 +139,7 @@ export const createInternalAdapter = (
+ 			validSessions.map(async ({ token }) => {
+ 				const cached = await secondaryStorage.get(token);
+ 				if (!cached) return;
+-				const parsed = safeJSONParse<{ session: Session; user: User }>(cached);
++				const parsed = parseStoredSession(cached);
+ 				if (!parsed) return;
+ 
+ 				const sessionTTL = getTTLSeconds(parsed.session.expiresAt, now);
+@@ -694,10 +707,7 @@ export const createInternalAdapter = (
+ 					return null;
+ 				}
+ 				if (sessionStringified) {
+-					const s = safeJSONParse<{
+-						session: Session;
+-						user: User;
+-					}>(sessionStringified);
++					const s = parseStoredSession(sessionStringified);
+ 					if (!s || (await isRevokedSession(s.session))) return null;
+ 					const parsedSession = parseSessionOutput(ctx.options, {
+ 						...s.session,
+@@ -865,10 +875,7 @@ export const createInternalAdapter = (
+ 									return null;
+ 								}
+ 
+-								const parsedSession = safeJSONParse<{
+-									session: Session;
+-									user: User;
+-								}>(currentSession);
++								const parsedSession = parseStoredSession(currentSession);
+ 								if (!parsedSession) return null;
+ 
+ 								const mergedSession = {

@@ -1,0 +1,1058 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [32m✓[39m [30m[46m @better-auth/core [49m[39m src/db/adapter/factory.test.ts [2m([22m[2m36 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+[90mstderr[2m | src/db/internal-adapter.test.ts
+[22m[39m2026-11-03T23:06:45.184Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mshould abort oauth account creation when user creation is vetoed
+[22m[39m2026-11-03T23:06:45.211Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mdisabled cookie cache fallback[2m > [22m[2mignores retired session_data when caching is disabled in configuration
+[22m[39m2026-11-03T23:06:45.236Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/multi-session/multi-session.test.ts
+[22m[39m2026-11-03T23:06:45.236Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts
+[22m[39m2026-11-03T23:06:45.246Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts
+[22m[39m2026-11-03T23:06:45.266Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts
+[22m[39m2026-11-03T23:06:45.272Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/multi-session/multi-session.test.ts[2m > [22m[2mmulti-session database fallback[2m > [22m[2mlists database-backed device sessions after cache eviction
+[22m[39m2026-11-03T23:06:45.283Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts
+[22m[39m2026-11-03T23:06:45.283Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts
+[22m[39m2026-11-03T23:06:45.288Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mrejects createUser outside an endpoint context when validateUserInfo is configured
+[22m[39m2026-11-03T23:06:45.294Z ERROR [Better Auth]: Unable to run validateUserInfo: missing endpoint context Error: No auth context found. Please make sure you are calling this function within a `runWithEndpointContext` callback.
+    at getCurrentAuthEndpointContext [90m(/app/[39mpackages/core/dist/context/endpoint-context.mjs:35:34[90m)[39m
+    at Object.createUser [90m(/app/[39mpackages/better-auth/src/db/internal-adapter.ts:350:7[90m)[39m
+    at [90m/app/[39mpackages/better-auth/src/db/internal-adapter.test.ts:268:28
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+[90mstdout[2m | src/api/routes/update-user.test.ts
+[22m[39m2026-11-03T23:06:45.302Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mdisabled cookie cache fallback[2m > [22m[2mignores retired session_data when caching is disabled for the request
+[22m[39m2026-11-03T23:06:45.302Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts
+[22m[39m2026-11-03T23:06:45.303Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mshould find session with custom userId
+[22m[39m2026-11-03T23:06:45.315Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts
+[22m[39m2026-11-03T23:06:45.324Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mdisabled cookie cache fallback[2m > [22m[2mclears retired session_data when session_token is missing
+[22m[39m2026-11-03T23:06:45.331Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/multi-session/multi-session.test.ts[2m > [22m[2mmulti-session database fallback[2m > [22m[2mactivates a remaining database session after revoking the active session
+[22m[39m2026-11-03T23:06:45.334Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mdisabled cookie cache fallback[2m > [22m[2mclears retired session_data when session_token is invalid
+[22m[39m2026-11-03T23:06:45.347Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould update the user's name
+[22m[39m2026-11-03T23:06:45.350Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts
+[22m[39m2026-11-03T23:06:45.350Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould fall through to session_token DB validation when session_data HMAC fails
+[22m[39m2026-11-03T23:06:45.356Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mpreserves no-store when a custom session callback sets cache headers
+[22m[39m2026-11-03T23:06:45.360Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcookies[2m > [22m[2mshould set multiple cookies
+[22m[39m2026-11-03T23:06:45.361Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/multi-session/multi-session.test.ts[2m > [22m[2mmulti-session database fallback[2m > [22m[2mselects the first held session after revocation across mixed cache hits
+[22m[39m2026-11-03T23:06:45.367Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mpropagates session lookup failures to server and HTTP clients
+[22m[39m2026-11-03T23:06:45.375Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould expire malformed compact session_data and fall through to session_token DB validation
+[22m[39m2026-11-03T23:06:45.379Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcookies[2m > [22m[2mshould use secure cookies
+[22m[39m2026-11-03T23:06:45.384Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould unset image
+[22m[39m2026-11-03T23:06:45.384Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcookies[2m > [22m[2mshould use secure cookies when the base url is https
+[22m[39m2026-11-03T23:06:45.394Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification token storage[2m > [22m[2mshould hash identifier when storeIdentifier is 'hashed'
+[22m[39m2026-11-03T23:06:45.395Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould expire malformed compact session_data and fall through to session_token DB validation
+[22m[39m2026-11-03T23:06:45.390Z ERROR [Better Auth]: Error parsing JSON {
+  error: SyntaxError: Unexpected token 'o', "not-json" is not valid JSON
+      at JSON.parse (<anonymous>)
+      at safeJSONParse [90m(/app/[39mpackages/core/dist/utils/json.mjs:34:48[90m)[39m
+      at decodeCookieCache [90m(/app/[39mpackages/better-auth/src/cookies/index.ts:329:3[90m)[39m
+      at [90m/app/[39mpackages/better-auth/src/api/routes/session.ts:118:15
+      at [90m/app/[39mpackages/core/dist/api/index.mjs:56:11
+      at async internalHandler [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/better-call@1.4.5_zod@4.5.4/node_modules/[4mbetter-call[24m/dist/endpoint.mjs:29:20[90m)[39m
+      at [90m/app/[39mpackages/better-auth/src/api/dispatch.ts:399:21
+      at async processRequest [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/better-call@1.4.5_zod@4.5.4/node_modules/[4mbetter-call[24m/dist/router.mjs:82:11[90m)[39m
+      at async handler [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/better-call@1.4.5_zod@4.5.4/node_modules/[4mbetter-call[24m/dist/router.mjs:105:16[90m)[39m
+      at [90m/app/[39mpackages/core/dist/context/transaction.mjs:38:13
+}
+
+[90mstdout[2m | src/api/routes/session-api.test.ts
+[22m[39m2026-11-03T23:06:45.397Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification token storage[2m > [22m[2mshould use overrides for specific prefixes
+[22m[39m2026-11-03T23:06:45.401Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification token storage[2m > [22m[2mshould fallback to plain lookup for old tokens
+[22m[39m2026-11-03T23:06:45.403Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification token storage[2m > [22m[2mshould fallback to plain lookup for old tokens
+[22m[39m2026-11-03T23:06:45.404Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould still return null when both session_data and session_token are invalid
+[22m[39m2026-11-03T23:06:45.405Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts
+[22m[39m2026-11-03T23:06:45.415Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts
+[22m[39m2026-11-03T23:06:45.433Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mpropagates session lookup failures to server and HTTP clients
+[22m[39m2026-11-03T23:06:45.386Z ERROR [Better Auth]: INTERNAL_SERVER_ERROR Error: database unavailable
+    at [90m/app/[39mpackages/better-auth/src/plugins/custom-session/custom-session.test.ts:96:23
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+[90mstderr[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mpropagates session lookup failures to server and HTTP clients
+[22m[39m2026-11-03T23:06:45.404Z ERROR [Better Auth]: INTERNAL_SERVER_ERROR Error: database unavailable
+    at [90m/app/[39mpackages/better-auth/src/plugins/custom-session/custom-session.test.ts:96:23
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould change email only after confirming both addresses
+[22m[39m2026-11-03T23:06:45.403Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mruns the after hook after adding user to db
+[22m[39m2026-11-03T23:06:45.416Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould work with JWT strategy when HMAC verification fails
+[22m[39m2026-11-03T23:06:45.433Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould work with JWE strategy when decryption fails
+[22m[39m2026-11-03T23:06:45.449Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts
+[22m[39m2026-11-03T23:06:45.434Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mshould preserve individual cookie Max-Age when cookieCache is enabled
+[22m[39m2026-11-03T23:06:45.454Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/cookies/cookies.test.ts[2m > [22m[2mcookies[2m > [22m[2mproduction environment[2m > [22m[2mshould use secure cookies when baseURL is not configured
+[22m[39m2026-11-03T23:06:45.466Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould update the user's password
+[22m[39m2026-11-03T23:06:45.467Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts
+[22m[39m2026-11-03T23:06:45.468Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould handle cross-subdomain cookie migration without silent logout
+[22m[39m2026-11-03T23:06:45.470Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcookies[2m > [22m[2mproduction environment[2m > [22m[2mshould use secure cookies when baseURL is not configured
+[22m[39m2026-11-03T23:06:45.470Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts
+[22m[39m2026-11-03T23:06:45.477Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mshould preserve partitioned cookie attributes during get-session refresh
+[22m[39m2026-11-03T23:06:45.478Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mshould expire the session cookies when the session is no longer valid
+[22m[39m2026-11-03T23:06:45.487Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcrossSubdomainCookies[2m > [22m[2mshould update cookies with custom domain
+[22m[39m2026-11-03T23:06:45.483Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcrossSubdomainCookies[2m > [22m[2mshould update cookies with custom domain
+[22m[39m2026-11-03T23:06:45.484Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/cookie-cache-fallback.test.ts[2m > [22m[2mcookieCache HMAC verification failure fallback[2m > [22m[2mshould work during cookieCache window even with stale session_data
+[22m[39m2026-11-03T23:06:45.487Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/api/routes/cookie-cache-fallback.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 319[2mms[22m[39m
+ [32m✓[39m [30m[43m better-auth [49m[39m src/plugins/multi-session/multi-session.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 224[2mms[22m[39m
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcrossSubdomainCookies[2m > [22m[2mshould use default domain from baseURL if not provided
+[22m[39m2026-11-03T23:06:45.501Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mcrossSubdomainCookies[2m > [22m[2mshould use default domain from baseURL if not provided
+[22m[39m2026-11-03T23:06:45.502Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould update the user's password
+[22m[39m2026-11-03T23:06:45.498Z WARN [Better Auth]: Invalid password
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mshould calculate TTL correctly with Math.floor for secondary storage
+[22m[39m2026-11-03T23:06:45.504Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when revocation fails
+[22m[39m2026-11-03T23:06:45.509Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return the correct session cookie
+[22m[39m2026-11-03T23:06:45.514Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return the correct session cookie
+[22m[39m2026-11-03T23:06:45.514Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould work with Headers object directly
+[22m[39m2026-11-03T23:06:45.521Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould work with Headers object directly
+[22m[39m2026-11-03T23:06:45.522Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when revocation fails
+[22m[39m2026-11-03T23:06:45.521Z ERROR [Better Auth]: Error Error: session store unavailable
+    at [90m/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:178:5
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when revocation fails
+[22m[39m# SERVER_ERROR:  Error: session store unavailable
+    at [90m/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:178:5
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when revocation fails
+[22m[39m2026-11-03T23:06:45.525Z WARN [Better Auth]: Invalid password
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould work with Headers-like object that has inherited 'headers' property
+[22m[39m2026-11-03T23:06:45.533Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould work with Headers-like object that has inherited 'headers' property
+[22m[39m2026-11-03T23:06:45.533Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mshould infer the session type
+[22m[39m2026-11-03T23:06:45.534Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps existing sessions when the password write fails
+[22m[39m2026-11-03T23:06:45.534Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mlistSessions should skip missing sessions without blanking the list
+[22m[39m2026-11-03T23:06:45.536Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mdefers secondary session deletion until commit and discards it on rollback
+[22m[39m2026-11-03T23:06:45.538Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps existing sessions when the password write fails
+[22m[39m2026-11-03T23:06:45.539Z ERROR [Better Auth]: Error Error: database unavailable
+    at [90m/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:191:5
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps existing sessions when the password write fails
+[22m[39m# SERVER_ERROR:  Error: database unavailable
+    at [90m/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:191:5
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mshould not add user/session to client getSession type when custom session omits them
+[22m[39m2026-11-03T23:06:45.541Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mdefers secondary session creation until commit and discards it on rollback
+[22m[39m2026-11-03T23:06:45.541Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mrejects deferred secondary-only session creation when persistence fails
+[22m[39m2026-11-03T23:06:45.546Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password and sessions when the replacement session cannot be created
+[22m[39m2026-11-03T23:06:45.549Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mkeeps a secondary-only session write inside the transaction even when deferral is requested
+[22m[39m2026-11-03T23:06:45.549Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould work with cross-realm Headers-like object (instanceof fails)
+[22m[39m2026-11-03T23:06:45.550Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould work with cross-realm Headers-like object (instanceof fails)
+[22m[39m2026-11-03T23:06:45.550Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/custom-session/custom-session.test.ts[2m > [22m[2mCustom Session Plugin Tests[2m > [22m[2mshould infer both customSessionClient and inferAdditionalFields when combined
+[22m[39m2026-11-03T23:06:45.549Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/plugins/custom-session/custom-session.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 252[2mms[22m[39m
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mpreserves sessions created after user session deletion is requested
+[22m[39m2026-11-03T23:06:45.555Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2mshould require a fresh session based on session creation time
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return the correct session cookie on production
+[22m[39m2026-11-03T23:06:45.561Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return the correct session cookie on production
+[22m[39m2026-11-03T23:06:45.561Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mkeeps stored sessions when the revocation snapshot cannot be read
+[22m[39m2026-11-03T23:06:45.561Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mlistSessions should skip malformed session data (valid JSON but wrong structure)
+[22m[39m2026-11-03T23:06:45.564Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mlistSessions should skip corrupt/unparsable sessions without blanking the list
+[22m[39m2026-11-03T23:06:45.566Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password and sessions when the replacement session cannot be created
+[22m[39m2026-11-03T23:06:45.566Z WARN [Better Auth]: Invalid password
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mlistSessions should return empty array when all sessions are missing/corrupt
+[22m[39m2026-11-03T23:06:45.568Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mfindSessions skips malformed JSON sessions without discarding valid sessions
+[22m[39m2026-11-03T23:06:45.569Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould allow override cookie prefix with secure cookies
+[22m[39m2026-11-03T23:06:45.569Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould allow override cookie prefix with secure cookies
+[22m[39m2026-11-03T23:06:45.569Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mfindSessions skips JSON null sessions without discarding valid sessions
+[22m[39m2026-11-03T23:06:45.570Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mshould update session and active-sessions list in secondary storage
+[22m[39m2026-11-03T23:06:45.571Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mshould deduplicate sessions when active-sessions list contains duplicates
+[22m[39m2026-11-03T23:06:45.572Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould allow override cookie name
+[22m[39m2026-11-03T23:06:45.573Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould allow override cookie name
+[22m[39m2026-11-03T23:06:45.573Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when secondary storage cannot store the replacement session
+[22m[39m2026-11-03T23:06:45.573Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification secondary storage[2m > [22m[2mshould store verification in secondary storage by default
+[22m[39m2026-11-03T23:06:45.573Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification secondary storage[2m > [22m[2mshould find verification from secondary storage
+[22m[39m2026-11-03T23:06:45.574Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification secondary storage[2m > [22m[2mshould NOT store in database when secondary-only mode
+[22m[39m2026-11-03T23:06:45.575Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2mshould require a fresh session to list sessions
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification secondary storage[2m > [22m[2mshould delete verification from secondary storage
+[22m[39m2026-11-03T23:06:45.578Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return cookie cache
+[22m[39m2026-11-03T23:06:45.579Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return cookie cache
+[22m[39m2026-11-03T23:06:45.579Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification secondary storage[2m > [22m[2mshould store in both when storeInDatabase is true
+[22m[39m2026-11-03T23:06:45.580Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification secondary storage[2m > [22m[2mshould fallback to database when not in secondary storage
+[22m[39m2026-11-03T23:06:45.584Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2msession refresh and expiration[2m > [22m[2mreturns the expected session expiration after 0 seconds
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mverification secondary storage[2m > [22m[2mshould set correct TTL based on expiresAt
+[22m[39m2026-11-03T23:06:45.588Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2msafeJSONParse date revival in secondary storage[2m > [22m[2mshould return Date objects from findVerificationValue when storage returns pre-parsed objects
+[22m[39m2026-11-03T23:06:45.591Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2msafeJSONParse date revival in secondary storage[2m > [22m[2mshould correctly detect expired verification when storage returns pre-parsed objects
+[22m[39m2026-11-03T23:06:45.593Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when secondary storage cannot store the replacement session
+[22m[39m2026-11-03T23:06:45.587Z ERROR [Better Auth]: Error Error: storage unavailable
+    at Object.set [90m(/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:219:29[90m)[39m
+    at mirrorSessionToSecondaryStorage [90m(/app/[39mpackages/better-auth/src/db/internal-adapter.ts:628:29[90m)[39m
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when secondary storage cannot store the replacement session
+[22m[39m# SERVER_ERROR:  Error: storage unavailable
+    at Object.set [90m(/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:219:29[90m)[39m
+    at mirrorSessionToSecondaryStorage [90m(/app/[39mpackages/better-auth/src/db/internal-adapter.ts:628:29[90m)[39m
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2msafeJSONParse date revival in secondary storage[2m > [22m[2mshould return Date objects for all date fields across multiple reads
+[22m[39m2026-11-03T23:06:45.595Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2msafeJSONParse date revival in secondary storage[2m > [22m[2mshould preserve non-date string fields when reviving dates
+[22m[39m2026-11-03T23:06:45.598Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mkeeps the old password when secondary storage cannot store the replacement session
+[22m[39m2026-11-03T23:06:45.597Z WARN [Better Auth]: Invalid password
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould respect dontRememberMe when storing session in cookie cache
+[22m[39m2026-11-03T23:06:45.597Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould respect dontRememberMe when storing session in cookie cache
+[22m[39m2026-11-03T23:06:45.597Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mreturns the row to the first caller and null to subsequent reads
+[22m[39m2026-11-03T23:06:45.600Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2myields exactly one winner under concurrent consume
+[22m[39m2026-11-03T23:06:45.603Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mdoes not cache the replacement session when the transaction fails
+[22m[39m2026-11-03T23:06:45.603Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2msession refresh and expiration[2m > [22m[2mreturns the expected session expiration after 59 seconds
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mreturns null for an unknown identifier
+[22m[39m2026-11-03T23:06:45.608Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mreturns null when the row exists but has already expired
+[22m[39m2026-11-03T23:06:45.611Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return null if the cookie is invalid
+[22m[39m2026-11-03T23:06:45.613Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould return null if the cookie is invalid
+[22m[39m2026-11-03T23:06:45.614Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2maborts the consume when a delete.before hook returns false
+[22m[39m2026-11-03T23:06:45.614Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2msession refresh and expiration[2m > [22m[2mreturns the expected session expiration after 60 seconds
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mdoes not cache the replacement session when the transaction fails
+[22m[39m2026-11-03T23:06:45.618Z ERROR [Better Auth]: Error Error: commit failed
+    at Object.<anonymous> [90m(/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:277:11[90m)[39m
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mwith revokeOtherSessions, when a step fails[2m > [22m[2mdoes not cache the replacement session when the transaction fails
+[22m[39m# SERVER_ERROR:  Error: commit failed
+    at Object.<anonymous> [90m(/app/[39mpackages/better-auth/src/api/routes/update-user.test.ts:277:11[90m)[39m
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould update account's updatedAt when changing password
+[22m[39m2026-11-03T23:06:45.621Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2msession refresh and expiration[2m > [22m[2mreturns the expected session expiration after 61 seconds
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mfires delete.after only for the winning racer
+[22m[39m2026-11-03T23:06:45.624Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould throw an error if the secret is not provided
+[22m[39m2026-11-03T23:06:45.627Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould throw an error if the secret is not provided
+[22m[39m2026-11-03T23:06:45.628Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mconsumes via the original identifier when storeIdentifier is hashed
+[22m[39m2026-11-03T23:06:45.629Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mconsumes the latest row and invalidates stale rows for the identifier
+[22m[39m2026-11-03T23:06:45.634Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2msession refresh and expiration[2m > [22m[2mpersists successive session refreshes beyond the original expiration
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould chunk large cookies instead of logging error
+[22m[39m2026-11-03T23:06:45.637Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould chunk large cookies instead of logging error
+[22m[39m2026-11-03T23:06:45.637Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mgetSessionCookie[2m > [22m[2mshould chunk large cookies instead of logging error
+[22m[39m2026-11-03T23:06:45.640Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: [32m'Session cookie exceeds the 4050 byte limit and was split into 3 chunks.'[39m,
+  valueSize: [33m8940[39m,
+  chunkCount: [33m3[39m,
+  chunkSizes: [ [33m3977[39m, [33m3977[39m, [33m986[39m ]
+}
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2msensitive session middleware cookie cache[2m > [22m[2mshould not let request query re-enable cookie cache on sensitive endpoints
+[22m[39m2026-11-03T23:06:45.644Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2msensitive session middleware cookie cache[2m > [22m[2mshould not let request query re-enable cookie cache on sensitive endpoints
+[22m[39m2026-11-03T23:06:45.645Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2muses secondary storage getAndDelete when verification values are storage-only
+[22m[39m2026-11-03T23:06:45.645Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mreturns null when the secondary storage row has already expired
+[22m[39m2026-11-03T23:06:45.647Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mrehydrates string `expiresAt` from secondary storage JSON
+[22m[39m2026-11-03T23:06:45.649Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mconsumeVerificationValue[2m > [22m[2mreturns null when secondary storage `expiresAt` cannot be parsed
+[22m[39m2026-11-03T23:06:45.651Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mreturns true the first time and the row is findable
+[22m[39m2026-11-03T23:06:45.652Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mreturns false the second time for the same identifier
+[22m[39m2026-11-03T23:06:45.654Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2msession refresh and expiration[2m > [22m[2mclears an expired session without refreshing it
+[22m[39m2026-01-01T00:00:00.000Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould exclude user fields with returned: false from cookie cache
+[22m[39m2026-11-03T23:06:45.656Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould exclude user fields with returned: false from cookie cache
+[22m[39m2026-11-03T23:06:45.656Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2myields exactly one winner under concurrent reserve
+[22m[39m2026-11-03T23:06:45.657Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mreserves independently across different identifiers
+[22m[39m2026-11-03T23:06:45.660Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mfails closed when verification reservation is secondary-storage-only
+[22m[39m2026-11-03T23:06:45.662Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mwith configured id strategies[2m > [22m[2myields exactly one winner when ids are uuids
+[22m[39m2026-11-03T23:06:45.663Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mwith configured id strategies[2m > [22m[2mkeeps reserving when ids are database-generated numbers
+[22m[39m2026-11-03T23:06:45.666Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould correctly filter multiple user fields based on returned config
+[22m[39m2026-11-03T23:06:45.666Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould correctly filter multiple user fields based on returned config
+[22m[39m2026-11-03T23:06:45.666Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mwith configured id strategies[2m > [22m[2mkeeps reserving when ids are database-generated numbers
+[22m[39m2026-11-03T23:06:45.666Z WARN [Better Auth]: Single-use checks (such as SAML assertion IDs, DPoP proofs, and private_key_jwt assertions) need string ids and are not enforced with `advanced.database.generateId: "serial"`.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mreturns true the first time and the row is findable
+[22m[39m2026-11-03T23:06:45.667Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2mshould update the session every time when set to 0
+[22m[39m2026-11-03T23:06:45.666Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mreturns false the second time for the same identifier
+[22m[39m2026-11-03T23:06:45.669Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould reduce cookie size when large fields are excluded
+[22m[39m2026-11-03T23:06:45.671Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould reduce cookie size when large fields are excluded
+[22m[39m2026-11-03T23:06:45.671Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2myields exactly one winner under concurrent reserve
+[22m[39m2026-11-03T23:06:45.671Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+[90mstderr[2m | src/db/internal-adapter.test.ts[2m > [22m[2minternal adapter test[2m > [22m[2mreserveVerificationValue[2m > [22m[2mreserves independently across different identifiers
+[22m[39m2026-11-03T23:06:45.674Z WARN [Better Auth]: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/db/internal-adapter.test.ts [2m([22m[2m72 tests[22m[2m)[22m[33m 487[2mms[22m[39m
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould maintain session field filtering (regression check)
+[22m[39m2026-11-03T23:06:45.678Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould maintain session field filtering (regression check)
+[22m[39m2026-11-03T23:06:45.678Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould include unknown user fields for backward compatibility
+[22m[39m2026-11-03T23:06:45.683Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould include unknown user fields for backward compatibility
+[22m[39m2026-11-03T23:06:45.683Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould work with JWT strategy
+[22m[39m2026-11-03T23:06:45.688Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould work with JWT strategy
+[22m[39m2026-11-03T23:06:45.688Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould work with JWT strategy backed by JWKS keys
+[22m[39m2026-11-03T23:06:45.695Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould work with JWT strategy backed by JWKS keys
+[22m[39m2026-11-03T23:06:45.695Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould work with compact strategy
+[22m[39m2026-11-03T23:06:45.706Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould work with compact strategy
+[22m[39m2026-11-03T23:06:45.706Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2msession[2m > [22m[2mshould not exceed the 400-day browser Max-Age ceiling on session refresh
+[22m[39m2026-11-03T23:06:45.707Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould reject JWT plugin tokens that are not cookie-cache JWTs
+[22m[39m2026-11-03T23:06:45.714Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould reject JWT plugin tokens that are not cookie-cache JWTs
+[22m[39m2026-11-03T23:06:45.715Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould return null when JWKS verification uses the wrong key set
+[22m[39m2026-11-03T23:06:45.720Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould return null when JWKS verification uses the wrong key set
+[22m[39m2026-11-03T23:06:45.720Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould default to compact strategy when not specified
+[22m[39m2026-11-03T23:06:45.733Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Cache Field Filtering[2m > [22m[2mshould default to compact strategy when not specified
+[22m[39m2026-11-03T23:06:45.733Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould not update password if current password is wrong
+[22m[39m2026-11-03T23:06:45.735Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk cookies when they exceed 4KB
+[22m[39m2026-11-03T23:06:45.738Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk cookies when they exceed 4KB
+[22m[39m2026-11-03T23:06:45.739Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould not update password if current password is wrong
+[22m[39m2026-11-03T23:06:45.743Z WARN [Better Auth]: Invalid password
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould revoke other sessions
+[22m[39m2026-11-03T23:06:45.745Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache[2m > [22m[2mserves cached sessions without querying the database
+[22m[39m2026-11-03T23:06:45.745Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache[2m > [22m[2mserves cached sessions without querying the database
+[22m[39m2026-11-03T23:06:45.745Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk cookies when they exceed 4KB
+[22m[39m2026-11-03T23:06:45.746Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: [32m'Session cookie exceeds the 4050 byte limit and was split into 2 chunks.'[39m,
+  valueSize: [33m6227[39m,
+  chunkCount: [33m2[39m,
+  chunkSizes: [ [33m3977[39m, [33m2250[39m ]
+}
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk JWKS-backed JWT cookies when they exceed 4KB
+[22m[39m2026-11-03T23:06:45.749Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk JWKS-backed JWT cookies when they exceed 4KB
+[22m[39m2026-11-03T23:06:45.749Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk JWKS-backed JWT cookies when they exceed 4KB
+[22m[39m2026-11-03T23:06:45.754Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: [32m'Session cookie exceeds the 4050 byte limit and was split into 2 chunks.'[39m,
+  valueSize: [33m6568[39m,
+  chunkCount: [33m2[39m,
+  chunkSizes: [ [33m3977[39m, [33m2591[39m ]
+}
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache[2m > [22m[2mreads fresh user data when cookie caching is bypassed
+[22m[39m2026-11-03T23:06:45.755Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache[2m > [22m[2mreads fresh user data when cookie caching is bypassed
+[22m[39m2026-11-03T23:06:45.756Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould preserve the replacement session in secondary storage
+[22m[39m2026-11-03T23:06:45.756Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould reconstruct chunked cookies correctly
+[22m[39m2026-11-03T23:06:45.758Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould reconstruct chunked cookies correctly
+[22m[39m2026-11-03T23:06:45.759Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould reconstruct chunked cookies correctly
+[22m[39m2026-11-03T23:06:45.764Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: [32m'Session cookie exceeds the 4050 byte limit and was split into 2 chunks.'[39m,
+  valueSize: [33m4232[39m,
+  chunkCount: [33m2[39m,
+  chunkSizes: [ [33m3977[39m, [33m255[39m ]
+}
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache[2m > [22m[2mrefreshes expired cache and reuses the replacement cookie
+[22m[39m2026-11-03T23:06:45.763Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache[2m > [22m[2mrefreshes expired cache and reuses the replacement cookie
+[22m[39m2026-11-03T23:06:45.763Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould clean up all chunks when deleting session
+[22m[39m2026-11-03T23:06:45.766Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould clean up all chunks when deleting session
+[22m[39m2026-11-03T23:06:45.766Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshouldn't pass defaults
+[22m[39m2026-11-03T23:06:45.769Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould clean up all chunks when deleting session
+[22m[39m2026-11-03T23:06:45.770Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: [32m'Session cookie exceeds the 4050 byte limit and was split into 2 chunks.'[39m,
+  valueSize: [33m6246[39m,
+  chunkCount: [33m2[39m,
+  chunkSizes: [ [33m3977[39m, [33m2269[39m ]
+}
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould propagate updates across sessions when secondaryStorage is enabled
+[22m[39m2026-11-03T23:06:45.774Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould NOT chunk cookies when they are under 4KB
+[22m[39m2026-11-03T23:06:45.776Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould NOT chunk cookies when they are under 4KB
+[22m[39m2026-11-03T23:06:45.777Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk session cache when attributes push the line over the limit
+[22m[39m2026-11-03T23:06:45.784Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk session cache when attributes push the line over the limit
+[22m[39m2026-11-03T23:06:45.784Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould not write to secondary storage multiple times for the same session token during updateUser
+[22m[39m2026-11-03T23:06:45.788Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2mCookie Chunking[2m > [22m[2mshould chunk session cache when attributes push the line over the limit
+[22m[39m2026-11-03T23:06:45.797Z DEBUG [Better Auth]: CHUNKING_SESSION_COOKIE {
+  message: [32m'Session cookie exceeds the 4050 byte limit and was split into 2 chunks.'[39m,
+  valueSize: [33m4088[39m,
+  chunkCount: [33m2[39m,
+  chunkSizes: [ [33m3896[39m, [33m192[39m ]
+}
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mupdateUser[2m > [22m[2mshould not allow updating user with additional fields that are input: false
+[22m[39m2026-11-03T23:06:45.805Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould not delete user if deleteUser is disabled
+[22m[39m2026-11-03T23:06:45.815Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould not delete user if deleteUser is disabled
+[22m[39m2026-11-03T23:06:45.824Z ERROR [Better Auth]: Delete user is disabled. Enable it in the options
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould not delete user if deleteUser is disabled
+[22m[39m{ data: [1mnull[22m, error: { status: [33m404[39m, statusText: [32m'NOT_FOUND'[39m } }
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould delete the user with a fresh session
+[22m[39m2026-11-03T23:06:45.829Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould require password when session is no longer fresh
+[22m[39m2026-11-03T23:06:45.840Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2maccount cookie sync on user switch[2m > [22m[2mkeeps the fresh account cookie issued for the new user when the request carries another user's stale account cookie
+[22m[39m2026-11-03T23:06:45.842Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstderr[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache with JWT strategy backed by JWKS[2m > [22m[2mshould verify existing cookie-cache JWTs across JWKS rotation grace period
+[22m[39m2026-11-03T23:06:45.840Z WARN [Better Auth]: [better-auth] `session.cookieCache.maxAge` (300s) exceeds the JWT plugin JWKS grace period (60s). Rotated keys may stop verifying cookie-cache JWTs before the cookie expires.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2maccount cookie sync on user switch[2m > [22m[2mkeeps the fresh account cookie issued for the new user when the request carries another user's stale account cookie
+[22m[39m2026-11-03T23:06:45.843Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache with JWT strategy backed by JWKS[2m > [22m[2mshould verify existing cookie-cache JWTs across JWKS rotation grace period
+[22m[39m2026-11-03T23:06:45.840Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould delete every session from deleted user
+[22m[39m2026-11-03T23:06:45.848Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache with JWE strategy[2m > [22m[2mserves cached sessions without querying the database
+[22m[39m2026-11-03T23:06:45.854Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould delete with verification flow and password
+[22m[39m2026-11-03T23:06:45.855Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould delete only once when the same token is used concurrently
+[22m[39m2026-11-03T23:06:45.869Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache with JWE strategy[2m > [22m[2mreads fresh user data when cookie caching is bypassed
+[22m[39m2026-11-03T23:06:45.873Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2maccount cookie sync on user switch[2m > [22m[2mstill expires another user's stale account cookie when the response issues no fresh one
+[22m[39m2026-11-03T23:06:45.883Z DEBUG [Better Auth]: Schema validation is not available for adapter "kysely". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/cookies/cookies.test.ts[2m > [22m[2maccount cookie sync on user switch[2m > [22m[2mstill expires another user's stale account cookie when the response issues no fresh one
+[22m[39m2026-11-03T23:06:45.883Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache with JWE strategy[2m > [22m[2mrefreshes expired cache and reuses the replacement cookie
+[22m[39m2026-11-03T23:06:45.883Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache with JWE strategy[2m > [22m[2mserves concurrent requests from the cache
+[22m[39m2026-11-03T23:06:45.900Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/cookies/cookies.test.ts [2m([22m[2m115 tests[22m[2m)[22m[33m 568[2mms[22m[39m
+[90mstderr[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2muses cached data before the refresh threshold
+[22m[39m2026-11-03T23:06:45.913Z WARN [Better Auth]: [better-auth] `session.cookieCache.refreshCache` is enabled while `database` or `secondaryStorage` is configured. `refreshCache` is meant for stateless (DB-less) setups. Disabling `refreshCache` — remove it from your config to silence this warning.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2muses cached data before the refresh threshold
+[22m[39m2026-11-03T23:06:45.913Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mdoes not perform stateless refresh when a database is configured
+[22m[39m2026-11-03T23:06:45.922Z WARN [Better Auth]: [better-auth] `session.cookieCache.refreshCache` is enabled while `database` or `secondaryStorage` is configured. `refreshCache` is meant for stateless (DB-less) setups. Disabling `refreshCache` — remove it from your config to silence this warning.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mdoes not perform stateless refresh when a database is configured
+[22m[39m2026-11-03T23:06:45.923Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mshould ignore cookie cache for sensitive operations like changePassword
+[22m[39m2026-11-03T23:06:45.932Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould not refresh cache when refreshCache is disabled (false)
+[22m[39m2026-11-03T23:06:45.934Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould work without database (session stored in cookie only)
+[22m[39m2026-11-03T23:06:45.944Z WARN [Better Auth]: [better-auth] `session.cookieCache.refreshCache` is enabled while `database` or `secondaryStorage` is configured. `refreshCache` is meant for stateless (DB-less) setups. Disabling `refreshCache` — remove it from your config to silence this warning.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould work without database (session stored in cookie only)
+[22m[39m2026-11-03T23:06:45.944Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mdelete user[2m > [22m[2mrejects /delete-user/callback when the backing session was revoked
+[22m[39m2026-11-03T23:06:45.946Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould preserve session expiry when refreshing stateless cookie cache
+[22m[39m2026-11-03T23:06:45.953Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould preserve session expiry when refreshing stateless cookie cache
+[22m[39m2026-11-03T23:06:45.953Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould work without database when refreshCache threshold is reached
+[22m[39m2026-11-03T23:06:45.963Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould work without database when refreshCache threshold is reached
+[22m[39m2026-11-03T23:06:45.964Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mchange-email enumeration protection[2m > [22m[2mshould return 200 when target email already exists
+[22m[39m2026-11-03T23:06:45.966Z INFO [Better Auth]: Change email attempt for existing email
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mchange-email without sendVerificationEmail[2m > [22m[2mshould return the same error for existing and non-existing emails
+[22m[39m2026-11-03T23:06:45.978Z ERROR [Better Auth]: Verification email isn't enabled.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould forward cookie cache headers from getSessionFromCtx
+[22m[39m2026-11-03T23:06:45.980Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mchange-email without sendVerificationEmail[2m > [22m[2mshould return the same error for existing and non-existing emails
+[22m[39m2026-11-03T23:06:45.983Z ERROR [Better Auth]: Verification email isn't enabled.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould extend session_token cookie expiry when refreshCache threshold is reached
+[22m[39m2026-11-03T23:06:45.991Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache refreshCache[2m > [22m[2mshould extend session_token cookie expiry when refreshCache threshold is reached
+[22m[39m2026-11-03T23:06:45.992Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mchange-email rejects confirmation-only config for verified users[2m > [22m[2mreturns 400 when sendVerificationEmail is not configured
+[22m[39m2026-11-03T23:06:45.997Z ERROR [Better Auth]: Verification email isn't enabled.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2mcredential identity across email changes[2m > [22m[2mkeeps one credential account when the user changes their sign-in email
+[22m[39m2026-11-03T23:06:45.999Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mcredential identity across email changes[2m > [22m[2mkeeps one credential account when the user changes their sign-in email
+[22m[39m2026-11-03T23:06:46.005Z WARN [Better Auth]: User not found
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould invalidate cookie cache when version changes (string version)
+[22m[39m2026-11-03T23:06:46.006Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/update-user.test.ts[2m > [22m[2msetPassword[2m > [22m[2msets the password on the existing passwordless credential account
+[22m[39m2026-11-03T23:06:46.009Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould invalidate cookie cache when version changes (string version)
+[22m[39m2026-11-03T23:06:46.016Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mpassword length on verify-only fields[2m > [22m[2mchange-password should reject a currentPassword longer than maxPasswordLength before hashing
+[22m[39m2026-11-03T23:06:46.022Z WARN [Better Auth]: Password is too long
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould work with function-based version
+[22m[39m2026-11-03T23:06:46.023Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/api/routes/update-user.test.ts[2m > [22m[2mpassword length on verify-only fields[2m > [22m[2mdelete-user should reject a password longer than maxPasswordLength before hashing
+[22m[39m2026-11-03T23:06:46.027Z WARN [Better Auth]: Password is too long
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould work with async function-based version
+[22m[39m2026-11-03T23:06:46.034Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould work with compact strategy
+[22m[39m2026-11-03T23:06:46.075Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/api/routes/update-user.test.ts [2m([22m[2m39 tests[22m[2m)[22m[33m 734[2mms[22m[39m
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould work with jwt strategy
+[22m[39m2026-11-03T23:06:46.085Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould default to version '1' when not specified
+[22m[39m2026-11-03T23:06:46.090Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mcookie cache versioning[2m > [22m[2mshould include additionalFields when retrieving from cookie cache
+[22m[39m2026-11-03T23:06:46.099Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould return needsRefresh flag on GET when enabled
+[22m[39m2026-11-03T23:06:46.110Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould return needsRefresh: false when session is fresh
+[22m[39m2026-11-03T23:06:46.114Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould not update session on GET when deferSessionRefresh is enabled
+[22m[39m2026-11-03T23:06:46.118Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould update session on POST when deferSessionRefresh is enabled
+[22m[39m2026-11-03T23:06:46.126Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould reject POST when deferSessionRefresh is not enabled
+[22m[39m2026-11-03T23:06:46.130Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould not delete expired session on GET when deferSessionRefresh is enabled
+[22m[39m2026-11-03T23:06:46.133Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould delete expired session on POST when deferSessionRefresh is enabled
+[22m[39m2026-11-03T23:06:46.136Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould still update session on GET when deferSessionRefresh is not enabled (default behavior)
+[22m[39m2026-11-03T23:06:46.139Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdeferSessionRefresh[2m > [22m[2mshould respect disableSessionRefresh config when deferSessionRefresh is enabled
+[22m[39m2026-11-03T23:06:46.143Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould accept remoteUrl with alg specified
+[22m[39m2026-11-03T23:06:46.146Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdate field type consistency[2m > [22m[2mshould have consistent date types between cookie cache and refresh paths
+[22m[39m2026-11-03T23:06:46.147Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mdate field type consistency[2m > [22m[2mshould have consistent date types between cookie cache and refresh paths
+[22m[39m2026-11-03T23:06:46.147Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould disable /jwks endpoint when remoteUrl is configured
+[22m[39m2026-11-03T23:06:46.148Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with different algorithms when remoteUrl is set
+[22m[39m2026-11-03T23:06:46.154Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with different algorithms when remoteUrl is set
+[22m[39m2026-11-03T23:06:46.156Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with different algorithms when remoteUrl is set
+[22m[39m2026-11-03T23:06:46.160Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with different algorithms when remoteUrl is set
+[22m[39m2026-11-03T23:06:46.162Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with different algorithms when remoteUrl is set
+[22m[39m2026-11-03T23:06:46.165Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould still allow token generation when remoteUrl is set
+[22m[39m2026-11-03T23:06:46.176Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with custom sign function and remoteUrl
+[22m[39m2026-11-03T23:06:46.220Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould validate that remoteUrl is a valid URL format
+[22m[39m2026-11-03T23:06:46.281Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mupdate-session cookie cache revocation[2m > [22m[2mfails closed when the backing session is revoked in a stateful deployment
+[22m[39m2026-11-03T23:06:46.286Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould validate that remoteUrl is a valid URL format
+[22m[39m2026-11-03T23:06:46.287Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould validate that remoteUrl is a valid URL format
+[22m[39m2026-11-03T23:06:46.290Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould validate that remoteUrl is a valid URL format
+[22m[39m2026-11-03T23:06:46.296Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with remoteUrl pointing to different paths
+[22m[39m2026-11-03T23:06:46.301Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with remoteUrl pointing to different paths
+[22m[39m2026-11-03T23:06:46.307Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mupdate-session cookie cache revocation[2m > [22m[2mstill refreshes the cookie in a DB-less deployment when no row exists
+[22m[39m2026-11-03T23:06:46.308Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mupdate-session cookie cache revocation[2m > [22m[2mstill refreshes the cookie in a DB-less deployment when no row exists
+[22m[39m2026-11-03T23:06:46.311Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with remoteUrl pointing to different paths
+[22m[39m2026-11-03T23:06:46.316Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould work with remoteUrl pointing to different paths
+[22m[39m2026-11-03T23:06:46.319Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould handle remoteUrl with query parameters
+[22m[39m2026-11-03T23:06:46.322Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - remote url[2m > [22m[2mshould not interfere with other JWT endpoints when remoteUrl is set
+[22m[39m2026-11-03T23:06:46.324Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mforced strict session validation[2m > [22m[2ma request cannot re-enable the cookie cache on a route that forces it off
+[22m[39m2026-11-03T23:06:46.327Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mforced strict session validation[2m > [22m[2muses the signed cookie as the authoritative session record without a server store
+[22m[39m2026-11-03T23:06:46.335Z DEBUG [Better Auth]: Schema validation is not available for adapter "memory". Skipping schema validation. Database operations will proceed normally.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mforced strict session validation[2m > [22m[2muses the signed cookie as the authoritative session record without a server store
+[22m[39m2026-11-03T23:06:46.335Z DEBUG [Better Auth]: [Memory Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - custom adapter[2m > [22m[2mshould use custom adapter
+[22m[39m2026-11-03T23:06:46.335Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - custom jwksPath[2m > [22m[2mshould use custom jwksPath when specified
+[22m[39m2026-11-03T23:06:46.340Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mget-session cache headers[2m > [22m[2msets Cache-Control: no-store on authenticated GET /get-session responses
+[22m[39m2026-11-03T23:06:46.344Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstderr[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - JWKS minting inside an active transaction[2m > [22m[2mmints the first signing key through the transaction-scoped adapter instead of deadlocking on the connection
+[22m[39m2026-11-03T23:06:46.344Z ERROR [Better Auth]: Database schema mismatch
+
+  Missing tables
+    user, session, account, verification, jwks
+
+  help: Run `npx auth migrate` to add the missing tables and columns.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mget-session cache headers[2m > [22m[2msets Cache-Control: no-store on unauthenticated GET /get-session responses
+[22m[39m2026-11-03T23:06:46.349Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+[90mstdout[2m | src/api/routes/session-api.test.ts[2m > [22m[2mget-session cache headers[2m > [22m[2mdoes not set Cache-Control: no-store on session-gated endpoints
+[22m[39m2026-11-03T23:06:46.352Z DEBUG [Better Auth]: [Kysely Adapter] - Using provided transaction implementation.
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/api/routes/session-api.test.ts [2m([22m[2m80 tests[22m[2m)[22m[33m 866[2mms[22m[39m
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - signing algorithm comes from the key[2m > [22m[2mverifyJWT rejects a token whose header names another algorithm for the key
+[22m[39m2026-11-03T23:06:46.401Z DEBUG [Better Auth]: JWT verification failed JOSEAlgNotAllowed: "alg" (Algorithm) Header Parameter value not allowed
+    at flattenedVerify [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/jose@6.2.3/node_modules/[4mjose[24m/dist/webapi/jws/flattened/verify.js:62:15[90m)[39m
+    at compactVerify [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/jose@6.2.3/node_modules/[4mjose[24m/dist/webapi/jws/compact/verify.js:15:28[90m)[39m
+    at jwtVerify [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/jose@6.2.3/node_modules/[4mjose[24m/dist/webapi/jwt/verify.js:5:28[90m)[39m
+    at verifyJWT [90m(/app/[39mpackages/better-auth/src/plugins/jwt/verify.ts:63:29[90m)[39m
+    at [90m/app/[39mpackages/better-auth/src/plugins/jwt/index.ts:341:22
+    at [90m/app/[39mpackages/core/dist/api/index.mjs:56:11
+    at async internalHandler [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/better-call@1.4.5_zod@4.5.4/node_modules/[4mbetter-call[24m/dist/endpoint.mjs:29:20[90m)[39m
+    at [90m/app/[39mpackages/better-auth/src/api/dispatch.ts:399:21
+    at [90m/app/[39mpackages/better-auth/src/plugins/jwt/jwt.test.ts:980:3
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20 {
+  code: [32m'ERR_JOSE_ALG_NOT_ALLOWED'[39m
+}
+
+[90mstdout[2m | src/plugins/jwt/jwt.test.ts[2m > [22m[2mjwt - signing algorithm comes from the key[2m > [22m[2mdoes not take the cookie-cache algorithm from the token header
+[22m[39m2026-11-03T23:06:46.407Z DEBUG [Better Auth]: Cookie-cache JWT verification failed JOSENotSupported: Invalid or unsupported JWK "alg" (Algorithm) Parameter value
+    at subtleMapping [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/jose@6.2.3/node_modules/[4mjose[24m/dist/webapi/lib/jwk_to_key.js:45:27[90m)[39m
+    at jwkToKey [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/jose@6.2.3/node_modules/[4mjose[24m/dist/webapi/lib/jwk_to_key.js:100:38[90m)[39m
+    at importJWK [90m(file:///app/[39mnode_modules/[4m.pnpm[24m/jose@6.2.3/node_modules/[4mjose[24m/dist/webapi/key/import.js:41:20[90m)[39m
+    at importLocalPublicKey [90m(/app/[39mpackages/better-auth/src/plugins/jwt/cookie-cache.ts:58:20[90m)[39m
+    at verifyCookieCacheJWT [90m(/app/[39mpackages/better-auth/src/plugins/jwt/cookie-cache.ts:107:15[90m)[39m
+    at [90m/app/[39mpackages/better-auth/src/plugins/jwt/jwt.test.ts:1008:3
+    at async [90mfile:///app/[39mnode_modules/[4m.pnpm[24m/vitest@5.0.5_@opentelemetry+api@1.9.1_@types+node@25.9.4_@vitest+coverage-istanbul@5.0._cc8b4ee37e72538bb1628d1bebbc414d/node_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20 {
+  code: [32m'ERR_JOSE_NOT_SUPPORTED'[39m
+}
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/plugins/jwt/jwt.test.ts [2m([22m[2m107 tests[22m[2m)[22m[33m 955[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m9 passed[39m[22m[90m (9)[39m
+[2m      Tests [22m [1m[32m488 passed[39m[22m[90m (488)[39m
+[2m   Start at [22m 23:06:44
+[2m   Duration [22m 2.32s[2m (transform 37%, tests 33%, import 29%)[22m
+
+JUNIT report written to /results/base-after.xml

@@ -1,0 +1,104 @@
+#!/bin/bash
+set -u
+output_path=/tmp/test-results.xml
+mode=
+argument_error=
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --output_path)
+      if [ "$#" -lt 2 ]; then argument_error='Missing --output_path value'; shift; else output_path=$2; shift 2; fi ;;
+    base|new)
+      if [ -n "$mode" ]; then argument_error='Specify exactly one mode'; fi
+      mode=$1
+      shift ;;
+    *) argument_error="Unknown argument: $1"; shift ;;
+  esac
+done
+output_path=$(python3 -c 'import pathlib,sys; print(pathlib.Path(sys.argv[1]).resolve())' "$output_path") || exit 1
+fail_report() {
+  python3 - "$output_path" "$1" <<'PY'
+import pathlib,sys,xml.etree.ElementTree as E
+path=pathlib.Path(sys.argv[1]);path.parent.mkdir(parents=True,exist_ok=True)
+root=E.Element('testsuites',tests='1',failures='1',errors='0')
+suite=E.SubElement(root,'testsuite',name='test runner',tests='1',failures='1',errors='0',skipped='0')
+case=E.SubElement(suite,'testcase',name='environment and collection',classname='runner')
+E.SubElement(case,'failure',type='HarnessError',message=sys.argv[2]).text=sys.argv[2]
+E.ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)
+print(sys.argv[2],file=sys.stderr)
+PY
+  exit 1
+}
+[ -z "$argument_error" ] || fail_report "$argument_error"
+[ -n "$mode" ] || fail_report 'Usage: ./test.sh --output_path PATH base|new'
+cd "$(dirname "$0")" || fail_report 'Cannot enter repository root'
+mkdir -p "$(dirname "$output_path")" || fail_report 'Cannot create report directory'
+rm -f "$output_path"
+if [ "$mode" = base ]; then
+  files=(
+    packages/core/src/db/adapter/factory.test.ts
+    packages/better-auth/src/api/routes/session-api.test.ts
+    packages/better-auth/src/api/routes/update-user.test.ts
+    packages/better-auth/src/cookies/cookies.test.ts
+    packages/better-auth/src/plugins/jwt/jwt.test.ts
+  )
+  projects=(--project better-auth --project @better-auth/core)
+else
+  files=(packages/better-auth/src/api/routes/session-field-roundtrip.test.ts)
+  projects=(--project better-auth)
+fi
+for test_file in "${files[@]}"; do
+  [ -f "$test_file" ] || fail_report "Required test file missing: $test_file"
+done
+pnpm --filter 'better-auth^...' build > "$output_path.build.log" 2>&1
+build_exit=$?
+[ "$build_exit" -eq 0 ] || fail_report "Workspace dependency build failed with exit $build_exit; see $output_path.build.log"
+pnpm exec vitest run "${projects[@]}" "${files[@]}" --reporter=default --reporter=junit --outputFile.junit="$output_path" > "$output_path.vitest.log" 2>&1
+vitest_exit=$?
+python3 - "$output_path" "$vitest_exit" "$mode" "${files[@]}" <<'PY'
+import pathlib,sys,xml.etree.ElementTree as E
+path=pathlib.Path(sys.argv[1]);status=int(sys.argv[2]);mode=sys.argv[3];expected=sys.argv[4:]
+def fallback(message):
+    root=E.Element('testsuites',tests='1',failures='1',errors='0')
+    suite=E.SubElement(root,'testsuite',name='test runner',tests='1',failures='1',errors='0',skipped='0')
+    case=E.SubElement(suite,'testcase',name='environment and collection',classname='runner')
+    E.SubElement(case,'failure',type='HarnessError',message=message).text=message
+    E.ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)
+    print(message,file=sys.stderr)
+    raise SystemExit(1)
+try:
+    tree=E.parse(path);root=tree.getroot()
+except (OSError,E.ParseError) as error:
+    fallback(f'Vitest did not produce valid JUnit XML, exit {status}: {error}; see {path}.vitest.log')
+cases=list(root.iter('testcase'));suites=list(root.iter('testsuite'))
+problem=None
+if not cases:problem='No tests collected'
+for required in expected:
+    if not any(s.attrib.get('name','').endswith(required) for s in suites):
+        problem=f'Required test file was not reported: {required}'
+if mode=='new' and len(cases)!=14:problem=f'Expected 14 new cases, collected {len(cases)}'
+if mode=='new' and any(c.find('skipped') is not None for c in cases):problem='New tests were skipped'
+case_failures=sum(c.find('failure') is not None for c in cases)
+case_errors=sum(c.find('error') is not None for c in cases)
+if status and not case_failures and not case_errors:
+    problem=f'Vitest exited {status} despite an all-pass report; see {path}.vitest.log'
+try:
+    counts=(int(root.attrib.get('tests',len(cases))),int(root.attrib.get('failures',case_failures)),int(root.attrib.get('errors',case_errors)))
+    if counts!=(len(cases),case_failures,case_errors):problem='JUnit totals do not match the reported test cases'
+except ValueError:
+    problem='JUnit totals are not valid integers'
+if problem:
+    suite=E.SubElement(root,'testsuite',name='runner integrity',tests='1',failures='1',errors='0',skipped='0')
+    case=E.SubElement(suite,'testcase',name='collection completeness',classname='runner')
+    E.SubElement(case,'failure',type='HarnessError',message=problem).text=problem
+    root.set('tests',str(len(cases)+1))
+    root.set('failures',str(case_failures+1))
+    root.set('errors',str(case_errors))
+    tree.write(path,encoding='utf-8',xml_declaration=True)
+    print(problem,file=sys.stderr)
+    raise SystemExit(1)
+failures=sum(c.find('failure') is not None for c in cases)
+errors=sum(c.find('error') is not None for c in cases)
+skipped=sum(c.find('skipped') is not None for c in cases)
+print(f'{mode}: {len(cases)} cases, {failures} failures, {errors} errors, {skipped} skipped; Vitest exit {status}')
+if status or failures or errors:raise SystemExit(1)
+PY

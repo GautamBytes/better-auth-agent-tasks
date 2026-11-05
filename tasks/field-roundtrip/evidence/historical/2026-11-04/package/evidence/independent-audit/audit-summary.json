@@ -1,0 +1,212 @@
+{
+  "task": "Preserve declared field types across serialized storage and session caches",
+  "date": "2026-11-04",
+  "source_chat": "01a1a358-6920-71f3-a961-e55a262efdae",
+  "base_commit": "e7200d132f5946490c19a389b5a89b31aeead4e7",
+  "original_task_modified": false,
+  "independent_replay": {
+    "network": "none",
+    "uid": 1000,
+    "base_existing_before": 377,
+    "base_existing_after": 377,
+    "new_failures_before": 14,
+    "new_failures_after": 0
+  },
+  "extra_regression_tests": {
+    "base": {
+      "tests": 111,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "fixed": {
+      "tests": 111,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "repeat_runs": [
+    {
+      "stage": "base",
+      "run": 1,
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "base",
+      "run": 2,
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "base",
+      "run": 3,
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "base",
+      "run": 4,
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "base",
+      "run": 5,
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "base",
+      "run": 6,
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "fixed",
+      "run": 1,
+      "exit": 0,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "fixed",
+      "run": 2,
+      "exit": 0,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "fixed",
+      "run": 3,
+      "exit": 0,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "fixed",
+      "run": 4,
+      "exit": 0,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "fixed",
+      "run": 5,
+      "exit": 0,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "stage": "fixed",
+      "run": 6,
+      "exit": 0,
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "single_file_reverts": [
+    {
+      "reverted_file": "packages/better-auth/src/cookies/cache.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 8,
+      "errors": 0
+    },
+    {
+      "reverted_file": "packages/better-auth/src/cookies/index.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 4,
+      "errors": 0
+    },
+    {
+      "reverted_file": "packages/better-auth/src/cookies/jwt.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 2,
+      "errors": 0
+    },
+    {
+      "reverted_file": "packages/better-auth/src/db/internal-adapter.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 4,
+      "errors": 0
+    },
+    {
+      "reverted_file": "packages/better-auth/src/db/schema.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 10,
+      "errors": 0
+    },
+    {
+      "reverted_file": "packages/better-auth/src/plugins/jwt/cookie-cache.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 2,
+      "errors": 0
+    },
+    {
+      "reverted_file": "packages/core/src/db/adapter/factory.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0
+    },
+    {
+      "reverted_file": "packages/core/src/utils/json.ts",
+      "exit": 1,
+      "tests": 14,
+      "failures": 14,
+      "errors": 0
+    }
+  ],
+  "finding": {
+    "file": "title.txt",
+    "line": 1,
+    "issue": "Live guide section 4 asks for exact public entry-point names in the title too. Existing title has no API names.",
+    "suggestion": "Preserve additional-field types across auth.api.signUpEmail, auth.api.getSession, auth.api.updateUser and auth.api.updateSession"
+  },
+  "platform_gates_not_verified": [
+    "Repository eligibility and quota",
+    "Accepted Docker base image",
+    "Required agent attempts and solve-rate target",
+    "Long-horizon sequence metric",
+    "Unfairness and cheating review",
+    "Final platform acceptance and current assistance policy"
+  ],
+  "conclusion": "Local behavior and package checks passed; not yet fully compliant or platform accepted."
+}

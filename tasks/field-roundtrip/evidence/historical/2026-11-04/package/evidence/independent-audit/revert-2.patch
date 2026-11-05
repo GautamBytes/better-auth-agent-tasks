@@ -1,0 +1,21 @@
+diff --git a/packages/better-auth/src/cookies/jwt.ts b/packages/better-auth/src/cookies/jwt.ts
+index 2924e95..fe816f0 100644
+--- a/packages/better-auth/src/cookies/jwt.ts
++++ b/packages/better-auth/src/cookies/jwt.ts
+@@ -1,4 +1,4 @@
+-import type { CookieCachePayload } from "@better-auth/core";
++import type { BetterAuthOptions, CookieCachePayload } from "@better-auth/core";
+ import type { JSONWebKeySet, JWTPayload } from "jose";
+ import { decodeProtectedHeader, importJWK, jwtVerify } from "jose";
+ import { parseCookieCachePayload } from "./cache";
+@@ -33,8 +33,9 @@ export function getSessionCookieJwtVerifyOptions(
+ 
+ export function parseSessionCookieJwtPayload(
+ 	payload: JWTPayload,
++	options?: BetterAuthOptions,
+ ): (CookieCachePayload & JWTPayload) | null {
+-	const data = parseCookieCachePayload(payload);
++	const data = parseCookieCachePayload(payload, options);
+ 	if (!data || typeof payload.iss !== "string" || !payload.iss) {
+ 		return null;
+ 	}
