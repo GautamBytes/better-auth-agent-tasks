@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="6" failures="0" errors="0" time="0.002551833">
+    <testsuite name="packages/better-auth/src/utils/wildcard-stability.test.ts" timestamp="2026-11-05T11:46:27.122Z" hostname="632bd23aa7df" tests="6" failures="0" errors="0" skipped="0" time="0.002551833">
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps global matching independent of earlier calls" time="0.00106225">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps sticky matching independent of earlier calls" time="0.000199167">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps global and case insensitive matching independent of earlier calls" time="0.000195459">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps sticky and case insensitive matching independent of earlier calls" time="0.000148042">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps pattern array matching independent of earlier calls" time="0.000175334">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps custom separator matching independent of earlier calls" time="0.000172167">
+        </testcase>
+    </testsuite>
+</testsuites>

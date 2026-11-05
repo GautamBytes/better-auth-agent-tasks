@@ -1,0 +1,21 @@
+packages/better-auth/src/cookies/cache.ts: OK
+packages/better-auth/src/cookies/index.ts: OK
+packages/better-auth/src/cookies/jwt.ts: OK
+packages/better-auth/src/db/internal-adapter.ts: OK
+packages/better-auth/src/db/schema.ts: OK
+packages/better-auth/src/plugins/jwt/cookie-cache.ts: OK
+packages/core/src/db/adapter/factory.ts: OK
+packages/core/src/utils/json.ts: OK
+packages/core/src/db/adapter/factory.test.ts: OK
+packages/better-auth/src/api/routes/session-api.test.ts: OK
+packages/better-auth/src/api/routes/update-user.test.ts: OK
+packages/better-auth/src/cookies/cookies.test.ts: OK
+packages/better-auth/src/plugins/jwt/jwt.test.ts: OK
+packages/better-auth/src/db/internal-adapter.test.ts: OK
+packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts: OK
+packages/better-auth/src/plugins/multi-session/multi-session.test.ts: OK
+packages/better-auth/src/plugins/custom-session/custom-session.test.ts: OK
+base: 488 cases, 0 failures, 0 errors, 0 skipped; Vitest exit 0
+new: 14 cases, 14 failures, 0 errors, 0 skipped; Vitest exit 1
+base: 488 cases, 0 failures, 0 errors, 0 skipped; Vitest exit 0
+new: 14 cases, 0 failures, 0 errors, 0 skipped; Vitest exit 0

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="57" failures="0" errors="0" time="0.025653167">
+    <testsuite name="packages/better-auth/src/utils/url.test.ts" timestamp="2026-11-05T11:46:26.510Z" hostname="632bd23aa7df" tests="57" failures="0" errors="0" skipped="0" time="0.025653167">
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="trimTrailingSlashes &gt; should remove trailing slashes" time="0.000624166">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="trimTrailingSlashes &gt; should leave non-trailing slashes unchanged" time="0.000079792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; should append the auth path after trailing slashes" time="0.000130041">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject malicious protocol in X-Forwarded-Proto" time="0.019736">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject file protocol in X-Forwarded-Proto" time="0.00017025">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject path traversal in X-Forwarded-Host" time="0.000146375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject null bytes in X-Forwarded-Host" time="0.000332625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject HTML injection in X-Forwarded-Host" time="0.000139667">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject empty X-Forwarded-Host" time="0.000122583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject whitespace-only X-Forwarded-Host" time="0.000118042">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should accept valid hostname with port" time="0.000169833">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should accept valid IPv4 address" time="0.000150417">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should accept valid IPv4 address with port" time="0.00009375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should accept valid IPv6 address in brackets" time="0.000101917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should accept localhost" time="0.000073541">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should accept localhost with port" time="0.000722458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should reject invalid port numbers" time="0.000088375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should only accept http or https protocols" time="0.000144792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should not use proxy headers when trustedProxyHeaders is false" time="0.000039958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should require both headers to be present" time="0.000070834">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should handle subdomain correctly" time="0.000038458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getBaseURL &gt; trustedProxyHeaders validation &gt; should handle deep subdomain correctly" time="0.000032125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; exact matches &gt; should match exact hostname" time="0.000073166">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; exact matches &gt; should match hostname with port" time="0.000022166">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; exact matches &gt; should be case insensitive" time="0.000032166">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; exact matches &gt; should not match different hostnames" time="0.000020209">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; wildcard patterns &gt; should match *.domain pattern (Vercel style)" time="0.000173958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; wildcard patterns &gt; should match prefix-* pattern" time="0.000090583">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; wildcard patterns &gt; should match middle wildcard pattern" time="0.000047792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; wildcard patterns &gt; should match ? single character wildcard" time="0.000055917">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; protocol handling &gt; should strip protocol from host if accidentally included" time="0.000029125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; protocol handling &gt; should strip path from host if accidentally included" time="0.000021">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="matchesHostPattern &gt; edge cases &gt; should return false for empty strings" time="0.000027208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getHostFromSource &gt; should prefer x-forwarded-host over host header when trustedProxyHeaders is true" time="0.000071667">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getHostFromSource &gt; should ignore x-forwarded-host when trustedProxyHeaders is falsy" time="0.000029958">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getHostFromSource &gt; should fall back to host header if x-forwarded-host is not set" time="0.000029417">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getHostFromSource &gt; should fall back to request URL if no headers" time="0.000039375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getHostFromSource &gt; should reject malicious x-forwarded-host and fall back" time="0.000029292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getProtocolFromSource &gt; should use explicit protocol config" time="0.000043417">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getProtocolFromSource &gt; should use x-forwarded-proto when trustedProxyHeaders is true" time="0.000024792">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getProtocolFromSource &gt; should ignore x-forwarded-proto when trustedProxyHeaders is falsy" time="0.000025291">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getProtocolFromSource &gt; should fall back to request URL protocol" time="0.000024209">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="getProtocolFromSource &gt; should use request URL protocol as fallback" time="0.0000235">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="isDynamicBaseURLConfig &gt; should return true for valid dynamic config" time="0.000028458">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="isDynamicBaseURLConfig &gt; should return false for string config" time="0.000017708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="isDynamicBaseURLConfig &gt; should return false for undefined" time="0.000017375">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="isDynamicBaseURLConfig &gt; should return false for object without allowedHosts" time="0.000017292">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveDynamicBaseURL &gt; should resolve allowed host from x-forwarded-host when trustedProxyHeaders is true" time="0.000067">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveDynamicBaseURL &gt; should resolve allowed exact match host from host header" time="0.000034708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveDynamicBaseURL &gt; should resolve preview wildcard pattern" time="0.000037625">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveDynamicBaseURL &gt; should throw for disallowed host without fallback" time="0.000098125">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveDynamicBaseURL &gt; should use fallback for disallowed host" time="0.000036208">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveDynamicBaseURL &gt; should respect protocol config" time="0.000027709">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveDynamicBaseURL &gt; should ignore x-forwarded-host when trustedProxyHeaders is falsy" time="0.000030084">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveBaseURL &gt; should handle static string config" time="0.000036667">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveBaseURL &gt; should handle dynamic config with request when trustedProxyHeaders is true" time="0.000036708">
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/url.test.ts" name="resolveBaseURL &gt; should fall back to legacy behavior for undefined config" time="0.000040625">
+        </testcase>
+    </testsuite>
+</testsuites>

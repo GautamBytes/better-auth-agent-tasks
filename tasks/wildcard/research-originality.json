@@ -1,0 +1,1285 @@
+{
+  "checked_utc": "2026-11-05T11:31:32.823662+00:00",
+  "repo": "https://github.com/better-auth/better-auth",
+  "stars": 30602,
+  "pushed_at": "2026-11-05T10:53:22Z",
+  "upstream_file_blob": "7cd409e2386975daa420d0d97ee94f2921360052",
+  "local_file_blob": "7cd409e2386975daa420d0d97ee94f2921360052",
+  "same_source_on_main": true,
+  "searches": [
+    {
+      "query": "repo:better-auth/better-auth wildcard",
+      "total_count": 130,
+      "items": [
+        {
+          "number": 12213,
+          "title": "passkey: let `origin` be a function of the request, as `trustedOrigins` can be",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/issues/12213"
+        },
+        {
+          "number": 12068,
+          "title": "fix: prevent trusted origin prefix redirects",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/12068"
+        },
+        {
+          "number": 11078,
+          "title": "feat(api): add enabledPaths option to restrict served paths",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11078"
+        },
+        {
+          "number": 12217,
+          "title": "fix(origin-check): validate IPv4 octets in IP wildcard trusted origins",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12217"
+        },
+        {
+          "number": 10831,
+          "title": "OIDC discovery: public-routable HTTPS issuers should not require `trustedOrigins` membership \u2014 the trust escape hatch disables the SSRF checks entirely",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/issues/10831"
+        },
+        {
+          "number": 11757,
+          "title": "fix(sveltekit): recognize auth paths behind TLS-terminating proxies",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11757"
+        },
+        {
+          "number": 11807,
+          "title": "fix(prisma-adapter): match regex characters literally on MongoDB",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11807"
+        },
+        {
+          "number": 11158,
+          "title": "fix(sso): run the DNS SSRF guard on OIDC discovery for public issuers",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11158"
+        },
+        {
+          "number": 10147,
+          "title": "oauth-provider: support context-aware validation hooks for dynamic resource indicators",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/issues/10147"
+        },
+        {
+          "number": 11337,
+          "title": "@better-auth/mcp: plain-HTTP `*.localhost` resource URLs are rejected as non-loopback, breaking local auth",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/issues/11337"
+        },
+        {
+          "number": 12129,
+          "title": "First-party multi-tenancy: tenant from host or path, tenant-bound sessions, per-tenant identity and policy",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/issues/12129"
+        },
+        {
+          "number": 12199,
+          "title": "chore: release v1.7.16",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12199"
+        },
+        {
+          "number": 12198,
+          "title": "fix: harden authentication flows",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12198"
+        },
+        {
+          "number": 9597,
+          "title": "feat(captcha): support exact and wildcard endpoint matching",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9597"
+        },
+        {
+          "number": 10404,
+          "title": "docs: add guide for deploying better auth with docker",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/10404"
+        },
+        {
+          "number": 11056,
+          "title": "fix(oauth): revoke tokens when consent is deleted",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11056"
+        },
+        {
+          "number": 12207,
+          "title": "chore: sync main to next",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12207"
+        },
+        {
+          "number": 12214,
+          "title": "chore: release v1.7.17",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12214"
+        },
+        {
+          "number": 9599,
+          "title": "Captcha path matching: substring \u2192 exact + wildcard (next minor)",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/9599"
+        },
+        {
+          "number": 11683,
+          "title": "index.d.mts re-exports zod but index.mjs does not, so import { z } from \"better-auth\" type-checks and then fails at runtime",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/11683"
+        },
+        {
+          "number": 6359,
+          "title": "feat: implement cross-subdomain cookies plugin and fix TODOs",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/6359"
+        },
+        {
+          "number": 4877,
+          "title": "feat: Steam social provider (v2)",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/4877"
+        },
+        {
+          "number": 10650,
+          "title": "[Security] MCP Plugin: CORS on Register Endpoint \u2014 Cross-Origin OAuth Phishing",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/10650"
+        },
+        {
+          "number": 10645,
+          "title": "[Security] MCP Plugin: CORS on Register Endpoint \u2014 Cross-Origin OAuth Phishing",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/10645"
+        },
+        {
+          "number": 11112,
+          "title": "fix(cli): handle pnpm catalog dependencies in auth upgrade",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11112"
+        },
+        {
+          "number": 10004,
+          "title": "feat(captcha)!: support wildcard endpoint matching",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10004"
+        },
+        {
+          "number": 11225,
+          "title": "chore(deps): bump hono from 4.12.34 to 4.13.7",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11225"
+        },
+        {
+          "number": 11509,
+          "title": "fix(captcha): warn when the plugin's default endpoints leave another plugin's auth routes unprotected",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11509"
+        },
+        {
+          "number": 11016,
+          "title": "feat(captcha): add Vercel BotID provider",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11016"
+        },
+        {
+          "number": 10462,
+          "title": "docs: update for nitro v3",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10462"
+        },
+        {
+          "number": 9946,
+          "title": "feat: better-auth auth UI pages",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/9946"
+        },
+        {
+          "number": 10711,
+          "title": "docs: clarify express.json() usage with toNodeHandler",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10711"
+        },
+        {
+          "number": 10657,
+          "title": "fix(types): align auth endpoints with `better-call`",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10657"
+        },
+        {
+          "number": 6636,
+          "title": "[1.4.6] ExpressJS and toNodeHandler gives 404 errors for all paths",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/6636"
+        },
+        {
+          "number": 9233,
+          "title": "cookieCache verification failure causes silent logout despite valid session_token",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/9233"
+        },
+        {
+          "number": 12253,
+          "title": "chore: sync main to next",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12253"
+        },
+        {
+          "number": 10742,
+          "title": "docs: align the 1.7 migration guide with current behavior",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10742"
+        },
+        {
+          "number": 10197,
+          "title": "fix(google): align hosted-domain validation across sign-in flows",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10197"
+        },
+        {
+          "number": 8575,
+          "title": "feat: add ERC-8128 plugin",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8575"
+        },
+        {
+          "number": 10507,
+          "title": "fix(redis-storage): use SCAN instead of KEYS to avoid blocking Redis",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10507"
+        },
+        {
+          "number": 8686,
+          "title": "feat(oauth-provider): add validateRedirectUri option for custom redirect validation",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8686"
+        },
+        {
+          "number": 9848,
+          "title": "fix(kysely-adapter): drop fragile `@better-auth/core/utils/string` subpath import",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9848"
+        },
+        {
+          "number": 9190,
+          "title": "Add Enterprise IAM Plugin for Policy-Based Access Control",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/9190"
+        },
+        {
+          "number": 10292,
+          "title": "docs: fix migration errors in the 1.7 upgrade guide and RC blog",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10292"
+        },
+        {
+          "number": 9020,
+          "title": "fix(cli): better handling of wildcards in tsconfig paths",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9020"
+        },
+        {
+          "number": 7020,
+          "title": "feat(adapters): add Bun SQL adapter for PostgreSQL",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7020"
+        },
+        {
+          "number": 3145,
+          "title": "feat: add wildcard support",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3145"
+        },
+        {
+          "number": 5231,
+          "title": "Wildcard issues with trustedOrigins",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/5231"
+        },
+        {
+          "number": 3238,
+          "title": "ElysiaJS endpoints not working with BetterAuth",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3238"
+        },
+        {
+          "number": 9032,
+          "title": "fix(cli): handle extends and mid-path wildcards in tsconfig paths",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9032"
+        },
+        {
+          "number": 2735,
+          "title": "specify docs around wildcard domains",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/2735"
+        },
+        {
+          "number": 10216,
+          "title": "refactor: centralize request IP resolver in core",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10216"
+        },
+        {
+          "number": 10115,
+          "title": "Using Better Auth + SvelteKit via ngrok, getting 404 on all auth related routes",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/10115"
+        },
+        {
+          "number": 6412,
+          "title": "Feat: OIDC provider wildcard redirect URI",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6412"
+        },
+        {
+          "number": 6828,
+          "title": "/api/auth/*: 404 Not Found with Nestjs Prisma v7",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/6828"
+        },
+        {
+          "number": 3105,
+          "title": "fix: wildcard match for callback url",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3105"
+        },
+        {
+          "number": 3086,
+          "title": "callbackURL do not support wildcard trustedOrigins",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3086"
+        },
+        {
+          "number": 4521,
+          "title": "docs: fix the wildcard route of hono",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4521"
+        },
+        {
+          "number": 6904,
+          "title": "fix: correct wildcard pattern matching for `trustedOrigins`",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6904"
+        },
+        {
+          "number": 3154,
+          "title": "Protocol-specific wildcard trusted origins not working",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3154"
+        },
+        {
+          "number": 4520,
+          "title": "docs: fix the wildcard route of hono",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4520"
+        },
+        {
+          "number": 3853,
+          "title": "Mention function & wildcard match for `trustedOrigins` in docs",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3853"
+        },
+        {
+          "number": 2720,
+          "title": "Allow to specify wildcard domains for trusted origins",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/2720"
+        },
+        {
+          "number": 11257,
+          "title": "ci(docs): automate version source updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11257"
+        },
+        {
+          "number": 8013,
+          "title": "fix(expo): support wildcard trusted origins in deep link cookie injection",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8013"
+        },
+        {
+          "number": 5248,
+          "title": "fix: resolve custom URL scheme origin matching with wildcards",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5248"
+        },
+        {
+          "number": 3155,
+          "title": "fix: protocol-specific wildcard trusted origins does not work",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3155"
+        },
+        {
+          "number": 5624,
+          "title": "fix: urls without protocol shouldn't be able to satisfy a wildcard origin",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5624"
+        },
+        {
+          "number": 9576,
+          "title": "fix(oidc-provider, mcp): authenticate confidential clients on refresh_token grant",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9576"
+        },
+        {
+          "number": 9131,
+          "title": "fix(auth): harden dynamic baseURL resolution",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9131"
+        },
+        {
+          "number": 4595,
+          "title": "fix: check endpoint conflicts respect `method`",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4595"
+        },
+        {
+          "number": 9172,
+          "title": "chore: sync main to next",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9172"
+        },
+        {
+          "number": 5599,
+          "title": "Implement beforeLeave and afterLeave hooks for organization",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5599"
+        },
+        {
+          "number": 3937,
+          "title": "feat(api): support glob patterns in disabledPaths matching",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3937"
+        },
+        {
+          "number": 8102,
+          "title": "Release v1.5.0-beta.17",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8102"
+        },
+        {
+          "number": 3857,
+          "title": "docs: enhance trustedOrigins option with examples",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3857"
+        },
+        {
+          "number": 2428,
+          "title": "Documentation - Breaking changes w/ ExpressJS v5 regarding route mounting",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/2428"
+        },
+        {
+          "number": 10223,
+          "title": "feat/oauth provider dynamic redirect uri",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10223"
+        },
+        {
+          "number": 764,
+          "title": "Add the possibility to disable trustedOrigins and accept requests from anything (like cors with *)",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/764"
+        },
+        {
+          "number": 10236,
+          "title": "chore: sync main to next",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10236"
+        },
+        {
+          "number": 9074,
+          "title": "chore: sync main to next",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9074"
+        },
+        {
+          "number": 7095,
+          "title": "chore: explicit export `auth.ts`",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7095"
+        },
+        {
+          "number": 4828,
+          "title": "chore: set `noUncheckedIndexedAccess` to true",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4828"
+        },
+        {
+          "number": 9586,
+          "title": "chore: add Dependabot configuration",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9586"
+        },
+        {
+          "number": 126,
+          "title": "CSRF Route Not Found",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/126"
+        },
+        {
+          "number": 4529,
+          "title": "v1.3.9",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4529"
+        },
+        {
+          "number": 8009,
+          "title": "feat(auth): support dynamic baseURL with allowedHosts",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8009"
+        },
+        {
+          "number": 6513,
+          "title": "chore: remove unused exports and export types",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6513"
+        },
+        {
+          "number": 2142,
+          "title": "fix: typescript inference issue when declaration is enabled",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/2142"
+        },
+        {
+          "number": 5006,
+          "title": "refactor: move utils to core",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5006"
+        },
+        {
+          "number": 1354,
+          "title": "Auth actions such as signIn don't support full URLs",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/1354"
+        },
+        {
+          "number": 7975,
+          "title": "`dist/index.d.mts` re-exports entire `zod` namespace, causing `import(\"better-auth\").$strip` in downstream declaration emit",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/7975"
+        },
+        {
+          "number": 6944,
+          "title": "Better-Auth 1.4.8 broken and unusable due to trusted origins",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/6944"
+        },
+        {
+          "number": 5440,
+          "title": "test(mongodb): add tests for special character handling",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5440"
+        },
+        {
+          "number": 6314,
+          "title": "feat: support form data for email sign-in/sign-up and fallback to checking fetch Metadata for first login",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6314"
+        },
+        {
+          "number": 6151,
+          "title": "chore(demo): update auth instance to work with oauth-proxy",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6151"
+        },
+        {
+          "number": 7261,
+          "title": "$Infer.Session type doesn't include additionalFields when using dynamic trustedOrigins function",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/7261"
+        },
+        {
+          "number": 1585,
+          "title": "trustedOrigins ignored - Hono backend",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/1585"
+        },
+        {
+          "number": 1288,
+          "title": "I would like to use google authentication using subdomains, but my subdomains are dynamic...",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/1288"
+        },
+        {
+          "number": 2203,
+          "title": "Invalid Origin error with BetterAuth on Vercel preview deployments",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/2203"
+        },
+        {
+          "number": 8884,
+          "title": "perf(build): reduce published package sizes",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8884"
+        },
+        {
+          "number": 8639,
+          "title": "feat(captcha): add endpoint exclusions using `!` prefix",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8639"
+        },
+        {
+          "number": 4021,
+          "title": "Fastify + Next.js: CORS Issue",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/4021"
+        },
+        {
+          "number": 4843,
+          "title": "disabledPaths doesn't work for paths with variable components",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/4843"
+        },
+        {
+          "number": 5872,
+          "title": "Express js have serverless crash on vercel",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/5872"
+        },
+        {
+          "number": 4329,
+          "title": "Log possibilities to enable Fail2ban",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/4329"
+        },
+        {
+          "number": 3362,
+          "title": "Login loads forever on remote access - work when deployed locally and access from localhost",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3362"
+        },
+        {
+          "number": 8503,
+          "title": "The oauth-provider reported a CORS error after login, causing the authentication process to stop",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/8503"
+        },
+        {
+          "number": 7041,
+          "title": "Error: Access-Control-Allow-Origin * when i was redirected from chatgpt to login screen of my app",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/7041"
+        },
+        {
+          "number": 10009,
+          "title": "chore: release v1.7.0-beta.6",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10009"
+        },
+        {
+          "number": 7288,
+          "title": "refactor(core): split utils into small files",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7288"
+        },
+        {
+          "number": 6223,
+          "title": "chore: re-export helper types in client",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6223"
+        },
+        {
+          "number": 7974,
+          "title": "chore(i18n): re-export types",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7974"
+        },
+        {
+          "number": 3711,
+          "title": "[Bug] Expo Client Session Remains Null After Google Social Sign-In",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3711"
+        },
+        {
+          "number": 9974,
+          "title": "fix: address bug findings across packages ",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9974"
+        },
+        {
+          "number": 1287,
+          "title": "I would like to use google authentication using subdomains, but my subdomains are dynamic.",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/1287"
+        },
+        {
+          "number": 7951,
+          "title": "fix(stripe): drop metered billing, use generic lineItems instead",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7951"
+        },
+        {
+          "number": 3874,
+          "title": "Better auth Dockerized authClient Issues",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3874"
+        },
+        {
+          "number": 5452,
+          "title": "secondaryStorage always gets default TTL",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/5452"
+        },
+        {
+          "number": 5311,
+          "title": "fix(drizzle-adapter): handle all operators in multiple `where` conditions",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5311"
+        },
+        {
+          "number": 9073,
+          "title": "chore: release v1.7.0-beta.0",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9073"
+        },
+        {
+          "number": 3476,
+          "title": "Feat/v1.3 announcement change log",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3476"
+        },
+        {
+          "number": 9081,
+          "title": "chore: release v1.6.3",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9081"
+        },
+        {
+          "number": 1548,
+          "title": "feat: nestjs support",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/1548"
+        },
+        {
+          "number": 9532,
+          "title": "chore: release v1.6.11",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9532"
+        },
+        {
+          "number": 7674,
+          "title": "Expo client creates malformed Cookie starting with a ; which is not accepted by some load balancers such as the google loadbalancer",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/7674"
+        },
+        {
+          "number": 6913,
+          "title": "feat: support drizzle relations v2",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6913"
+        },
+        {
+          "number": 2666,
+          "title": "feat: MCP plugin",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/2666"
+        },
+        {
+          "number": 6595,
+          "title": "chore(deps): update github-actions",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6595"
+        },
+        {
+          "number": 5261,
+          "title": "chore(deps): update github-actions",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5261"
+        }
+      ],
+      "complete_pages": true
+    },
+    {
+      "query": "repo:better-auth/better-auth lastIndex",
+      "total_count": 2,
+      "items": [
+        {
+          "number": 5385,
+          "title": "Feat: add pattern option to validate password",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5385"
+        },
+        {
+          "number": 3570,
+          "title": "TypeScript error with emailOTP plugin after upgrading from v1.2.12 to v1.3.3 - Plugin init method type incompatibility",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3570"
+        }
+      ]
+    },
+    {
+      "query": "repo:better-auth/better-auth \"wildcardMatch\"",
+      "total_count": 9,
+      "items": [
+        {
+          "number": 12068,
+          "title": "fix: prevent trusted origin prefix redirects",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/12068"
+        },
+        {
+          "number": 11078,
+          "title": "feat(api): add enabledPaths option to restrict served paths",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11078"
+        },
+        {
+          "number": 4877,
+          "title": "feat: Steam social provider (v2)",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/4877"
+        },
+        {
+          "number": 11056,
+          "title": "fix(oauth): revoke tokens when consent is deleted",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11056"
+        },
+        {
+          "number": 12198,
+          "title": "fix: harden authentication flows",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12198"
+        },
+        {
+          "number": 3937,
+          "title": "feat(api): support glob patterns in disabledPaths matching",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3937"
+        },
+        {
+          "number": 3105,
+          "title": "fix: wildcard match for callback url",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/3105"
+        },
+        {
+          "number": 8009,
+          "title": "feat(auth): support dynamic baseURL with allowedHosts",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8009"
+        },
+        {
+          "number": 6412,
+          "title": "Feat: OIDC provider wildcard redirect URI",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6412"
+        }
+      ]
+    },
+    {
+      "query": "repo:better-auth/better-auth \"sticky\"",
+      "total_count": 61,
+      "items": [
+        {
+          "number": 11518,
+          "title": "fix/social-test-callback-error-handler-5127755558819347597",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11518"
+        },
+        {
+          "number": 6424,
+          "title": "feat:(mcp)handle the deletion of invalid and rotated tokens",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/6424"
+        },
+        {
+          "number": 11870,
+          "title": "Shutdown all bank account ",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11870"
+        },
+        {
+          "number": 10446,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 10 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10446"
+        },
+        {
+          "number": 10370,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 9 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10370"
+        },
+        {
+          "number": 11482,
+          "title": "fix(auth): recover from initialization dropped on Cloudflare Workers",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/11482"
+        },
+        {
+          "number": 11313,
+          "title": "[backport v1.6.x] feat(instrumentation): add option to disable tracing",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11313"
+        },
+        {
+          "number": 11355,
+          "title": "[backport v1.6.x] fix(captcha): log Turnstile verification failures",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11355"
+        },
+        {
+          "number": 11354,
+          "title": "[backport v1.6.x] fix(core): preserve database option type inference",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11354"
+        },
+        {
+          "number": 11220,
+          "title": "Fix Drizzle Imports",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11220"
+        },
+        {
+          "number": 10487,
+          "title": "PR: fix(docs): fix variable shadowing in api.mdx code example",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10487"
+        },
+        {
+          "number": 11524,
+          "title": "Fix/sso signup disabled 9412",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11524"
+        },
+        {
+          "number": 5721,
+          "title": "feat: support callback function in onAPIError's errorURL",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/5721"
+        },
+        {
+          "number": 7566,
+          "title": "feat: Vercel BotID support on captcha plugin",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7566"
+        },
+        {
+          "number": 5673,
+          "title": "feat(admin): events for admin actions",
+          "state": "open",
+          "url": "https://github.com/better-auth/better-auth/pull/5673"
+        },
+        {
+          "number": 9659,
+          "title": "ci(workflows): harden GitHub workflow configuration",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9659"
+        },
+        {
+          "number": 10223,
+          "title": "feat/oauth provider dynamic redirect uri",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10223"
+        },
+        {
+          "number": 8793,
+          "title": "ci: pin action SHAs and bump sticky-pull-request-comment to v3",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8793"
+        },
+        {
+          "number": 8507,
+          "title": "docs: redesign mobile menu with accordion nav and sticky sign-in footer",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8507"
+        },
+        {
+          "number": 11281,
+          "title": "\u259a\u259a fix(organization): refresh session cookie cache after accepting an invitation",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11281"
+        },
+        {
+          "number": 7202,
+          "title": "docs: fix typo on session management page",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7202"
+        },
+        {
+          "number": 10331,
+          "title": "Create Angga",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10331"
+        },
+        {
+          "number": 9911,
+          "title": "[WIP] Fix code based on review comment",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9911"
+        },
+        {
+          "number": 8654,
+          "title": "fix(organization): member delete hooks in organization plugin",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8654"
+        },
+        {
+          "number": 4169,
+          "title": "docs: fix scrolling issue",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4169"
+        },
+        {
+          "number": 10510,
+          "title": "Fix anonymous plugin session cleanup",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10510"
+        },
+        {
+          "number": 4658,
+          "title": "Docs site anchor links not working properly",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/4658"
+        },
+        {
+          "number": 9263,
+          "title": "feat(api-key): add per-key IP allowlist",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9263"
+        },
+        {
+          "number": 10451,
+          "title": "Fix/passkey error codes mismatch 10447",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10451"
+        },
+        {
+          "number": 4168,
+          "title": "[cherry-pick] docs update",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4168"
+        },
+        {
+          "number": 6404,
+          "title": "docs: apply canonical classes & minor improvements",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/6404"
+        },
+        {
+          "number": 10594,
+          "title": "Fix checkOrgaizationSlug return handling",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10594"
+        },
+        {
+          "number": 10985,
+          "title": "feat: Flutter / Dart client integration",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10985"
+        },
+        {
+          "number": 9792,
+          "title": "fix: URL-encode callbackURL in verify-email links",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9792"
+        },
+        {
+          "number": 8791,
+          "title": "ci: add semantic pull request title validation",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8791"
+        },
+        {
+          "number": 12002,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 14 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/12002"
+        },
+        {
+          "number": 11999,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 15 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11999"
+        },
+        {
+          "number": 9535,
+          "title": "fix cookies with semicolon-only separators",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9535"
+        },
+        {
+          "number": 11902,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 14 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11902"
+        },
+        {
+          "number": 9458,
+          "title": "docs: improve pricing page UI",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9458"
+        },
+        {
+          "number": 2502,
+          "title": "fix/builder sign in boxes",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/2502"
+        },
+        {
+          "number": 5385,
+          "title": "Feat: add pattern option to validate password",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/5385"
+        },
+        {
+          "number": 8416,
+          "title": "feat(core): Support both mixed and numeric ids",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8416"
+        },
+        {
+          "number": 8925,
+          "title": "[codex] Fix provider-aware social link lookup",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8925"
+        },
+        {
+          "number": 11062,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 13 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11062"
+        },
+        {
+          "number": 9038,
+          "title": "Fix/sso org isolation 9013",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9038"
+        },
+        {
+          "number": 9019,
+          "title": "ci: add one-click changeset commit and unify bot identity",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9019"
+        },
+        {
+          "number": 9043,
+          "title": "Fix/9040",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9043"
+        },
+        {
+          "number": 8356,
+          "title": "docs: fix layout bugs related to the TOC",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8356"
+        },
+        {
+          "number": 11006,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 12 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/11006"
+        },
+        {
+          "number": 7925,
+          "title": "docs: add mongoose example to mongodb adapter docs ",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/7925"
+        },
+        {
+          "number": 8749,
+          "title": "docs(landing): improve main routes style",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8749"
+        },
+        {
+          "number": 10948,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 13 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10948"
+        },
+        {
+          "number": 10541,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 11 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/10541"
+        },
+        {
+          "number": 8391,
+          "title": "chore: migrate infrastructure links to `dash.better-auth.com`",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8391"
+        },
+        {
+          "number": 8850,
+          "title": "fix(instrumentation): don't mark redirect APIErrors as span errors",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/8850"
+        },
+        {
+          "number": 4409,
+          "title": "v1.3.8",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/4409"
+        },
+        {
+          "number": 3570,
+          "title": "TypeScript error with emailOTP plugin after upgrading from v1.2.12 to v1.3.3 - Plugin init method type incompatibility",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/3570"
+        },
+        {
+          "number": 9827,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 12 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9827"
+        },
+        {
+          "number": 9595,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 11 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9595"
+        },
+        {
+          "number": 9592,
+          "title": "chore(deps): bump the github-actions group across 1 directory with 12 updates",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/9592"
+        }
+      ]
+    },
+    {
+      "query": "repo:better-auth/better-auth \"global regex\"",
+      "total_count": 2,
+      "items": [
+        {
+          "number": 2895,
+          "title": "fix: oauth proxy between http and https",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/pull/2895"
+        },
+        {
+          "number": 4531,
+          "title": "Jest Test Failures After @noble/ciphers v2.0.0 Update",
+          "state": "closed",
+          "url": "https://github.com/better-auth/better-auth/issues/4531"
+        }
+      ]
+    }
+  ],
+  "file_history": [
+    {
+      "sha": "531b9d56a58484abce6df35175dc2398ba9e38e7",
+      "message": "chore: add lint rule `useConst` (#7369)"
+    },
+    {
+      "sha": "5436b95adae971c19e62f72a15482eb5c0ab72d1",
+      "message": "chore: remove unused exports and export types (#6513)"
+    },
+    {
+      "sha": "5ca7745dd4d12a22233f8c5ba74ab7be455bb6d6",
+      "message": "chore: set `noUncheckedIndexedAccess` to true (#4828)"
+    },
+    {
+      "sha": "562a8accf9f73929cc7ea9226b0fa8638cd3d0d6",
+      "message": "feat: add wildcard and function support for custom rate limiter paths\n\n- Added support for wildcard (`*`) in custom rate limiter paths.\n- Custom rate limiter paths can now also be defined using functions.\n- Updated special rules to demonstrate the usage of wildcard and function-based path matchers."
+    }
+  ],
+  "conclusion": "Scoped public issues/PR and file-history search found no matching implementation or rejection. Discussion-only/unindexed content, platform duplicates, eligibility and quota are not exhaustively checked."
+}

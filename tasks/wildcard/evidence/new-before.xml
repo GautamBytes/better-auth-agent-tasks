@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="6" failures="6" errors="0" time="0.004711708">
+    <testsuite name="packages/better-auth/src/utils/wildcard-stability.test.ts" timestamp="2026-11-05T11:46:25.853Z" hostname="632bd23aa7df" tests="6" failures="6" errors="0" skipped="0" time="0.004711708">
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps global matching independent of earlier calls" time="0.002881333">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/utils/wildcard-stability.test.ts:55:26
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps sticky matching independent of earlier calls" time="0.000318792">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/utils/wildcard-stability.test.ts:55:26
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps global and case insensitive matching independent of earlier calls" time="0.000246375">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/utils/wildcard-stability.test.ts:55:26
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps sticky and case insensitive matching independent of earlier calls" time="0.000204333">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/utils/wildcard-stability.test.ts:55:26
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps pattern array matching independent of earlier calls" time="0.000259833">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/utils/wildcard-stability.test.ts:55:26
+            </failure>
+        </testcase>
+        <testcase classname="packages/better-auth/src/utils/wildcard-stability.test.ts" name="wildcard matcher call stability &gt; keeps custom separator matching independent of earlier calls" time="0.000209417">
+            <failure message="expected false to be true // Object.is equality" type="AssertionError">
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/utils/wildcard-stability.test.ts:55:26
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

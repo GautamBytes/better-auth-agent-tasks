@@ -1,0 +1,36 @@
+{
+  "task": "field-roundtrip",
+  "verified_at_utc": "2026-11-05T11:46:45.597742+00:00",
+  "base_commit": "e7200d132f5946490c19a389b5a89b31aeead4e7",
+  "image": "better-auth-tasks:base",
+  "image_id": "sha256:312a2d124909a4812d755b91adc9474aa20b22cf8eea50d7a355466d7a0db417",
+  "runtime": "aarch64\nuid=1000(node) gid=1000(node) groups=1000(node)\nv24.19.0\n11.1.1\ne7200d132f5946490c19a389b5a89b31aeead4e7",
+  "reports": {
+    "base-before": {
+      "tests": 488,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "new-before": {
+      "tests": 14,
+      "failures": 14,
+      "errors": 0,
+      "skipped": 0
+    },
+    "base-after": {
+      "tests": 488,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "new-after": {
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "agent_trials": false,
+  "platform_approved": false
+}

@@ -1,0 +1,45 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [31m❯[39m [30m[43m better-auth [49m[39m src/utils/wildcard-stability.test.ts [2m([22m[2m6 tests[22m[2m | [22m[31m6 failed[39m[2m)[22m[32m 5[2mms[22m[39m
+   [31m❯[39m wildcard matcher call stability [2m(6)[22m
+[31m     [31m×[31m keeps global matching independent of earlier calls[39m[32m 3[2mms[22m[39m
+[31m     [31m×[31m keeps sticky matching independent of earlier calls[39m[32m 0[2mms[22m[39m
+[31m     [31m×[31m keeps global and case insensitive matching independent of earlier calls[39m[32m 0[2mms[22m[39m
+[31m     [31m×[31m keeps sticky and case insensitive matching independent of earlier calls[39m[32m 0[2mms[22m[39m
+[31m     [31m×[31m keeps pattern array matching independent of earlier calls[39m[32m 0[2mms[22m[39m
+[31m     [31m×[31m keeps custom separator matching independent of earlier calls[39m[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 6 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/utils/wildcard-stability.test.ts[2m > [22mwildcard matcher call stability[2m > [22mkeeps global matching independent of earlier calls
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/utils/wildcard-stability.test.ts[2m > [22mwildcard matcher call stability[2m > [22mkeeps sticky matching independent of earlier calls
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/utils/wildcard-stability.test.ts[2m > [22mwildcard matcher call stability[2m > [22mkeeps global and case insensitive matching independent of earlier calls
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/utils/wildcard-stability.test.ts[2m > [22mwildcard matcher call stability[2m > [22mkeeps sticky and case insensitive matching independent of earlier calls
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/utils/wildcard-stability.test.ts[2m > [22mwildcard matcher call stability[2m > [22mkeeps pattern array matching independent of earlier calls
+[41m[1m FAIL [22m[49m [30m[43m better-auth [49m[39m src/utils/wildcard-stability.test.ts[2m > [22mwildcard matcher call stability[2m > [22mkeeps custom separator matching independent of earlier calls
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2m❯[22m src/utils/wildcard-stability.test.ts:[2m55:26[22m[39m
+    [90m 53|[39m    const match = wildcardMatch(pattern, options);
+    [90m 54|[39m    expect(match(sample)).toBe(true);
+    [90m 55|[39m    expect(match(sample)).toBe(true);
+    [90m   |[39m                          [31m^[39m
+    [90m 56|[39m    expect(match(miss)).toBe(false);
+    [90m 57|[39m    expect(match(sample)).toBe(true);
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m6 failed[39m[22m[90m (6)[39m
+[2m   Start at [22m 11:46:25
+[2m   Duration [22m 86ms[2m (transform 50%, tests 22%, import 21%, worker 7%)[22m
+
+JUNIT report written to /results/new-before.xml

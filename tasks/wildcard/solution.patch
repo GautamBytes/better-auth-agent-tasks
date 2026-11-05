@@ -1,0 +1,11 @@
+diff --git a/packages/better-auth/src/utils/wildcard.ts b/packages/better-auth/src/utils/wildcard.ts
+--- a/packages/better-auth/src/utils/wildcard.ts
++++ b/packages/better-auth/src/utils/wildcard.ts
+@@ -179,6 +179,7 @@
+ 		throw new TypeError(`Sample must be a string, but ${typeof sample} given`);
+ 	}
+ 
++	regexp.lastIndex = 0;
+ 	return regexp.test(sample);
+ }
+ 

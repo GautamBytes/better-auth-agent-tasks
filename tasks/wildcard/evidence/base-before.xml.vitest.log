@@ -1,0 +1,11 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [32m✓[39m [30m[43m better-auth [49m[39m src/utils/url.test.ts [2m([22m[2m57 tests[22m[2m)[22m[32m 27[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m57 passed[39m[22m[90m (57)[39m
+[2m   Start at [22m 11:46:25
+[2m   Duration [22m 132ms[2m (transform 53%, tests 34%, import 11%, worker 2%)[22m
+
+JUNIT report written to /results/base-before.xml

@@ -1,0 +1,343 @@
+diff --git a/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts b/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts
+new file mode 100644
+index 0000000..b39e77b
+--- /dev/null
++++ b/packages/better-auth/src/api/routes/session-field-roundtrip.test.ts
+@@ -0,0 +1,223 @@
++import type { BetterAuthOptions } from "@better-auth/core";
++import type { SecondaryStorage } from "@better-auth/core/db";
++import { describe, expect, it } from "vitest";
++import { jwt } from "../../plugins/jwt";
++import { getTestInstance } from "../../test-utils/test-instance";
++
++type CookieStrategy = NonNullable<
++	NonNullable<
++		NonNullable<BetterAuthOptions["session"]>["cookieCache"]
++	>["strategy"]
++>;
++type StorageRoute =
++	| { kind: "cookie"; strategy: CookieStrategy }
++	| { kind: "secondary"; parsed: boolean }
++	| { kind: "database" }
++	| { kind: "jwt-plugin" };
++
++const timestampStrings = [
++	"2024-01-02T03:04:05Z",
++	"2031-09-08T07:06:05.123400Z",
++];
++const cookieStrategies = ["compact", "jwt", "jwe"] satisfies CookieStrategy[];
++
++function jsonValue(value: string) {
++	return {
++		createdAt: value,
++		nested: { expiresAt: value, enabled: true, count: 7, missing: null },
++		items: [value, "ordinary text", null, { updatedAt: value }],
++		empty: [],
++	};
++}
++
++function fieldOptions(value: string) {
++	return {
++		user: {
++			additionalFields: {
++				trackingId: { type: "string", required: false },
++				aliases: { type: "string[]", required: false },
++				preferences: { type: "json", required: false },
++				joinedOn: { type: "date", required: false },
++				optionalText: { type: "string", required: false },
++				emptyTags: { type: "string[]", required: false },
++				secretAuditNote: {
++					type: "string",
++					input: false,
++					returned: false,
++					defaultValue: "private note",
++				},
++			},
++		},
++		session: {
++			additionalFields: {
++				cursor: { type: "string", defaultValue: value },
++				history: { type: "string[]", defaultValue: [value, "plain"] },
++				data: { type: "json", defaultValue: jsonValue(value) },
++				reviewDate: { type: "date", defaultValue: new Date(value) },
++				nullableText: { type: "string", required: false, defaultValue: null },
++				emptyHistory: { type: "string[]", defaultValue: [] },
++			},
++		},
++	} satisfies BetterAuthOptions;
++}
++
++function secondaryStorage(parsed: boolean): SecondaryStorage {
++	const values = new Map<string, string>();
++	function read(key: string): unknown {
++		const value = values.get(key);
++		return value === undefined ? null : parsed ? JSON.parse(value) : value;
++	}
++	return {
++		get: read,
++		getAndDelete(key) {
++			const value = read(key);
++			values.delete(key);
++			return value;
++		},
++		increment(key) {
++			const count = Number(values.get(key) ?? 0) + 1;
++			values.set(key, String(count));
++			return count;
++		},
++		set(key, value) {
++			values.set(key, value);
++		},
++		delete(key) {
++			values.delete(key);
++		},
++	};
++}
++
++function requestCookies(headers: Headers) {
++	return new Headers({
++		cookie: headers
++			.getSetCookie()
++			.map((cookie) => cookie.split(";")[0])
++			.join("; "),
++	});
++}
++
++function expectUser(user: unknown, value: string) {
++	expect.soft(user).toMatchObject({
++		trackingId: value,
++		aliases: [value, "plain"],
++		preferences: jsonValue(value),
++		joinedOn: new Date(value),
++		optionalText: null,
++		emptyTags: [],
++		createdAt: expect.any(Date),
++		updatedAt: expect.any(Date),
++	});
++	expect.soft(user).not.toHaveProperty("secretAuditNote");
++}
++
++function expectSession(session: unknown, value: string) {
++	expect.soft(session).toMatchObject({
++		cursor: value,
++		history: [value, "plain"],
++		data: jsonValue(value),
++		reviewDate: new Date(value),
++		nullableText: null,
++		emptyHistory: [],
++		createdAt: expect.any(Date),
++		updatedAt: expect.any(Date),
++		expiresAt: expect.any(Date),
++	});
++}
++
++async function expectStorageRoundTrip(value: string, route: StorageRoute) {
++	const fields = fieldOptions(value);
++	const { auth } = await getTestInstance(
++		{
++			...fields,
++			logger: { disabled: true },
++			plugins:
++				route.kind === "jwt-plugin" ? [jwt({ sessionCookieCache: true })] : [],
++			secondaryStorage:
++				route.kind === "secondary" ? secondaryStorage(route.parsed) : undefined,
++			session: {
++				...fields.session,
++				cookieCache: {
++					enabled: route.kind === "cookie" || route.kind === "jwt-plugin",
++					strategy:
++						route.kind === "jwt-plugin"
++							? "jwt"
++							: route.kind === "cookie"
++								? route.strategy
++								: "compact",
++				},
++			},
++		},
++		{ disableTestUser: true },
++	);
++	const signup = await auth.api.signUpEmail({
++		body: {
++			email: "roundtrip@example.com",
++			name: "Roundtrip",
++			password: "password123",
++			trackingId: value,
++			aliases: [value, "plain"],
++			preferences: jsonValue(value),
++			joinedOn: new Date(value),
++			optionalText: null,
++			emptyTags: [],
++		},
++		returnHeaders: true,
++	});
++	expectUser(signup.response.user, value);
++	const headers = requestCookies(signup.headers);
++	if (route.kind === "cookie" || route.kind === "jwt-plugin") {
++		const backing = await auth.api.getSession({
++			headers,
++			query: { disableCookieCache: true },
++		});
++		expect(backing).not.toBeNull();
++		expect.soft(backing?.user.trackingId).toBe(value);
++	}
++	const restored = await auth.api.getSession({ headers });
++	expect(restored).not.toBeNull();
++	expectUser(restored?.user, value);
++	expectSession(restored?.session, value);
++	if (route.kind === "secondary") {
++		await auth.api.updateUser({ headers, body: { name: "Renamed" } });
++		const afterUserUpdate = await auth.api.getSession({ headers });
++		expectUser(afterUserUpdate?.user, value);
++		expectSession(afterUserUpdate?.session, value);
++		await auth.api.updateSession({ headers, body: { cursor: value } });
++		const afterSessionUpdate = await auth.api.getSession({ headers });
++		expectUser(afterSessionUpdate?.user, value);
++		expectSession(afterSessionUpdate?.session, value);
++	}
++}
++
++/**
++ * @see https://github.com/better-auth/better-auth/blob/e7200d132f5946490c19a389b5a89b31aeead4e7/packages/core/src/db/type.ts
++ * @see https://github.com/better-auth/better-auth/pull/4237
++ */
++describe.each(timestampStrings)(
++	"additional-field round trips for %s",
++	(value) => {
++		it.each(cookieStrategies)(
++			"preserves field types through the %s cookie cache",
++			async (strategy) => {
++				await expectStorageRoundTrip(value, { kind: "cookie", strategy });
++			},
++		);
++
++		it("preserves field types through JWT-plugin cookie signing", async () => {
++			await expectStorageRoundTrip(value, { kind: "jwt-plugin" });
++		});
++
++		it("preserves field types through JSON-string secondary storage", async () => {
++			await expectStorageRoundTrip(value, { kind: "secondary", parsed: false });
++		});
++
++		it("preserves field types through pre-parsed secondary storage", async () => {
++			await expectStorageRoundTrip(value, { kind: "secondary", parsed: true });
++		});
++
++		it("preserves field types through SQLite array and JSON serialization", async () => {
++			await expectStorageRoundTrip(value, { kind: "database" });
++		});
++	},
++);
+diff --git a/test.sh b/test.sh
+new file mode 100755
+index 0000000..9653fc5
+--- /dev/null
++++ b/test.sh
+@@ -0,0 +1,108 @@
++#!/bin/bash
++set -u
++output_path=/tmp/test-results.xml
++mode=
++argument_error=
++while [ "$#" -gt 0 ]; do
++  case "$1" in
++    --output_path)
++      if [ "$#" -lt 2 ]; then argument_error='Missing --output_path value'; shift; else output_path=$2; shift 2; fi ;;
++    base|new)
++      if [ -n "$mode" ]; then argument_error='Specify exactly one mode'; fi
++      mode=$1
++      shift ;;
++    *) argument_error="Unknown argument: $1"; shift ;;
++  esac
++done
++output_path=$(python3 -c 'import pathlib,sys; print(pathlib.Path(sys.argv[1]).resolve())' "$output_path") || exit 1
++fail_report() {
++  python3 - "$output_path" "$1" <<'PY'
++import pathlib,sys,xml.etree.ElementTree as E
++path=pathlib.Path(sys.argv[1]);path.parent.mkdir(parents=True,exist_ok=True)
++root=E.Element('testsuites',tests='1',failures='1',errors='0')
++suite=E.SubElement(root,'testsuite',name='test runner',tests='1',failures='1',errors='0',skipped='0')
++case=E.SubElement(suite,'testcase',name='environment and collection',classname='runner')
++E.SubElement(case,'failure',type='HarnessError',message=sys.argv[2]).text=sys.argv[2]
++E.ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)
++print(sys.argv[2],file=sys.stderr)
++PY
++  exit 1
++}
++[ -z "$argument_error" ] || fail_report "$argument_error"
++[ -n "$mode" ] || fail_report 'Usage: ./test.sh --output_path PATH base|new'
++cd "$(dirname "$0")" || fail_report 'Cannot enter repository root'
++mkdir -p "$(dirname "$output_path")" || fail_report 'Cannot create report directory'
++rm -f "$output_path"
++if [ "$mode" = base ]; then
++  files=(
++    packages/core/src/db/adapter/factory.test.ts
++    packages/better-auth/src/api/routes/session-api.test.ts
++    packages/better-auth/src/api/routes/update-user.test.ts
++    packages/better-auth/src/cookies/cookies.test.ts
++    packages/better-auth/src/plugins/jwt/jwt.test.ts
++    packages/better-auth/src/db/internal-adapter.test.ts
++    packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts
++    packages/better-auth/src/plugins/multi-session/multi-session.test.ts
++    packages/better-auth/src/plugins/custom-session/custom-session.test.ts
++  )
++  projects=(--project better-auth --project @better-auth/core)
++else
++  files=(packages/better-auth/src/api/routes/session-field-roundtrip.test.ts)
++  projects=(--project better-auth)
++fi
++for test_file in "${files[@]}"; do
++  [ -f "$test_file" ] || fail_report "Required test file missing: $test_file"
++done
++pnpm --filter 'better-auth^...' build > "$output_path.build.log" 2>&1
++build_exit=$?
++[ "$build_exit" -eq 0 ] || fail_report "Workspace dependency build failed with exit $build_exit; see $output_path.build.log"
++pnpm exec vitest run "${projects[@]}" "${files[@]}" --reporter=default --reporter=junit --outputFile.junit="$output_path" > "$output_path.vitest.log" 2>&1
++vitest_exit=$?
++python3 - "$output_path" "$vitest_exit" "$mode" "${files[@]}" <<'PY'
++import pathlib,sys,xml.etree.ElementTree as E
++path=pathlib.Path(sys.argv[1]);status=int(sys.argv[2]);mode=sys.argv[3];expected=sys.argv[4:]
++def fallback(message):
++    root=E.Element('testsuites',tests='1',failures='1',errors='0')
++    suite=E.SubElement(root,'testsuite',name='test runner',tests='1',failures='1',errors='0',skipped='0')
++    case=E.SubElement(suite,'testcase',name='environment and collection',classname='runner')
++    E.SubElement(case,'failure',type='HarnessError',message=message).text=message
++    E.ElementTree(root).write(path,encoding='utf-8',xml_declaration=True)
++    print(message,file=sys.stderr)
++    raise SystemExit(1)
++try:
++    tree=E.parse(path);root=tree.getroot()
++except (OSError,E.ParseError) as error:
++    fallback(f'Vitest did not produce valid JUnit XML, exit {status}: {error}; see {path}.vitest.log')
++cases=list(root.iter('testcase'));suites=list(root.iter('testsuite'))
++problem=None
++if not cases:problem='No tests collected'
++for required in expected:
++    if not any(s.attrib.get('name','').endswith(required) for s in suites):
++        problem=f'Required test file was not reported: {required}'
++if mode=='new' and len(cases)!=14:problem=f'Expected 14 new cases, collected {len(cases)}'
++if mode=='new' and any(c.find('skipped') is not None for c in cases):problem='New tests were skipped'
++case_failures=sum(c.find('failure') is not None for c in cases)
++case_errors=sum(c.find('error') is not None for c in cases)
++if status and not case_failures and not case_errors:
++    problem=f'Vitest exited {status} despite an all-pass report; see {path}.vitest.log'
++try:
++    counts=(int(root.attrib.get('tests',len(cases))),int(root.attrib.get('failures',case_failures)),int(root.attrib.get('errors',case_errors)))
++    if counts!=(len(cases),case_failures,case_errors):problem='JUnit totals do not match the reported test cases'
++except ValueError:
++    problem='JUnit totals are not valid integers'
++if problem:
++    suite=E.SubElement(root,'testsuite',name='runner integrity',tests='1',failures='1',errors='0',skipped='0')
++    case=E.SubElement(suite,'testcase',name='collection completeness',classname='runner')
++    E.SubElement(case,'failure',type='HarnessError',message=problem).text=problem
++    root.set('tests',str(len(cases)+1))
++    root.set('failures',str(case_failures+1))
++    root.set('errors',str(case_errors))
++    tree.write(path,encoding='utf-8',xml_declaration=True)
++    print(problem,file=sys.stderr)
++    raise SystemExit(1)
++failures=sum(c.find('failure') is not None for c in cases)
++errors=sum(c.find('error') is not None for c in cases)
++skipped=sum(c.find('skipped') is not None for c in cases)
++print(f'{mode}: {len(cases)} cases, {failures} failures, {errors} errors, {skipped} skipped; Vitest exit {status}')
++if status or failures or errors:raise SystemExit(1)
++PY

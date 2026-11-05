@@ -1,0 +1,1 @@
+Make wildcardMatch stable across repeated calls with global or sticky flags

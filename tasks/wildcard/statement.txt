@@ -1,0 +1,3 @@
+Make wildcardMatch return a stable answer for each sample, independent of earlier calls to the same compiled matcher. A matching sample must continue to match when the configured regular-expression flags include g or y, including when either is combined with i. Interleaving matching and nonmatching samples must not change later results.
+
+Preserve case-insensitive matching when requested, pattern arrays, custom separator behavior, and the matcher's existing pattern, options and regexp properties, including its compiled flags. Non-string samples must still raise TypeError. Changing wildcard syntax, host validation or authentication endpoint behavior is outside scope.

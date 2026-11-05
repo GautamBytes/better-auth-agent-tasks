@@ -1,0 +1,17 @@
+b65009506afb22cf09a0adffbd04db8b4ec59d88beb6a73649ff2ec175a8e3f3  packages/better-auth/src/cookies/cache.ts
+185fdd91ba14ee389a5bb58610e6586168caa6809cf8429f1732650ad343ac38  packages/better-auth/src/cookies/index.ts
+b247309f00d3af14691601a43960ee42e135dcd05ef2d1483028ac996c3b5eaa  packages/better-auth/src/cookies/jwt.ts
+225044224655fd38e3f18bfafe89010032f6877194bfdc8c3116101671141be6  packages/better-auth/src/db/internal-adapter.ts
+4955f33b7c97a69ab1dfb6d3680665c5b774eaf3ac8d5fd36bcd8d74da78e05e  packages/better-auth/src/db/schema.ts
+6b69686313fb7878a52265efaf9df12a28a9e89b2acbd2e70c69d60ae005583b  packages/better-auth/src/plugins/jwt/cookie-cache.ts
+0ed2b6af32268701af823a0bcd6145684062d0248889e7b85c2fbae40e0770c4  packages/core/src/db/adapter/factory.ts
+9512d6396e8b276ca554c8ed08d3b09f80dfe96a02336036aea1acec5ddf4e72  packages/core/src/utils/json.ts
+3e69d3c1347a994651dbde5b7cd4e461e93e74a909e0bc712e3c74847962b09e  packages/core/src/db/adapter/factory.test.ts
+c2f561f44e3ca0c87b0fe18a40bcf30d63307dcedfaf3175fec4e9b32e25a6fc  packages/better-auth/src/api/routes/session-api.test.ts
+ba15d492f05799adc0f95ef3dcaf801125ca3717d5a96b30c0cf6ef7572d142c  packages/better-auth/src/api/routes/update-user.test.ts
+b7e9b4646b6b95d201789c79742896545dfa09c6d80b73b44a27140a3b4b0bb0  packages/better-auth/src/cookies/cookies.test.ts
+de3adb46f1ee4e1b143ad26919622f23a0065c2184508d45093182d324bf8d29  packages/better-auth/src/plugins/jwt/jwt.test.ts
+e4d05e4c04ec7bc6402f0ddee41599a74cdff3eb097e0d14d825cdc7980951be  packages/better-auth/src/db/internal-adapter.test.ts
+5aa3b8c8fb3e34413289cdb65e198d79401d8f40633dc1f02fd014c91bf78d68  packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts
+2be4cb23920ba88a7c7c34fe025bd5e3f02811f74b1625760af1fe2480b45654  packages/better-auth/src/plugins/multi-session/multi-session.test.ts
+4d9db61ce57ff64305380e8854aeccd8999de46cd9e954957668efc400780755  packages/better-auth/src/plugins/custom-session/custom-session.test.ts

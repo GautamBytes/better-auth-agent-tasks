@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/better-auth/better-auth",
+  "base_commit": "e7200d132f5946490c19a389b5a89b31aeead4e7",
+  "source_file": "packages/better-auth/src/utils/wildcard.ts",
+  "source_sha256": "75b0ca918b633d17e61fdc7fedb38e93298640e291fb5a26ec8ef55b2de7fdd5",
+  "existing_test_file": "packages/better-auth/src/utils/url.test.ts",
+  "existing_test_sha256": "bc265caa3431027f94428e21f038601d2c1aa8cd20f2a6477284e5f52f4e50d9",
+  "new_tests": 6,
+  "platform_agent_trials": false
+}
